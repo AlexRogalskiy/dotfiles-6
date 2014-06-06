@@ -34,5 +34,6 @@ unset install_homebrew
 unset install_apps
 unset setup_files
 
+echo "sourcing bash profile"
 source ~/.bash_profile
 
