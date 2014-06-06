@@ -49,9 +49,7 @@ install sbt
 install ant
 
 # tools
-tap homebrew/boneyard
-install jad
-untap homebrew/boneyard
+install homebrew/binary/jad
 
 install tuntap 
 install openconnect 

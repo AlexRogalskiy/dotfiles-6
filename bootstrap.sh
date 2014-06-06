@@ -20,17 +20,14 @@ cd "$(dirname "${BASH_SOURCE}")"
 #git pull origin master
 
 if [ “$1” == “setup” ]; then
-	echo “setup it isss”
 	install_homebrew
 	install_apps
 	setup_files
 	cd ~/.appsettings && ./link.sh;
 elif [ “$1” == “osx” ]; then
-	echo “osx it issss”
-	#~/.osx
+	~/.osx
 else
-	echo “else it sissss”
-	#setup_files
+	setup_files
 fi
 
 unset install_homebrew
