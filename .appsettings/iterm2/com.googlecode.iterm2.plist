@@ -9782,7 +9782,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/rob/Dropbox/iTerm</string>
+	<string>~/.appsettings/iterm2/</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>

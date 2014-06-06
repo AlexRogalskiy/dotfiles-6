@@ -14,6 +14,7 @@ function setup_files() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
 		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~
 	source ~/.bash_profile
+	~/.osx
 }
 
 cd "$(dirname "${BASH_SOURCE}")"
@@ -23,6 +24,7 @@ if [ "$1" == “—-setup” ]; then
 	install_homebrew
 	setup_files
 	install_apps
+	cd ~/.appsettings && ./link.sh
 else
 	setup_files
 fi
