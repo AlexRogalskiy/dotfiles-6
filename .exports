@@ -1,6 +1,10 @@
 # Make sublime the default editor
 export EDITOR='subl -w'
 
+# Local workspace
+export LOGDIR='~/Logs'
+export SPACE='~/Workspace'
+
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE

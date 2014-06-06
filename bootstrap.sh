@@ -19,21 +19,29 @@ alias subl=“”
 cd "$(dirname "${BASH_SOURCE}")"
 #git pull origin master
 
-if [ “$1” == “setup” ]; then
+if [ "$1" == "init" ]; then
 	install_homebrew
-	install_apps
 	setup_files
-	cd ~/.appsettings && ./link.sh;
-elif [ “$1” == “osx” ]; then
-	~/.osx
+	install_apps
+elif [ "$1" ==  "osx" ]; then
+	setup_files
+  ~/.osx
 else
 	setup_files
+  if [ "$1" !=  "nobrew" ]; then
+    install_apps
+  fi
 fi
 
 unset install_homebrew
 unset install_apps
 unset setup_files
 
+echo "linking app settings"
+cd ~/.appsettings && ./link.sh
+
 echo "sourcing bash profile"
 source ~/.bash_profile
 
+mkdir ~/Logs 2>/dev/null
+mkdir ~/Workspace 2>/dev/null

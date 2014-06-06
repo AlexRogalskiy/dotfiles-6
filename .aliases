@@ -60,4 +60,3 @@ alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimul
 
 # Mou markdown
 alias mou="open /Applications/Mou.app"
-

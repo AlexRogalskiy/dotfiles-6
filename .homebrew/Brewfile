@@ -51,9 +51,13 @@ install ant
 # tools
 install homebrew/binary/jad
 
-install tuntap 
-install openconnect 
+install tuntap
+install openconnect
 install git-flow
+
+install docker
+install boot2docker
 
 # Remove outdated versions from the cellar
 cleanup
+list
