@@ -13,22 +13,29 @@ function install_apps() {
 function setup_files() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
 		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~
-	source ~/.bash_profile
-	~/.osx
 }
 
+alias subl=“”
 cd "$(dirname "${BASH_SOURCE}")"
 #git pull origin master
 
-if [ "$1" == “—-setup” ]; then
+if [ “$1” == “setup” ]; then
+	echo “setup it isss”
 	install_homebrew
-	setup_files
 	install_apps
-	cd ~/.appsettings && ./link.sh
-else
 	setup_files
+	cd ~/.appsettings && ./link.sh;
+elif [ “$1” == “osx” ]; then
+	echo “osx it issss”
+	#~/.osx
+else
+	echo “else it sissss”
+	#setup_files
 fi
 
 unset install_homebrew
 unset install_apps
 unset setup_files
+
+source ~/.bash_profile
+
