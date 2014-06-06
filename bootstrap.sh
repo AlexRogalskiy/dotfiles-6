@@ -1,18 +1,32 @@
 #!/usr/bin/env bash
-cd "$(dirname "${BASH_SOURCE}")"
-git pull origin master
-function doIt() {
+
+function install_homebrew() {
+	echo "installing homebrew..."
+	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+}
+
+function install_apps() {
+	brew bundle ~/.homebrew/Brewfile
+	brew bundle ~/.homebrew/Caskfile
+}
+
+function setup_files() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
 		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~
 	source ~/.bash_profile
 }
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt
+
+cd "$(dirname "${BASH_SOURCE}")"
+#git pull origin master
+
+if [ "$1" == “—-setup” ]; then
+	install_homebrew
+	setup_files
+	install_apps
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt
-	fi
+	setup_files
 fi
-unset doIt
+
+unset install_homebrew
+unset install_apps
+unset setup_files
