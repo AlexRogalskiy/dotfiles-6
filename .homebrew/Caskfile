@@ -26,6 +26,7 @@ cask install alfred
 cask install adium
 cask install rdio
 
+cask install caskroom/versions/java6
 cask install caskroom/versions/java7
 cask install java
 

@@ -60,3 +60,7 @@ alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimul
 
 # Mou markdown
 alias mou="open /Applications/Mou.app"
+
+alias java6="export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+alias java7="export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home"
+alias java8="export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home"
