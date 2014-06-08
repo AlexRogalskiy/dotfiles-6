@@ -45,3 +45,6 @@ source ~/.bash_profile
 
 mkdir ~/Logs 2>/dev/null
 mkdir ~/Workspace 2>/dev/null
+
+# sudo kextload /Library/Extensions/tun.kext
+# sudo kextload /Library/Extensions/tap.kext
