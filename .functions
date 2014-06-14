@@ -83,3 +83,7 @@ gsed \
   	-e "s/Tests run: \([^,]*\), Failures: \([^,]*\), Errors: \([^,]*\), Skipped: \([^,]*\)/${BOLD}${TEXT_GREEN}Tests run: \1${RESET_FORMATTING}, ${BOLD}${TEXT_RED}Failures: \2${RESET_FORMATTING}, ${BOLD}${TEXT_RED}Errors: \3${RESET_FORMATTING}, ${BOLD}${TEXT_ORANGE}Skipped: \4${RESET_FORMATTING}/g"
 
 }
+
+function vnc() {
+  open vnc://$1
+}
