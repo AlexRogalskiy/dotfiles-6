@@ -4,34 +4,36 @@
 install caskroom/cask/brew-cask
 tap caskroom/versions
 
-cask install dropbox
-cask install google-chrome
-cask install iterm2
-cask install sublime-text3
-cask install virtualbox
+cask install dropbox --force 2> /dev/null
+cask install google-chrome --force 2> /dev/null
+cask install iterm2 --force 2> /dev/null
+cask install sublime-text3 --force 2> /dev/null
+cask install virtualbox --force 2> /dev/null
 
-cask install visualvm
-cask install intellij-idea
-cask install pgadmin3
+cask install visualvm --force 2> /dev/null
+cask install intellij-idea --force 2> /dev/null
+cask install pgadmin3 --force 2> /dev/null
 
 # quicklook plugins
-cask install quicklook-json
-cask install quicklook-csv
-cask install qlcolorcode
-cask install qlmarkdown
-cask install qlprettypatch
-cask install betterzipql
+cask install quicklook-json --force 2> /dev/null
+cask install quicklook-csv --force 2> /dev/null
+cask install qlcolorcode --force 2> /dev/null
+cask install qlmarkdown --force 2> /dev/null
+cask install qlprettypatch --force 2> /dev/null
+cask install betterzipql --force 2> /dev/null
 
-cask install alfred
-cask install adium
-cask install spotify
+cask install alfred --force 2> /dev/null
+cask install adium --force 2> /dev/null
+cask install rdio --force 2> /dev/null
 
-cask install caskroom/versions/java6
-cask install caskroom/versions/java7
-cask install java
+cask install caskroom/versions/java6 --force 2> /dev/null
+cask install caskroom/versions/java7 --force 2> /dev/null
+cask install java --force 2> /dev/null
 
-cask install hipchat
-cask install caffeine
-cask install evernote
+cask install hipchat --force 2> /dev/null
+cask install caffeine --force 2> /dev/null
+cask install evernote --force 2> /dev/null
+cask install sourcetree --force 2> /dev/null
 
+cask cleanup
 cask list
