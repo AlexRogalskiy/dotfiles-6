@@ -24,7 +24,7 @@ cask install betterzipql
 
 cask install alfred
 cask install adium
-cask install rdio
+cask install spotify
 
 cask install caskroom/versions/java6
 cask install caskroom/versions/java7
