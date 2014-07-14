@@ -22,3 +22,5 @@ function vpns() {
     echo "false"
   fi
 }
+
+java7
