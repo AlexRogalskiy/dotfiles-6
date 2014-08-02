@@ -1,9 +1,10 @@
+#! /usr/bin/env sh
+
 # Make sublime the default editor
 export EDITOR='subl -w'
 
 # Local workspace
-export LOGDIR='~/Logs'
-export SPACE='~/Workspace'
+export LOGDIR='/var/log' ##TODO setup perms on /var/log
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768

@@ -21,3 +21,5 @@ build/
 
 # Maven
 target/
+
+.local_config

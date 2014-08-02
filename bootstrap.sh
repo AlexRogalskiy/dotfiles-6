@@ -1,50 +1,57 @@
 #!/usr/bin/env bash
 
+function setup_mac() {
+  echo "configuring mac environment"
+  install_homebrew
+
+  ./.bootstrap_osx.sh
+  ~/.appsettings/link.sh
+}
+
+function setup_linux() {
+  echo "configuring linux environment"
+}
+
 function install_homebrew() {
-	echo "installing homebrew..."
-	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  if [[ ! `command -v brew` ]]; then
+    echo "installing homebrew..."
+    curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install > homebrew-install.rb
+    ruby homebrew-install.rb
+    rm homebrew-install.rb
+  fi
+
+  brew bundle homebrew/Brewfile
+  brew bundle homebrew/Caskfile
 }
 
-function install_apps() {
-	brew bundle ~/.homebrew/Brewfile
-	brew bundle ~/.homebrew/Caskfile
+function migrate_dotfiles() {
+  rsync --exclude ".git/" \
+        --exclude ".DS_Store" \
+        --exclude "bootstrap.sh" \
+        --exclude ".bootstrap_osx.sh" \
+        --exclude ".local_config" \
+        --exclude "homebrew" \
+        --exclude "README.md" \
+        --exclude "LICENSE-MIT.txt" \
+        -avh --no-perms . ~
 }
 
-function setup_files() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~
-}
+function run() {
+  cd "$(dirname "${BASH_SOURCE}")"
+  source .local_config
 
-alias subl=“”
-cd "$(dirname "${BASH_SOURCE}")"
-#git pull origin master
+  migrate_dotfiles
+
+  if [[ $OS == "mac" ]]; then
+    setup_mac
+  fi
+
+  mkdir -P ~/dev 2>/dev/null
+  source ~/.bash_profile
+}
 
 if [ "$1" == "init" ]; then
-	install_homebrew
-	setup_files
-	install_apps
-elif [ "$1" ==  "osx" ]; then
-	setup_files
-  ~/.osx
+  run
 else
-	setup_files
-  if [ "$1" !=  "nobrew" ]; then
-    install_apps
-  fi
+  echo "no option given. did you mean 'init'?"
 fi
-
-unset install_homebrew
-unset install_apps
-unset setup_files
-
-echo "linking app settings"
-cd ~/.appsettings && ./link.sh
-
-echo "sourcing bash profile"
-source ~/.bash_profile
-
-mkdir ~/Logs 2>/dev/null
-mkdir ~/Workspace 2>/dev/null
-
-# sudo kextload /Library/Extensions/tun.kext
-# sudo kextload /Library/Extensions/tap.kext

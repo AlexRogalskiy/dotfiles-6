@@ -1,9 +1,11 @@
+#! /usr/bin/env bash
+
 function vpn() {
   sudo kextload /Library/Extensions/tap.kext
   sudo kextload /Library/Extensions/tun.kext
   sudo openconnect -b --pid-file=$HOME/.vpnpid https://vpn.ondeck.com \
-    --user=rboll
-  }
+  --user=rboll
+}
 
 function vpnoff() {
   sudo -v
