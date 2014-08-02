@@ -4,39 +4,38 @@
 install caskroom/cask/brew-cask
 tap caskroom/versions
 
-cask install dropbox 2> /dev/null
-cask install google-chrome  2> /dev/null
-cask install iterm2  2> /dev/null
-cask install sublime-text3 2> /dev/null
-cask install virtualbox 2> /dev/null
+cask install dropbox
+cask install google-chrome
+cask install iterm2
+cask install sublime-text3
+cask install virtualbox
 
-cask install visualvm 2> /dev/null
-cask install intellij-idea 2> /dev/null
-cask install pgadmin3 2> /dev/null
+cask install visualvm
+cask install intellij-idea
+cask install pgadmin3
 
 # quicklook plugins
-cask install quicklook-json 2> /dev/null
-cask install quicklook-csv 2> /dev/null
-cask install qlcolorcode 2> /dev/null
-cask install qlmarkdown 2> /dev/null
-cask install qlprettypatch 2> /dev/null
-cask install betterzipql 2> /dev/null
+cask install quicklook-json
+cask install quicklook-csv
+cask install qlcolorcode
+cask install qlmarkdown
+cask install qlprettypatch
+cask install betterzipql
 
-cask install alfred 2> /dev/null
-cask install adium 2> /dev/null
-cask install rdio 2> /dev/null
+cask install alfred
+cask install adium
+cask install rdio
 
-cask install caskroom/versions/java6 2> /dev/null
+# cask install caskroom/versions/java6
 # won't install on 10.10?
-# cask install caskroom/versions/java7 2> /dev/null
-cask install java 2> /dev/null
+# cask install caskroom/versions/java7
+# cask install java
 
-cask install hipchat 2> /dev/null
-cask install caffeine 2> /dev/null
-cask install evernote 2> /dev/null
-cask install sourcetree 2> /dev/null
+cask install hipchat
+cask install caffeine
+cask install evernote
 
-cask install switchresx 2> /dev/null
+cask install switchresx
 
 cask cleanup
 cask list
