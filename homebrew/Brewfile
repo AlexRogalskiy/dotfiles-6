@@ -58,6 +58,8 @@ install git-flow
 install docker
 install boot2docker
 
+install stow
+
 # Remove outdated versions from the cellar
 cleanup
 list

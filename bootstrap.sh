@@ -2,11 +2,7 @@
 
 function setup_mac() {
   echo "configuring mac environment"
-  if [ ! $NOBREW ]; then
-    install_homebrew
-  else
-    echo "skipping homebrew install"
-  fi
+  install_homebrew
 
   ./.bootstrap_osx.sh
   ~/.appsettings/link.sh
@@ -39,12 +35,6 @@ function migrate_dotfiles() {
 }
 
 function run() {
-  if [[ $1 == "nobrew" ]]; then
-    NOBREW=true
-  else
-    NOBREW=false
-  fi
-
   cd "$(dirname "${BASH_SOURCE}")"
   source bash/.local_config
 
@@ -56,6 +46,7 @@ function run() {
 
   mkdir -p ~/dev
   source ~/.bash_profile
+  unset NOBREW
 }
 
 if [[ $1 == "init" ]]; then

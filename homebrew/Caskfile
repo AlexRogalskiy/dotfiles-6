@@ -4,38 +4,39 @@
 install caskroom/cask/brew-cask
 tap caskroom/versions
 
-cask install dropbox --force 2> /dev/null
-cask install google-chrome --force 2> /dev/null
-cask install iterm2 --force 2> /dev/null
-cask install sublime-text3 --force 2> /dev/null
-cask install virtualbox --force 2> /dev/null
+cask install dropbox 2> /dev/null
+cask install google-chrome  2> /dev/null
+cask install iterm2  2> /dev/null
+cask install sublime-text3 2> /dev/null
+cask install virtualbox 2> /dev/null
 
-cask install visualvm --force 2> /dev/null
-cask install intellij-idea --force 2> /dev/null
-cask install pgadmin3 --force 2> /dev/null
+cask install visualvm 2> /dev/null
+cask install intellij-idea 2> /dev/null
+cask install pgadmin3 2> /dev/null
 
 # quicklook plugins
-cask install quicklook-json --force 2> /dev/null
-cask install quicklook-csv --force 2> /dev/null
-cask install qlcolorcode --force 2> /dev/null
-cask install qlmarkdown --force 2> /dev/null
-cask install qlprettypatch --force 2> /dev/null
-cask install betterzipql --force 2> /dev/null
+cask install quicklook-json 2> /dev/null
+cask install quicklook-csv 2> /dev/null
+cask install qlcolorcode 2> /dev/null
+cask install qlmarkdown 2> /dev/null
+cask install qlprettypatch 2> /dev/null
+cask install betterzipql 2> /dev/null
 
-cask install alfred --force 2> /dev/null
-cask install adium --force 2> /dev/null
-cask install rdio --force 2> /dev/null
+cask install alfred 2> /dev/null
+cask install adium 2> /dev/null
+cask install rdio 2> /dev/null
 
-cask install caskroom/versions/java6 --force 2> /dev/null
-cask install caskroom/versions/java7 --force 2> /dev/null
-cask install java --force 2> /dev/null
+cask install caskroom/versions/java6 2> /dev/null
+# won't install on 10.10?
+# cask install caskroom/versions/java7 2> /dev/null
+cask install java 2> /dev/null
 
-cask install hipchat --force 2> /dev/null
-cask install caffeine --force 2> /dev/null
-cask install evernote --force 2> /dev/null
-cask install sourcetree --force 2> /dev/null
+cask install hipchat 2> /dev/null
+cask install caffeine 2> /dev/null
+cask install evernote 2> /dev/null
+cask install sourcetree 2> /dev/null
 
-cask install switchresx --force 2> /dev/null
+cask install switchresx 2> /dev/null
 
 cask cleanup
 cask list
