@@ -31,7 +31,7 @@ function install_homebrew() {
 
 function migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin appsettings vim)
+  STOWAWAYS=(bash git bin appsettings vim ssh)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
     stow -R --adopt -t ~ $STOWAWAY
