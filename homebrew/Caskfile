@@ -35,5 +35,7 @@ cask install caffeine --force 2> /dev/null
 cask install evernote --force 2> /dev/null
 cask install sourcetree --force 2> /dev/null
 
+cask install switchresx --force 2> /dev/null
+
 cask cleanup
 cask list
