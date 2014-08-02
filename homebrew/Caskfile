@@ -35,7 +35,7 @@ cask install hipchat
 cask install caffeine
 cask install evernote
 
-cask install switchresx
+#cask install switchresx
 
 cask cleanup
 cask list
