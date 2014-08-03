@@ -23,11 +23,6 @@ function extract() {
   fi
 }
 
-function upup() {
-  brew update
-  brew upgrade
-}
-
 # easy tar. specify file to tar up
 function etar() {
   if [ -d $1 ] || [ -f $1 ] ; then
