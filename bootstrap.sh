@@ -47,6 +47,8 @@ function run() {
   mkdir -p ~/dev
   source ~/.bash_profile
   crontab ~/.crontab
+  sudo touch /var/log/upup.log
+  sudo chmod g+w /var/log/upup.log
 }
 
 if [[ $1 == "init" ]]; then
