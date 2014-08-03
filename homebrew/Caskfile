@@ -24,7 +24,8 @@ cask install betterzipql
 
 cask install alfred
 cask install adium
-cask install rdio
+cask install spotify
+#cask install rdio
 
 # cask install caskroom/versions/java6
 # won't install on 10.10?
