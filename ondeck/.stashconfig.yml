@@ -1,0 +1,4 @@
+---
+stash_url: https://dev.ondeck.local/stash/projects
+username: rboll
+ssl_no_verify: true
