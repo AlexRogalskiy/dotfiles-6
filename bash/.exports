@@ -1,7 +1,7 @@
 #! /usr/bin/env sh
 
 # Make sublime the default editor
-export EDITOR='subl -w'
+export EDITOR='vim'
 
 # Local workspace
 export LOGDIR='/var/log' ##TODO setup perms on /var/log
