@@ -47,7 +47,7 @@ function run() {
   mkdir -p ~/dev
   source ~/.bash_profile
   crontab ~/.crontab
-  sudo sh -c "echo '\n\n#docker ip\n192.168.59.103\tdocker\n' >> /etc/hosts"
+  sudo sh -c "echo '\n\n#docker vm\n192.168.59.103\tdocker\n' >> /etc/hosts"
   sudo touch /var/log/upup.log
   sudo chmod g+w /var/log/upup.log
 }
