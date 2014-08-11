@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-
-export COMPUTER_NAME="rb-macbook"
-export OS="mac"

@@ -36,8 +36,14 @@ function migrate_dotfiles() {
 
 function run() {
   cd "$(dirname "${BASH_SOURCE}")"
-  source bash/.local_config
-
+  
+  if [[ -f local_config.sh ]]; then
+    source local_config.sh
+  else
+    echo "setup local_config.sh with COMPUTER_NAME and OS first!"
+    exit 1
+  fi
+  
   if [[ $OS == "mac" ]]; then
     setup_mac
   fi
