@@ -5,6 +5,9 @@ set autoindent
 
 set number
 
+set backspace=indent,eol,start
+set mouse=a
+
 filetype indent on
 filetype on
 filetype plugin on
