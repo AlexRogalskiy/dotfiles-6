@@ -27,7 +27,7 @@ function install_homebrew() {
 
 function migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin appsettings vim ssh cron ondeck)
+  STOWAWAYS=(bash git bin appsettings vim ssh cron docker ondeck)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
     stow -R --adopt -t ~ $STOWAWAY
@@ -47,6 +47,7 @@ function run() {
   mkdir -p ~/dev
   source ~/.bash_profile
   crontab ~/.crontab
+  sudo sh -c "echo '\n\n#docker ip\n192.168.59.103\tdocker\n' >> /etc/hosts"
   sudo touch /var/log/upup.log
   sudo chmod g+w /var/log/upup.log
 }
