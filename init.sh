@@ -36,13 +36,16 @@ function migrate_dotfiles() {
 
 function run() {
   cd "$(dirname "${BASH_SOURCE}")"
-  
+
   if [[ -f local_config.sh ]]; then
     source local_config.sh
   else
-    echo "setup local_config.sh with COMPUTER_NAME and OS first!"
-    exit 1
+    echo "local_config.sh did not exist. did you set a computer name?"
+    sleep 5
   fi
+
+  export COMPUTER_NAME=${COMPUTER_NAME:-rb-mac}
+  echo "Computer name set to '$COMPUTER_NAME'."
  
   if [[ `uname` == "Darwin" ]]; then
     setup_mac
