@@ -43,8 +43,8 @@ function run() {
     echo "setup local_config.sh with COMPUTER_NAME and OS first!"
     exit 1
   fi
-  
-  if [[ $OS == "mac" ]]; then
+ 
+  if [[ `uname` == "Darwin" ]]; then
     setup_mac
   fi
 
