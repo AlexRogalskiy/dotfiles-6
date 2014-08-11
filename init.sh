@@ -40,7 +40,7 @@ function run() {
   if [[ -f local_config.sh ]]; then
     source local_config.sh
   else
-    echo "local_config.sh did not exist. did you set a computer name?"
+    echo "WARN: local_config.sh did not exist. did you set a computer name?"
     sleep 5
   fi
 
