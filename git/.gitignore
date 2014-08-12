@@ -1,25 +1,28 @@
-# Folder view configuration files
+# misc os files
 .DS_Store
-
-# Files that might appear on external disks
 .Spotlight-V100
 .Trashes
 
-# Logs
+# logs
 *.log
 
-# Java
+# java
 *.class
 
-# IntelliJ
+# intellij
 .idea/
 *.iml
 
-# Gradle
+# gradle
 .gradle
 build/
 
-# Maven
+# maven
 target/
 
-.local_config
+# sql buffers
+*_buffer.sql
+
+# vim
+*.swp
+

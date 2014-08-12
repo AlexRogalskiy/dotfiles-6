@@ -3,3 +3,5 @@ appsettings/.appsettings/iterm2/com.googlecode.iterm2.plist-default
 
 local_config.sh
 
+docker/**/*.iso
+

@@ -49,6 +49,7 @@ function run() {
  
   if [[ `uname` == "Darwin" ]]; then
     setup_mac
+    boot2docker init
   fi
 
   migrate_dotfiles
