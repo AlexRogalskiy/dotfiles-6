@@ -1,0 +1,6 @@
+[submodule "vim/.vim/bundle/vim-simpledb"]
+	path = vim/.vim/bundle/vim-simpledb
+	url = https://github.com/ivalkeen/vim-simpledb
+[submodule "vim/.vim/bundle/synastic"]
+	path = vim/.vim/bundle/synastic
+	url = https://github.com/scrooloose/syntastic.git
