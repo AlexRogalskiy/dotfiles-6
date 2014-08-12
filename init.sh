@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# add alfred to dotfiles
+
 function setup_mac() {
   echo "configuring mac environment"
   install_homebrew
@@ -27,7 +29,7 @@ function install_homebrew() {
 
 function migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin appsettings vim ssh cron docker ondeck)
+  STOWAWAYS=(bash git bin appsettings postgres vim ssh cron docker ondeck)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
     stow -R --adopt -t ~ $STOWAWAY
