@@ -4,3 +4,6 @@
 [submodule "vim/.vim/bundle/synastic"]
 	path = vim/.vim/bundle/synastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/.vim/bundle/vim-nerdtree"]
+	path = vim/.vim/bundle/vim-nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
