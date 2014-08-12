@@ -12,4 +12,5 @@
 	url = git@github.com:scrooloose/nerdtree.git
 [submodule "vim/.vim/vim-simpledb"]
 	path = vim/.vim/bundle/vim-simpledb
-	url = git@github.com:ivalkeen/vim-simpledb.git
+  url = git@github.com:ivalkeen/vim-simpledb.git
+
