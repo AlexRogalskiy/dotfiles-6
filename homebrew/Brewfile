@@ -35,12 +35,13 @@ install tree
 
 install hub
 
-# datastore
+# datastore - removed in favor of docker
 install postgresql
-install zookeeper
+#install zookeeper
 
 # languages
 install scala
+install python
 
 # build tools
 install maven

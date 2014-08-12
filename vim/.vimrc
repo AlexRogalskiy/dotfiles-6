@@ -11,7 +11,6 @@ set mouse=a
 set incsearch
 set ignorecase
 set smartcase
-set hlsearch
 
 filetype indent on
 filetype on
