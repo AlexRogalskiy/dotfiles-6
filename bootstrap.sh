@@ -5,6 +5,6 @@
 
 mkdir -p ~/dev
 cd ~/dev
-git clone https://github.com/robertcboll/dotfiles.git
+git clone --recursive https://github.com/robertcboll/dotfiles.git
 sh ~/dev/dotfiles/init.sh
 
