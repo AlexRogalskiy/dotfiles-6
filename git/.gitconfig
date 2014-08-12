@@ -8,6 +8,10 @@
 [credential]
     helper = osxkeychain
 
+[core]
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
+
 [rerere]
   enabled = true
 
