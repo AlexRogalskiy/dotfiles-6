@@ -37,10 +37,10 @@ function migrate_dotfiles() {
 function run() {
   cd "$(dirname "${BASH_SOURCE}")"
 
-  if [[ -f local_config.sh ]]; then
-    source local_config.sh
+  if [[ -f ~/.local_config.sh ]]; then
+    source ~/.local_config.sh
   else
-    echo "WARN: local_config.sh did not exist. did you set a computer name?"
+    echo "WARN: ~/.local_config.sh did not exist. did you set a computer name?"
     sleep 5
   fi
 
