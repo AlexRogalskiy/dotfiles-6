@@ -7,3 +7,6 @@
 [submodule "vim/.vim/bundle/vim-nerdtree"]
 	path = vim/.vim/bundle/vim-nerdtree
 	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/.vim/bundle/vim-scala"]
+	path = vim/.vim/bundle/vim-scala
+	url = git@github.com:derekwyatt/vim-scala.git
