@@ -11,7 +11,7 @@ cask install sublime-text3
 cask install virtualbox
 
 cask install visualvm
-cask install intellij-idea
+#cask install intellij-idea
 cask install pgadmin3
 
 # quicklook plugins
@@ -35,6 +35,10 @@ cask install spotify
 cask install hipchat
 cask install caffeine
 cask install evernote
+
+cask install onepassword
+cask install joinme
+cask install flexiglass
 
 #cask install switchresx
 
