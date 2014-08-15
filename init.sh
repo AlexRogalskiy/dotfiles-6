@@ -29,11 +29,19 @@ function install_homebrew() {
 
 function migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin appsettings postgres vim ssh cron docker ondeck)
+  STOWAWAYS=(bash git bin postgres vim ssh ondeck)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
     stow -R --adopt -t ~ $STOWAWAY
   done;
+
+  if [[ `uname` == "Darwin" ]]; then
+    STOWAWAYS=(appsettings cron docker)
+    for STOWAWAY in ${STOWAWAYS[@]}; do
+      echo "stowing $STOWAWAY"
+      stow -R --adopt -t ~ $STOWAWAY
+    done;
+  fi
 }
 
 function run() {
@@ -52,13 +60,13 @@ function run() {
   if [[ `uname` == "Darwin" ]]; then
     setup_mac
     boot2docker init
+    crontab ~/.crontab
   fi
 
   migrate_dotfiles
 
   mkdir -p ~/dev
   source ~/.bash_profile
-  crontab ~/.crontab
   sudo sh -c "echo '\n\n#docker vm\n192.168.59.103\tdocker\n' >> /etc/hosts"
   sudo touch /var/log/upup.log
   sudo chmod g+w /var/log/upup.log
