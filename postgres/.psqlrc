@@ -2,4 +2,5 @@
 \pset null 'NULL'
 \set HISTFILE ~/.psql_history- :HOST - :DBNAME
 \set HISTSIZE 20000
+\x auto
 
