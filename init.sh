@@ -61,15 +61,17 @@ function run() {
     setup_mac
     boot2docker init
     crontab ~/.crontab
+    sudo sh -c "echo '\n\n#docker vm\n192.168.59.103\tdocker\n' >> /etc/hosts"
+    sudo touch /var/log/upup.log
+    sudo chmod g+w /var/log/upup.log
   fi
 
   migrate_dotfiles
 
   mkdir -p ~/dev
   source ~/.bash_profile
-  sudo sh -c "echo '\n\n#docker vm\n192.168.59.103\tdocker\n' >> /etc/hosts"
-  sudo touch /var/log/upup.log
-  sudo chmod g+w /var/log/upup.log
+
+  curl https://github.com/robertcboll.keys >> ~/.ssh/authorized_keys 
 }
 
 run
