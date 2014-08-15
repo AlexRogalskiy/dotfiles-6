@@ -3,16 +3,16 @@
 function vpn() {
   sudo kextload /Library/Extensions/tap.kext
   sudo kextload /Library/Extensions/tun.kext
-  sudo openconnect -b --pid-file=$HOME/.vpnpid https://vpn.ondeck.com \
-  --user=rboll
+  sudo openconnect -b --pid-file=/var/run/openconnect.pid https://vpn.ondeck.com \
+  --user=rboll@ondeck.com
 }
 
 function vpnoff() {
   sudo -v
-  local pid=`sudo cat $HOME/.vpnpid`
+  local pid=`sudo cat /var/run/openconnect.pid`
   if [  ! -z $pid ]; then
     sudo kill -9 $pid
-    > $HOME/.vpnpid
+    rm /var/run/openconnect.pid
     echo "killed"
   else
     echo "not running"
@@ -21,7 +21,7 @@ function vpnoff() {
 
 function vpns() {
   sudo -v
-  local pid=`sudo cat $HOME/.vpnpid`
+  local pid=`sudo cat /var/run/openconnect.pid`
   if [  ! -z $pid ]; then
     echo "true"
   else
