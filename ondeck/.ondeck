@@ -7,6 +7,10 @@ function vpn() {
   --user=rboll@ondeck.com
 }
 
+function odchat() {
+  mcabber -f ~/.mcabber-odc/mcabberrc
+}
+
 function vpnoff() {
   sudo -v
   local pid=`sudo cat /var/run/openconnect.pid`
