@@ -29,7 +29,7 @@ function install_homebrew() {
 
 function migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin postgres vim ssh ondeck mcabber)
+  STOWAWAYS=(bash git bin postgres vim ssh ondeck sbt mcabber)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
     stow -R --adopt -t ~ $STOWAWAY
