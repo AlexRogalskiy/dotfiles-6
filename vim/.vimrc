@@ -5,6 +5,7 @@ set autoindent
 
 set number
 
+set clipboard+=unnamed
 set backspace=indent,eol,start
 set mouse=a
 
