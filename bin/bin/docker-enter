@@ -1,7 +1,7 @@
 #! /bin/bash
 
 container=$1
-if [ -z $container ]; do echo "container id is required"; exit 1; done;
+if [ -z $container ]; then echo "container id is required"; exit 1; fi;
 
 pid=$(docker inspect --format '{{.State.Pid}}' $container)
 nsenter --target $pid --mount --uts --ipc --net --pid
