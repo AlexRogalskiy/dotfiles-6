@@ -17,7 +17,7 @@ function setup_linux() {
 function install_homebrew() {
   if [ ! `command -v brew` ]; then
     echo "installing homebrew..."
-    curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install > homebrew-install.rb
+    curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > homebrew-install.rb
     ruby homebrew-install.rb
     rm homebrew-install.rb
   fi
