@@ -32,3 +32,5 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # docker host
 export DOCKER_HOST="tcp://192.168.59.103:2375"
 
+export FLEETCTL_ENDPOINT=http://172.17.8.100:4001
+
