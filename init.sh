@@ -23,8 +23,8 @@ function install_homebrew() {
   fi
 
   echo "installing brew packages..."
-  exec homebrew/Brewfile
-  exec homebrew/Caskfile
+  homebrew/Brewfile
+  homebrew/Caskfile
 }
 
 function migrate_dotfiles() {
