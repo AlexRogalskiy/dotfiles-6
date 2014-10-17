@@ -42,7 +42,7 @@ brew cask install onepassword
 brew cask install joinme
 brew cask install flexiglass
 
-cask install switchresx
+brew cask install switchresx
 
 brew cask cleanup
 brew cask list
