@@ -1,3 +1,5 @@
+#! /bin/sh
+
 # Install native apps
 # Usage: `brew bundle Caskfile`
 
