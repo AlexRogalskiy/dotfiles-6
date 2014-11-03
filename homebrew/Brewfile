@@ -1,66 +1,68 @@
+#! /bin/sh
 # Install command-line tools using Homebrew
 # Usage: `brew bundle Brewfile`
 
 # Make sure we’re using the latest Homebrew
-update
+brew update
 
 # Upgrade any already-installed formulae
-upgrade
+brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-install coreutils
+brew install coreutils
 # Install some other useful utilities like `sponge`
-install moreutils
+brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-install findutils
+brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`
-install gnu-sed --default-names
+brew install gnu-sed --default-names
 # Install Bash 4
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-install bash
-install bash-completion
+brew install bash
+brew install bash-completion
 
 # Install wget with IRI support
-install wget --enable-iri
+brew install wget --enable-iri
 
 # Install more recent versions of some OS X tools
-install vim --override-system-vi
-install homebrew/dupes/grep
+brew install vim --override-system-vi
+brew install homebrew/dupes/grep
 
 # Install other useful binaries
-install ack
-install git
-install tree
+brew install ack
+brew install git
+brew install tree
 
-install hub
+brew install hub
 
 # datastore - removed in favor of docker
-install postgresql
+brew install postgresql
 #install zookeeper
 
 # languages
-install scala
-install python
+brew install scala
+brew install python
 
 # build tools
-install maven
-install gradle
-install sbt
-install ant
+brew install maven
+brew install gradle
+brew install sbt
+brew install ant
 
 # tools
-install homebrew/binary/jad
+brew install homebrew/binary/jad
 
-install tuntap
-install openconnect
-install git-flow
+brew install tuntap
+brew install openconnect
+brew install git-flow
 
-install docker
-install boot2docker
+brew install docker
+brew install boot2docker
 
-install stow
+brew install stow
 
 # Remove outdated versions from the cellar
-cleanup
-list
+brew cleanup
+brew list
+
