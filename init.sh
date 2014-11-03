@@ -32,14 +32,14 @@ function migrate_dotfiles() {
   STOWAWAYS=(bash git bin postgres vim ssh ondeck sbt mcabber)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
-    stow -R --adopt -t ~ $STOWAWAY
+    stow -R -t ~ $STOWAWAY
   done;
 
   if [[ `uname` == "Darwin" ]]; then
     STOWAWAYS=(appsettings cron docker)
     for STOWAWAY in ${STOWAWAYS[@]}; do
       echo "stowing $STOWAWAY"
-      stow -R --adopt -t ~ $STOWAWAY
+      stow -R -t --adopt ~ $STOWAWAY
     done;
   fi
 }
