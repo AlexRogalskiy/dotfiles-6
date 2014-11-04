@@ -2,7 +2,7 @@
 
 # add alfred to dotfiles
 
-function setup_mac {
+setup_mac() {
   echo "configuring mac environment"
   install_homebrew
 
@@ -10,11 +10,11 @@ function setup_mac {
   ~/.appsettings/link.sh
 }
 
-function setup_linux {
+setup_linux() {
   echo "configuring linux environment"
 }
 
-function install_homebrew {
+install_homebrew() {
   if [ ! `command -v brew` ]; then
     echo "installing homebrew..."
     curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > homebrew-install.rb
@@ -27,7 +27,7 @@ function install_homebrew {
   homebrew/Caskfile
 }
 
-function migrate_dotfiles {
+migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
   STOWAWAYS=(bash git bin postgres vim ssh ondeck sbt mcabber)
   for STOWAWAY in ${STOWAWAYS[@]}; do
@@ -44,7 +44,7 @@ function migrate_dotfiles {
   fi
 }
 
-function run {
+run() {
   cd "$(dirname "${BASH_SOURCE}")"
 
   if [[ -f ~/.local_config.sh ]]; then
