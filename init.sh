@@ -13,7 +13,6 @@ setup_mac() {
 setup_debian() {
   echo "configuring linux environment"
   sudo apt-get install -y stow
-  sudo apt-get install -y git
   sudo apt-get install -y vim
 }
 
