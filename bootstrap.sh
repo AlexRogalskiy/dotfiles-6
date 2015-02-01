@@ -3,6 +3,8 @@
 # to run this
 # curl -fsSL https://raw.githubusercontent.com/robertcboll/dotfiles/master/bootstrap.sh > /tmp/bootstrap.sh && sh /tmp/bootstrap.sh && rm /tmp/bootstrap.sh
 
+# requires curl and git only
+
 mkdir -p ~/dev
 cd ~/dev
 git clone --recursive https://github.com/robertcboll/dotfiles.git
