@@ -37,7 +37,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store|*.iml' -ls -delete; find . -type d -name '.idea' -ls -delete"
+alias cleanup="find . -type f -name '.DS_Store' -ls -delete; find . -type d -name '.idea' | xargs rm -r; find . -type f -name '*.iml' | xargs rm; find . -name 'target' | xargs rm -r;"
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
@@ -57,14 +57,13 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-# iOS emulator
-alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
+alias j6="export JAVA_HOME=$(echo /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home)"
+alias j7="export JAVA_HOME=$(echo /Library/Java/JavaVirtualMachines/jdk1.7.0_*.jdk/Contents/Home)"
+alias j8="export JAVA_HOME=$(echo /Library/Java/JavaVirtualMachines/jdk1.8.0_*.jdk/Contents/Home)"
 
-# Mou markdown
-alias mou="open /Applications/Mou.app"
-
-alias java6="export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-alias java7="export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home"
-alias java8="export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home"
+alias java7="j7 && java $@"
+alias java8="j8 && java $@"
 
 alias chrome="open -a Google\ Chrome $@"
+alias mou="open /Applications/Mou.app"
+alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
