@@ -12,8 +12,7 @@ setup_mac() {
 
 setup_debian() {
   echo "configuring linux environment"
-  sudo apt-get install -y stow
-  sudo apt-get install -y vim
+  sudo apt-get update && sudo apt-get install -y stow vim
 }
 
 install_homebrew() {
