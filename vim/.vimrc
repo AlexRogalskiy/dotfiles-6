@@ -1,3 +1,26 @@
+set nocompatible 
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'bling/vim-airline'
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/syntastic'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'ivalkeen/vim-simpledb'
+
+Plugin 'derekwyatt/vim-scala'
+
+call vundle#end()
+filetype plugin indent on
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -17,6 +40,12 @@ filetype indent on
 filetype on
 filetype plugin on
 syntax on
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 nmap \e :NERDTreeToggle<CR>
 
