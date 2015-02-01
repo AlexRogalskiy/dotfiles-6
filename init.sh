@@ -31,7 +31,7 @@ install_homebrew() {
 
 migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin psql vim ssh sbt)
+  STOWAWAYS={bash git bin psql vim ssh sbt}
 
   if [[ `uname` == "Darwin" ]]; then
     stowopts="-R -t --adopt"
