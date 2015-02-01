@@ -29,14 +29,14 @@ install_homebrew() {
 
 migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS=(bash git bin postgres vim ssh ondeck sbt mcabber)
+  STOWAWAYS=(bash git bin psql vim ssh sbt)
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
     stow -R -t ~ $STOWAWAY
   done;
 
   if [[ `uname` == "Darwin" ]]; then
-    STOWAWAYS=(appsettings cron docker)
+    STOWAWAYS=(iterm2 cron docker)
     for STOWAWAY in ${STOWAWAYS[@]}; do
       echo "stowing $STOWAWAY"
       stow -R -t --adopt ~ $STOWAWAY
