@@ -7,11 +7,13 @@ setup_mac() {
   install_homebrew
 
   ./.bootstrap_osx.sh
-  ~/.appsettings/link.sh
+  ~/.iterm2/link.sh
 }
 
 setup_linux() {
   echo "configuring linux environment"
+  sudo apt-get install -y stow
+  sudo apt-get install -y git
 }
 
 install_homebrew() {
@@ -30,16 +32,23 @@ install_homebrew() {
 migrate_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
   STOWAWAYS=(bash git bin psql vim ssh sbt)
+
+  if [[ `uname` == "Darwin" ]]; then
+    stowopts="-R -t --adopt"
+  else
+    stowopts="-R -t --adopt"
+  fi
+
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
-    stow -R -t ~ $STOWAWAY
+    stow $stowopts ~ $STOWAWAY
   done;
 
   if [[ `uname` == "Darwin" ]]; then
-    STOWAWAYS=(iterm2 cron docker)
+    STOWAWAYS=(iterm2 intellij cron docker)
     for STOWAWAY in ${STOWAWAYS[@]}; do
       echo "stowing $STOWAWAY"
-      stow -R -t --adopt ~ $STOWAWAY
+      stow $stowopts ~ $STOWAWAY
     done;
   fi
 }
@@ -47,15 +56,15 @@ migrate_dotfiles() {
 run() {
   cd "$(dirname "${BASH_SOURCE}")"
 
-  if [[ -f ~/.local_config.sh ]]; then
-    source ~/.local_config.sh
+  if [[ -f ~/.hostname ]]; then
+    BOX_NAME=$(cat ~/.hostname)
   else
-    echo "WARN: ~/.local_config.sh did not exist. did you set a computer name?"
+    echo "WARN: ~/.hostname did not exist. did you set a computer name?"
     sleep 5
   fi
 
-  export COMPUTER_NAME=${COMPUTER_NAME:-rb-mac}
-  echo "Computer name set to '$COMPUTER_NAME'."
+  export BOX_NAME=${BOX_NAME:-default}
+  echo "Computer name set to '$BOX_NAME'."
  
   if [[ `uname` == "Darwin" ]]; then
     setup_mac
