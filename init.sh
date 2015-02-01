@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # add alfred to dotfiles
 
@@ -34,9 +35,9 @@ link_dotfiles() {
   STOWAWAYS=(bash git bin psql vim ssh sbt)
 
   if [[ `uname` == "Darwin" ]]; then
-    stowopts="-R -t --adopt"
+    stowopts="-R -t"
   else
-    stowopts="-R -t --adopt"
+    stowopts="-R -t"
   fi
 
   for STOWAWAY in ${STOWAWAYS[@]}; do
