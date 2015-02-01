@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 # add alfred to dotfiles
 
@@ -11,10 +10,11 @@ setup_mac() {
   ~/.iterm2/link.sh
 }
 
-setup_linux() {
+setup_debian() {
   echo "configuring linux environment"
   sudo apt-get install -y stow
   sudo apt-get install -y git
+  sudo apt-get install -y vim
 }
 
 install_homebrew() {
@@ -35,21 +35,21 @@ link_dotfiles() {
   STOWAWAYS=(bash git bin psql vim ssh sbt)
 
   if [[ `uname` == "Darwin" ]]; then
-    stowopts="-R -t"
+    stowopts="--adopt "
   else
-    stowopts="-R -t"
+    stowopts="--adopt "
   fi
 
   for STOWAWAY in ${STOWAWAYS[@]}; do
     echo "stowing $STOWAWAY"
-    stow $stowopts ~ $STOWAWAY
+    stow $stowopts -t ~ $STOWAWAY
   done;
 
   if [[ `uname` == "Darwin" ]]; then
     STOWAWAYS=(iterm2 intellij cron docker)
     for STOWAWAY in ${STOWAWAYS[@]}; do
       echo "stowing $STOWAWAY"
-      stow $stowopts ~ $STOWAWAY
+      stow $stowopts -t ~ $STOWAWAY
     done;
   fi
 }
@@ -74,6 +74,8 @@ run() {
     sudo sh -c "echo '\n\n#docker vm\n192.168.59.103\tdocker\n' >> /etc/hosts"
     sudo touch /var/log/upup.log
     sudo chmod g+w /var/log/upup.log
+  else
+    setup_debian
   fi
 
   link_dotfiles
