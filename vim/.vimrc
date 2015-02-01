@@ -18,6 +18,12 @@ Plugin 'ivalkeen/vim-simpledb'
 
 Plugin 'derekwyatt/vim-scala'
 
+Plugin 'fatih/vim-go'
+
+Plugin 'tpope/vim-sensible'
+
+Plugin 'tpope/vim-surround'
+
 call vundle#end()
 filetype plugin indent on
 
