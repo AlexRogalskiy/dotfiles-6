@@ -29,9 +29,9 @@ install_homebrew() {
   homebrew/Caskfile
 }
 
-migrate_dotfiles() {
+link_dotfiles() {
   #stolen from github.com/ianferguson/dotfiles
-  STOWAWAYS={bash git bin psql vim ssh sbt}
+  STOWAWAYS=(bash git bin psql vim ssh sbt)
 
   if [[ `uname` == "Darwin" ]]; then
     stowopts="-R -t --adopt"
@@ -75,7 +75,7 @@ run() {
     sudo chmod g+w /var/log/upup.log
   fi
 
-  migrate_dotfiles
+  link_dotfiles
 
   mkdir -p ~/dev
   source ~/.bash_profile
