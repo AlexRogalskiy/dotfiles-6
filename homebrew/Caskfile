@@ -1,8 +1,5 @@
 #! /bin/sh
 
-# Install native apps
-# Usage: `brew bundle Caskfile`
-
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 
@@ -11,9 +8,10 @@ brew cask install google-chrome
 brew cask install iterm2
 brew cask install sublime-text3
 brew cask install virtualbox
+brew cask install vagrant
 
 brew cask install visualvm
-#cask install intellij-idea
+brew cask install intellij-idea
 brew cask install pgadmin3
 
 # quicklook plugins
@@ -27,20 +25,18 @@ brew cask install betterzipql
 brew cask install alfred
 brew cask install adium
 brew cask install spotify
-#cask install rdio
 
-# cask install caskroom/versions/java6
-# won't install on 10.10?
-# cask install caskroom/versions/java7
-# cask install java
+brew cask install caskroom/versions/java7
+brew cask install java
 
 brew cask install hipchat
+brew cask install slack
 brew cask install caffeine
 brew cask install evernote
 
-brew cask install onepassword
-brew cask install joinme
-brew cask install flexiglass
+# paid for on app store
+#brew cask install flexiglass
+#brew cask isntall onepassword
 
 brew cask install switchresx
 
