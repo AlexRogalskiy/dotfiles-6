@@ -35,7 +35,7 @@ popd &>/dev/null
 
 # app setup
 boot2docker init
-ln -sf ~/.appsettings/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist 2> /dev/null
+ln -sf ~/.iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
 
 # osx defaults
 osx/defaults.sh
