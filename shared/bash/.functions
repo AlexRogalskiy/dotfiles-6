@@ -80,7 +80,7 @@ function dotfiles() {
 }
 
 function rdotfiles() {
-  ssh $1 && mkdir -p ~/.dotfiles && cd ~/.dotfiles && curl -#L https://github.com/robertcboll/dotfiles/tarball/master | tar -xzv --strip-components 1 -C ~/.dotfiles && ~/.dotfiles/bootstrap.sh
+  ssh $1 "mkdir -p ~/.dotfiles && cd ~/.dotfiles && curl -#L https://github.com/robertcboll/dotfiles/tarball/master | tar -xzv --strip-components 1 -C ~/.dotfiles && ~/.dotfiles/bootstrap.sh"
 }
 
 # Empty the Trash on all mounted volumes and the main HDD
