@@ -1,8 +1,0 @@
-#! /bin/bash
-
-echo "upup `date`"
-
-echo "brew..."
-/usr/local/bin/brew update
-/usr/local/bin/brew upgrade
-

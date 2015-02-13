@@ -1,1 +1,1 @@
-it's just dotfiles‽
+it's just dotfiles‽## bootstrapmkdir -p ~/.dotfiles && cd ~/.dotfiles && curl -#L https://github.com/robertcboll/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh} && ~/.dotfiles/bootstrap.sh
