@@ -38,6 +38,8 @@ Plugin 'Raimondi/delimitMate'
 
 Plugin 'udalov/kotlin-vim'
 
+Plugin 'Shougo/neocomplete.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -78,8 +80,26 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " eclim
 let g:SuperTabDefaultCompletionType = 'context'
 
-nmap <leader>e :NERDTreeToggle<CR>
+" vim-go
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
-nmap <leader>b :TagbarToggle<CR>
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>re <Plug>(go-rename)
+
+let g:go_fmt_command = "goimports"
+
+" navigation plugins
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>tag :TagbarToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
