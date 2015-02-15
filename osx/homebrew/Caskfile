@@ -2,6 +2,9 @@
 
 brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
+brew tap caskroom/fonts
+
+brew cask install font-inconsolata
 
 brew cask install dropbox
 brew cask install google-chrome
