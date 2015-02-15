@@ -1,2 +1,2 @@
 # extend PATH
-export PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin:$GOROOT/bin:$PATH

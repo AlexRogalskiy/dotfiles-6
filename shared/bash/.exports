@@ -23,5 +23,10 @@ export MANPAGER="less -X"
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
 
-# Link Homebrew casks in `/Applications` rather than `~/Applications`
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export GOPATH=~/dev/go
+
+if [ `uname` == "Darwin" ]; then
+  # Link Homebrew casks in `/Applications` rather than `~/Applications`
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+  export GOROOT=/usr/local/opt/go/libexec
+fi
