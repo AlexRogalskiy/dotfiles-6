@@ -6,41 +6,33 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'bling/vim-airline'
-
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'scrooloose/syntastic'
-
-Plugin 'scrooloose/nerdtree'
-
-Plugin 'ivalkeen/vim-simpledb'
-
-Plugin 'derekwyatt/vim-scala'
-
-Plugin 'fatih/vim-go'
-
+" defaults
 Plugin 'tpope/vim-sensible'
 
-Plugin 'tpope/vim-surround'
-
+" helper windows
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 
+" tab markers
 Plugin 'Yggdroot/indentLine'
 
+" smart autocomplete
+Plugin 'Shougo/neocomplete.vim'
+" tab for autocomplete
 Plugin 'ervandew/supertab'
-
-Plugin 'initrc/eclim-vundle'
-
-Plugin 'vim-scripts/javaDoc.vim'
-
+" automatic closing of pairs ([{
 Plugin 'Raimondi/delimitMate'
 
-Plugin 'udalov/kotlin-vim'
-
-Plugin 'Shougo/neocomplete.vim'
+" languages
+Plugin 'scrooloose/syntastic'
+Plugin 'ivalkeen/vim-simpledb'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
+
 filetype plugin indent on
 
 set tabstop=2
@@ -73,12 +65,11 @@ let g:indentLine_char = '│'
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
-
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" eclim
-let g:SuperTabDefaultCompletionType = 'context'
+" autocomplete
+"let g:neocomplete#enable_at_startup = 1
 
 " vim-go
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -98,8 +89,14 @@ au FileType go nmap <Leader>re <Plug>(go-rename)
 
 let g:go_fmt_command = "goimports"
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 " navigation plugins
-nmap <leader>e :NERDTreeToggle<CR>
-nmap <leader>tag :TagbarToggle<CR>
+" f for files
+" n for navigation
+nmap <leader>f :NERDTreeToggle<CR>
+nmap <leader>n :TagbarToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
