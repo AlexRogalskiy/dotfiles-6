@@ -93,6 +93,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
+au filetype go let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
 " navigation plugins
 " f for files
 " n for navigation
