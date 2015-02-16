@@ -5,7 +5,7 @@ brew upgrade
 
 brew install coreutils
 brew install findutils
-brew install gnu-sed --default-names
+brew install gnu-sed --with-default-names
 brew install bash
 brew install bash-completion
 
