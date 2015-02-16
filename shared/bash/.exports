@@ -24,7 +24,7 @@ export MANPAGER=vimpager
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
 
-export GOPATH=~/dev/go
+export GOPATH=~/dev/gopath
 
 if [ `uname` == "Darwin" ]; then
   # Link Homebrew casks in `/Applications` rather than `~/Applications`

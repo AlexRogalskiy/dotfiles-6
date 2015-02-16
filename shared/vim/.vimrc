@@ -1,4 +1,4 @@
-set nocompatible 
+set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -64,7 +64,7 @@ let g:indentLine_char = '│'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
 
 " vim-go
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -88,6 +88,14 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ["go", "gotype", "gofmt", "govet", "golint" ]
+
+let g:go_fmt_fail_silently = 1
+
 au filetype go let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " navigation plugins
@@ -95,5 +103,9 @@ au filetype go let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " n for navigation
 nmap <leader>f :NERDTreeToggle<CR>
 nmap <leader>n :TagbarToggle<CR>
+
+" move between buffers
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-b> :bprevious<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
