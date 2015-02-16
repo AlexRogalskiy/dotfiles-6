@@ -18,8 +18,6 @@ Plugin 'bling/vim-airline'
 " tab markers
 Plugin 'Yggdroot/indentLine'
 
-" smart autocomplete
-Plugin 'Shougo/neocomplete.vim'
 " tab for autocomplete
 Plugin 'ervandew/supertab'
 " automatic closing of pairs ([{
@@ -67,9 +65,6 @@ let g:indentLine_char = '│'
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-" autocomplete
-"let g:neocomplete#enable_at_startup = 1
 
 " vim-go
 au FileType go nmap <Leader>gd <Plug>(go-doc)
