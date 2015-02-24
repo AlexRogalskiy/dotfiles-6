@@ -25,6 +25,7 @@ Plugin 'Raimondi/delimitMate'
 
 " languages
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'ivalkeen/vim-simpledb'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
