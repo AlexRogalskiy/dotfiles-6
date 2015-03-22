@@ -30,3 +30,6 @@ popd > /dev/null
 # setup the session
 echo "reloading shell profile"
 source ~/.bash_profile
+
+# print out notes
+cat ~/.dotfiles/postinst.txt
