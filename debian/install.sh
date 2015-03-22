@@ -1,5 +1,4 @@
 #! /bin/bash
-set -x
 
 echo "(apt output in apt.log)"
 sudo apt-get update -y >apt.log && 
