@@ -1,14 +1,6 @@
 #! /usr/bin/env bash
 
-if [ ! `which git` ]; then
-  echo 'trying to install git'
-  try_install_git || exit 1
-fi
-
-echo "cloning dotfiles"
-git clone --recursive https://github.com/robertcboll/dotfiles.git ~/.dotfiles
-exec ~/.dotfiles/install.sh
-
+# tries to install git based on dist
 try_install_git() {
   case `uname` in
     "Darwin")
@@ -24,3 +16,13 @@ try_install_git() {
       ;;
   esac
 }
+
+# run
+if [ ! `which git` ]; then
+  echo 'trying to install git'
+  try_install_git || exit 1
+fi
+
+echo "cloning dotfiles"
+git clone --recursive https://github.com/robertcboll/dotfiles.git ~/.dotfiles
+exec ~/.dotfiles/install.sh
