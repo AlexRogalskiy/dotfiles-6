@@ -3,7 +3,7 @@ set -e
 
 pushd "$(dirname "${BASH_SOURCE}")"
 
-# choose how to install based on os/dist
+# choose what to install based on os/dist
 case `uname` in 
   "Darwin") # osx
     osx/install.sh
