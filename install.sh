@@ -27,4 +27,5 @@ exec shared/install.sh
 popd > /dev/null
 
 # setup the session
+echo "loading shell profile"
 source ~/.bash_profile
