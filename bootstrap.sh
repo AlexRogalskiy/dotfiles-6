@@ -9,8 +9,8 @@ try_install_git() {
       ;;
     "Linux")
       if [ -f /etc/debian_version ]; then
-        echo "(apt output in apt.log)"
-        apt-get install -y git >apt.log
+        echo "(apt output in /tmp/apt.log)"
+        apt-get install -y git >/tmp/apt.log
       else
         echo "could not install git"
         return 1
