@@ -25,6 +25,12 @@ if [ ! `which git` ]; then
   try_install_git || exit 1
 fi
 
-echo "cloning dotfiles"
-git clone --recursive --quiet https://github.com/robertcboll/dotfiles.git ~/.dotfiles
+echo "updating dotfiles"
+if [ ! -d ~/.dotfiles ]; then
+  git clone --recursive --quiet https://github.com/robertcboll/dotfiles.git ~/.dotfiles
+else
+  pushd ~/.dotfiles >/dev/null
+  git pull
+  popd
+fi
 exec ~/.dotfiles/install.sh
