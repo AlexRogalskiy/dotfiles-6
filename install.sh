@@ -28,7 +28,5 @@ shared/install.sh
 popd > /dev/null
 
 # setup the session
-echo "loading shell profile"
-echo "really..."
+echo "reloading shell profile"
 source ~/.bash_profile
-echo "sourced it"
