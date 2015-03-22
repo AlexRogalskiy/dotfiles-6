@@ -22,7 +22,8 @@ case `uname` in
 esac
 
 # setup shared components
-exec shared/install.sh
+echo "installing cross platform components"
+shared/install.sh
 
 popd > /dev/null
 

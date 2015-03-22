@@ -4,11 +4,13 @@
 try_install_git() {
   case `uname` in
     "Darwin")
-      exec "xcode-select --install"
+      echo "installing xcode cli tools"
+      xcode-select --install
       ;;
     "Linux")
-      if [ -f /etc/debian_version]; then
-        exec "apt-get install -y git"
+      if [ -f /etc/debian_version ]; then
+        echo "(apt output in apt.log)"
+        apt-get install -y git >apt.log
       else
         echo "could not install git"
         return 1
@@ -24,5 +26,5 @@ if [ ! `which git` ]; then
 fi
 
 echo "cloning dotfiles"
-git clone --recursive https://github.com/robertcboll/dotfiles.git ~/.dotfiles
+git clone --recursive --quiet https://github.com/robertcboll/dotfiles.git ~/.dotfiles
 exec ~/.dotfiles/install.sh

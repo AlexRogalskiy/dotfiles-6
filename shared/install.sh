@@ -1,7 +1,5 @@
 #! /bin/bash
 
-echo "configuring shared components"
-
 # stow app dirs
 stows=(bash git psql sbt ssh vim)
 
