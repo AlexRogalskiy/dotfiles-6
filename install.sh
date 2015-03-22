@@ -29,4 +29,6 @@ popd > /dev/null
 
 # setup the session
 echo "loading shell profile"
+echo "really..."
 source ~/.bash_profile
+echo "sourced it"
