@@ -1,23 +1,30 @@
 #!/bin/bash
+set -e
 
-cd "$(dirname "${BASH_SOURCE}")"
+pushd "$(dirname "${BASH_SOURCE}")"
 
+# choose how to install based on os/dist
 case `uname` in 
-  "Darwin") 
-    osx/setup.sh
+  "Darwin") # osx
+    osx/install.sh
     ;;
   "Linux")
     if [ -f /etc/debian_version ]; then
-      debian/setup.sh
+      echo "installing debian components"
+      debian/install.sh
     else
-      echo "only debian linux supported"
+      echo "no os-specific components"
     fi
     ;;
   *)
-    echo "os not supported"
+    echo "no os-specific components"
     ;;
 esac
 
-shared/setup.sh
+# setup shared components
+exec shared/install.sh
 
+popd > /dev/null
+
+# setup the session
 source ~/.bash_profile

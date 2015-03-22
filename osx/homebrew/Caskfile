@@ -4,17 +4,40 @@ brew install caskroom/cask/brew-cask
 brew tap caskroom/versions
 brew tap caskroom/fonts
 
+# fonts
 brew cask install font-inconsolata
 
+# java
+brew cask install caskroom/versions/java7
+brew cask install java
+
+# apps
 brew cask install dropbox
 brew cask install google-chrome
-brew cask install iterm2
+brew cask install evernote
+brew cask install mou
+brew cask install spotify
+#brew cask install onepassword # paid for on app store
+
+# talk
+brew cask install hipchat
+brew cask install slack
+
+# utils
+brew cask install caffeine
+brew cask install alfred
+brew cask install switchresx
+#brew cask install flexiglass # paid for on app store
+
+# virt
 brew cask install virtualbox
 brew cask install vagrant
 
-brew cask install visualvm
+# tools
+brew cask install iterm2
 brew cask install intellij-idea
 brew cask install pgadmin3
+brew cask install visualvm
 
 # quicklook plugins
 brew cask install quicklook-json
@@ -24,25 +47,5 @@ brew cask install qlmarkdown
 brew cask install qlprettypatch
 brew cask install betterzipql
 
-brew cask install alfred
-brew cask install adium
-brew cask install spotify
-
-brew cask install caskroom/versions/java7
-brew cask install java
-
-brew cask install hipchat
-brew cask install slack
-brew cask install caffeine
-brew cask install evernote
-brew cask install mou
-
-# paid for on app store
-#brew cask install flexiglass
-#brew cask isntall onepassword
-
-brew cask install switchresx
-
 brew cask cleanup
 brew cask list
-

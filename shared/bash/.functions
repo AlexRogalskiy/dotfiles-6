@@ -75,12 +75,8 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-function dotfiles() {
-  mkdir -p ~/.dotfiles && cd ~/.dotfiles && curl -#L https://github.com/robertcboll/dotfiles/tarball/master | tar -xzv --strip-components 1 -C ~/.dotfiles && ~/.dotfiles/bootstrap.sh
-}
-
-function rdotfiles() {
-  ssh $1 "mkdir -p ~/.dotfiles && cd ~/.dotfiles && curl -#L https://github.com/robertcboll/dotfiles/tarball/master | tar -xzv --strip-components 1 -C ~/.dotfiles && ~/.dotfiles/bootstrap.sh"
+function bootstrap_remote() {
+  ssh $1 "curl -fsSL https://raw.githubusercontent.com/robertcboll/dotfiles/master/bootstrap.sh > /tmp/bootstrap.sh && chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh && rm /tmp/bootstrap.sh"
 }
 
 # Empty the Trash on all mounted volumes and the main HDD

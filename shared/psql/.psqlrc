@@ -1,5 +1,5 @@
 \set ON_ERROR_ROLLBACK interactive
-\pset null 'NULL'
+\pset null '(NULL)'
 \set HISTFILE ~/.psql_history- :HOST - :DBNAME
 \set HISTSIZE 20000
 \x auto

@@ -2,12 +2,12 @@
 
 # check for computer name
 if [ -z $COMPUTER_NAME ]; then
-  echo "getting computer name from ~/.name"
   if [ ! -f ~/.name ]; then
-    echo "[ERROR] ~/.name not found!"
-    echo "create it, and press any key to continue..."
-    read
+    echo "computer name not found; enter a name.."
+    read name
+    echo $name > ~/.name
   fi
+
   export COMPUTER_NAME=`cat ~/.name`
 fi
 
@@ -20,22 +20,20 @@ if [ ! `which brew` ]; then
   rm /tmp/homebrew-install.rb
 fi
 
-# homebrew apps
+# install homebrew apps
 echo "installing apps from homebrew"
 osx/homebrew/Brewfile
 osx/homebrew/Caskfile
 
-pushd . &>/dev/null
-
-cd osx
-# stow config files
+# stow osx files
+pushd osx > /dev/null
 stow --adopt -t ~ stow
+popd > /dev/null
 
-popd &>/dev/null
+# setup
 
-# app setup
 boot2docker init
+
 ln -sf ~/.iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
 
-# osx defaults
-osx/defaults.sh
+exec "osx/set-defaults.sh"

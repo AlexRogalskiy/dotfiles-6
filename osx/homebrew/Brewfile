@@ -1,10 +1,14 @@
 #! /bin/sh
 
+# get ready
 brew update
 brew upgrade
 
+# basics
+brew install stow
+
 brew install coreutils
-brew install findutils
+brew install findutils --with-default-names
 brew install gnu-sed --with-default-names
 brew install bash
 brew install bash-completion
@@ -13,17 +17,21 @@ brew install wget --enable-iri
 brew install vim --override-system-vi --with-lua
 brew install vimpager
 brew install ctags
-brew install homebrew/dupes/grep
+brew install homebrew/dupes/grep --with-default-names
 
-# Install other useful binaries
-brew install ack
-brew install git
-brew install hg
 brew install tree
 
-brew install hub
+# vcs
+brew install git
+brew install hg
 
+brew install hub
+brew install gist
+
+# db
 brew install postgresql
+
+# lang
 brew install go
 
 # build tools
@@ -32,15 +40,13 @@ brew install gradle
 brew install sbt
 brew install ant
 
-# tools
-brew install homebrew/binary/jad
-
+# virt
 brew install docker
 brew install boot2docker
 
-brew install stow
+# other
+brew install keybase
 
 # Remove outdated versions from the cellar
 brew cleanup
 brew list
-
