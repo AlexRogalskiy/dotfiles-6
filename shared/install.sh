@@ -14,4 +14,4 @@ popd &>/dev/null
 
 # pulling pubkeys from github
 echo "pulling ssh keys from github"
-curl -s https://github.com/robertcboll.keys >> ~/.ssh/authorized_keys
+curl -s https://github.com/robertcboll.keys > ~/.ssh/authorized_keys
