@@ -1,0 +1,10 @@
+<leader>c(space)  - toggle comment
+<leader>f         - NERDTree
+<leader>n         - tagbar
+
+gg                - jump to top
+G                 - jump to bottom
+
+gg=G              - reindent file
+
+:lclose           - close location window (syntastic errors)
