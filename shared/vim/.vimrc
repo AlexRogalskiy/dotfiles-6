@@ -66,6 +66,14 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:vim_json_syntax_conceal = 0
+
+" use git ls-files to drive ctrlp
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
+" default to just file name matching, not path for ctrp
+let g:ctrlp_by_filename = 1
+
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
