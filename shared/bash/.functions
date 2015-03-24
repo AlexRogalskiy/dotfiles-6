@@ -93,12 +93,15 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
+# note these break whenever multiple versions are present of the same major version!!
+
 # osx specific
 if [ `uname` == "Darwin" ]; then
-  alias j6="export JAVA_HOME=$(echo /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home)"
-  alias j7="export JAVA_HOME=$(echo /Library/Java/JavaVirtualMachines/jdk1.7.0_*.jdk/Contents/Home)"
-  alias j8="export JAVA_HOME=$(echo /Library/Java/JavaVirtualMachines/jdk1.8.0_*.jdk/Contents/Home)"
+  alias j6="export JAVA_HOME='$(echo /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home)'"
+  alias j7="export JAVA_HOME='$(echo /Library/Java/JavaVirtualMachines/jdk1.7.0_*.jdk/Contents/Home)'"
+  alias j8="export JAVA_HOME='$(echo /Library/Java/JavaVirtualMachines/jdk1.8.0_*.jdk/Contents/Home)'"
 
+  alias java6="j6 && java $@"
   alias java7="j7 && java $@"
   alias java8="j8 && java $@"
 
