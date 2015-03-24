@@ -27,9 +27,10 @@ shared/install.sh
 
 popd > /dev/null
 
-# setup the session
-echo "reloading shell profile"
-source ~/.bash_profile
-
+echo ""
 # print out notes
 cat ~/.dotfiles/postinst.txt
+echo ""
+
+# setup the session
+source ~/.bash_profile
