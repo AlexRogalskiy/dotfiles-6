@@ -1,38 +1,11 @@
 package org.vimsense;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.beust.jcommander.JCommander;
-import com.beust.jcommander.Parameter;
-import com.sun.source.tree.CompilationUnitTree;
-import com.sun.source.tree.ImportTree;
-import com.sun.source.tree.LineMap;
-import com.sun.source.tree.Tree;
-import com.sun.source.tree.Tree.Kind;
-import com.sun.source.util.JavacTask;
-import com.sun.tools.javac.tree.JCTree;
-import com.sun.tools.javac.tree.JCTree.JCClassDecl;
-import com.sun.tools.javac.tree.JCTree.JCExpression;
-import com.sun.tools.javac.tree.JCTree.JCImport;
-import com.sun.tools.javac.tree.JCTree.JCMethodDecl;
-import com.sun.tools.javac.tree.JCTree.JCVariableDecl;
-import org.codehaus.jackson.annotate.JsonAutoDetect;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.xeustechnologies.jcl.JarClassLoader;
-
-import javax.tools.DiagnosticCollector;
-import javax.tools.JavaCompiler;
-import javax.tools.JavaFileObject;
-import javax.tools.StandardJavaFileManager;
-import javax.tools.ToolProvider;
-import java.io.File;
 import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.FileWriter;
 import java.io.InputStream;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -52,13 +25,42 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
-import java.util.Set;
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Set;
+import java.util.StringTokenizer;
 import java.util.zip.ZipFile;
+import javax.tools.DiagnosticCollector;
+import javax.tools.JavaCompiler;
+import javax.tools.JavaFileObject;
+import javax.tools.StandardJavaFileManager;
+import javax.tools.ToolProvider;
+
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+import com.sun.source.tree.CompilationUnitTree;
+import com.sun.source.tree.ImportTree;
+import com.sun.source.tree.LineMap;
+import com.sun.source.tree.Tree.Kind;
+import com.sun.source.tree.Tree;
+import com.sun.source.util.JavacTask;
+import com.sun.tools.javac.tree.JCTree.JCClassDecl;
+import com.sun.tools.javac.tree.JCTree.JCExpression;
+import com.sun.tools.javac.tree.JCTree.JCImport;
+import com.sun.tools.javac.tree.JCTree.JCMethodDecl;
+import com.sun.tools.javac.tree.JCTree.JCVariableDecl;
+import com.sun.tools.javac.tree.JCTree;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
+import org.xeustechnologies.jcl.JarClassLoader;
 
 public class VimTool {
+
+
+                              
 
   public static final Log LOG = LogFactory.getLog(VimTool.class);
 
@@ -279,12 +281,12 @@ public class VimTool {
         );
       } else {
         // the following code works for several kinds of JDK
-        // - JDK1.1:		classes.zip
-        // - JDK1.2+:		rt.jar
-        // - JDK1.4+ of Sun and Apple:	rt.jar + jce.jar + jsse.jar
-        // - JDK1.4 of IBM		split rt.jar into core.jar, graphics.jar, server.jar
-        // 				combined jce.jar and jsse.jar into security.jar
-        // - JDK for MacOS X	split rt.jar into classes.jar, ui.jar in Classes directory
+        // - JDK1.1:    classes.zip
+        // - JDK1.2+:   rt.jar
+        // - JDK1.4+ of Sun and Apple:  rt.jar + jce.jar + jsse.jar
+        // - JDK1.4 of IBM    split rt.jar into core.jar, graphics.jar, server.jar
+        //        combined jce.jar and jsse.jar into security.jar
+        // - JDK for MacOS X  split rt.jar into classes.jar, ui.jar in Classes directory
         toret.addAll(getClassPathElementsFromDir(
           System.getProperty("java.home") + File.separator + "lib" + File.separator
         )
