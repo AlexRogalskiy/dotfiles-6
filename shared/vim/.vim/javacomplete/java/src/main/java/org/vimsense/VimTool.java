@@ -59,9 +59,6 @@ import org.xeustechnologies.jcl.JarClassLoader;
 
 public class VimTool {
 
-
-                              
-
   public static final Log LOG = LogFactory.getLog(VimTool.class);
 
   @JsonAutoDetect
