@@ -1,11 +1,9 @@
 #! /bin/sh
 
 brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
 
 # fonts
-brew cask install font-inconsolata
+brew cask install caskroom/fonts/font-inconsolata
 
 # java
 brew cask install caskroom/versions/java7
@@ -13,7 +11,7 @@ brew cask install java
 
 # apps
 brew cask install dropbox
-brew cask install google-chrome
+brew cask install google-chrome-dev
 brew cask install evernote
 brew cask install mou
 brew cask install spotify
