@@ -30,9 +30,13 @@ Plugin 'ivalkeen/vim-simpledb'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
 
+Plugin 'airblade/vim-rooter'
+
+Plugin 'robertcboll/javacomplete'
+
 call vundle#end()
 
-set rtp+=~/.vim/javacomplete
+" set rtp+=~/.vim/javacomplete
 
 filetype plugin indent on
 
@@ -67,6 +71,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:vim_json_syntax_conceal = 0
+
+let g:ctrlp_show_hidden = 1
+
+"let g:loaded_syntastic_java_javac_checker = 1
 
 " use git ls-files to drive ctrlp
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
