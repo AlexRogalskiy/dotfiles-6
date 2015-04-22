@@ -6,12 +6,12 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 # choose what to install based on os/dist
 case `uname` in 
   "Darwin") # osx
-    ./osx-install.sh
+    ./_scripts/osx-install.sh
     ;;
   "Linux")
     if [ -f /etc/debian_version ]; then
       echo "installing debian components"
-      ./debian-install.sh
+      ./_scripts/debian-install.sh
     else
       echo "no os-specific components"
     fi
@@ -23,10 +23,10 @@ esac
 
 # setup shared components
 echo "installing cross platform components"
-./shared-install.sh
+./_scripts/shared-install.sh
 
 echo ""
-cat ./postinst.txt
+cat ./_scripts/postinst.txt
 echo ""
 
 popd >/dev/null
