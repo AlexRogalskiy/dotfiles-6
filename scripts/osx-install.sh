@@ -22,18 +22,11 @@ fi
 
 # install homebrew apps
 echo "installing apps from homebrew"
-osx/homebrew/Brewfile
-osx/homebrew/Caskfile
+pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
+./../homebrew/Brewfile
+./../homebrew/Caskfile
 
-# stow osx files
-pushd osx > /dev/null
-stow --adopt -t ~ stow
-popd > /dev/null
-
-# setup
-
-boot2docker init
+./osx-defaults.sh
+popd >/dev/null
 
 ln -sf ~/.iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
-
-exec "osx/set-defaults.sh"

@@ -1,11 +1,10 @@
 #! /bin/bash
 
+pushd "$(dirname "${BASH_SOURCE}")/.." >/dev/null
+
 # stow app dirs
-stows=(bash git psql sbt ssh vim)
+stows=(bash git intellij iterm2 psql sbt ssh vim)
 
-pushd . &>/dev/null
-
-cd shared
 for dir in ${stows[@]}; do
 	stow --adopt -t ~ $dir
 done;

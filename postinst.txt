@@ -1,8 +1,0 @@
-Post Install Notes
-===============
-
-generate an ssh key and upload to github
-
-populate credentials files: ~/.sbt/.credentials, ~/.m2/settings.xml, ~/.gradle/gradle.properties
-
-gist --login

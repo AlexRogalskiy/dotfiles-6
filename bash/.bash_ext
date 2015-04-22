@@ -1,3 +1,22 @@
+#! /usr/bin/env sh
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 #! /usr/bin/env bash
 
 # Easier navigation: .., ..., ....
@@ -77,10 +96,6 @@ function server() {
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-function bootstrap_remote() {
-  ssh $1 "curl -fsSL https://raw.githubusercontent.com/robertcboll/dotfiles/master/bootstrap.sh > /tmp/bootstrap.sh && chmod +x /tmp/bootstrap.sh && /tmp/bootstrap.sh && rm /tmp/bootstrap.sh"
-}
-
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
@@ -93,7 +108,10 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
-# note these break whenever multiple versions are present of the same major version!!
+# open vnc with the default utility
+function vnc() {
+  open vnc://$@
+}
 
 # osx specific
 if [ `uname` == "Darwin" ]; then
@@ -108,8 +126,11 @@ if [ `uname` == "Darwin" ]; then
   alias chrome="open -a Google\ Chrome $@"
   alias mou="open /Applications/Mou.app"
   alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
-
-  function vnc() {
-    open vnc://$@
+  
+  boot2dock() {
+    if [ ! "running" == "$(boot2docker status)" ]; then
+      boot2docker up
+    fi
+    $(boot2docker shellinit)
   }
 fi

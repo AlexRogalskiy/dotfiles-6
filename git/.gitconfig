@@ -11,28 +11,30 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
+  editor = vim
 
 [rerere]
   enabled = true
 
 [branch]
-  autosetupmerge = true
+  autosetupmerge = always
   autosetuprebase = always
 
 [push]
-  # 'git push' will push the current branch to its tracking branch
-  # the usual default is to push all branches
+  # push only current branch to its tracking branch
   default = tracking
 
 [diff]
+  tool = vimdiff
   renames = copy
   renamelimit = 0
-  algorithm = patience
   prompt = false
-  tool = vimdiff
 
 [difftool]
   prompt = false
+
+[merge]
+  tool = vimdiff
 
 [color]
   ui = auto
@@ -44,28 +46,15 @@
 [alias]
   a = add
   aa = add .
-  ap = add -p .
   b = branch
-  ba = branch -a
-  bd = branch -d
   c = commit
   cm = commit -m
-  cma = commit --amend
   co = checkout
-  cb = checkout -b
-  cp = cherry-pick
   d = diff -w
   dt = difftool
-  dw = diff --word-diff -w
-  fa = fetch --all --tags
   lo = log --oneline
-  lsr = ls-remote
   mm = merge
   mf = merge --ff-only
-  pt = push --tags
-  r = reset
-  rh = reset HEAD^
-  rb = rebase
   rbi = rebase -i
   rbc = rebase --continue
   rba = rebase --abort
@@ -73,9 +62,5 @@
   rpo = remote prune origin
   s = status .
   sg = status
-  st = stash
-  stc = stash clear
-  stl = stash list
-  stp = stash pop
   tree =  log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   treed =  log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all --date-order

@@ -1,0 +1,11 @@
+Post Install Notes
+==================
+
+1. ssh keys
+2. pgp keys
+3. credentials files
+  a. ~/.sbt/.credentials
+  b. ~/.m2/settings.xml
+  c. ~/.gradle/gradle.properties
+4. login to servives
+  a. gist --login
