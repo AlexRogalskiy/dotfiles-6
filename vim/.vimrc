@@ -40,7 +40,6 @@ filetype plugin indent on
 
 set tabstop=2
 set shiftwidth=2
-set expandtab
 set autoindent
 
 set number
@@ -52,11 +51,6 @@ set mouse=a
 set incsearch
 set ignorecase
 set smartcase
-
-filetype indent on
-filetype on
-filetype plugin on
-syntax on
 
 " show tabs as pipes
 set list lcs=tab:\|\
