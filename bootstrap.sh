@@ -31,6 +31,6 @@ if [ ! -d ~/.dotfiles ]; then
 else
   pushd ~/.dotfiles >/dev/null
   git pull
-  popd
+  popd >/dev/null
 fi
 exec ~/.dotfiles/install.sh
