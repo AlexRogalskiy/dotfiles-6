@@ -34,15 +34,20 @@ Plugin 'airblade/vim-rooter'
 
 Plugin 'robertcboll/javacomplete'
 
+" colors
+Plugin 'duythinht/inori'
+
 call vundle#end()
 
 filetype plugin indent on
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 shiftwidth=2
 set autoindent
 
 set number
+
+syntax enable
+silent! colorscheme inori
 
 set clipboard+=unnamed
 set backspace=indent,eol,start
