@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-
+									
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -53,7 +53,7 @@ set ignorecase
 set smartcase
 
 " show tabs as pipes
-set list lcs=tab:\|\
+"set list lcs=tab:|  
 
 " syntastic
 " always populate the location list
