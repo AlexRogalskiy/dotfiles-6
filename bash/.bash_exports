@@ -18,7 +18,7 @@ export MANPAGER=vimpager
 export GREP_OPTIONS="--color=auto"
 
 # vi editing mode
-set -o vi
+#set -o vi
 
 export GOPATH=~/dev/gopath
 
