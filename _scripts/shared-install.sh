@@ -11,7 +11,7 @@ done;
 
 popd &>/dev/null
 
-vim +PluginInstall +qall
+vim +PluginInstall +GoInstallBinaries +qall
 
 # pulling pubkeys from github
 echo "pulling ssh keys from github"

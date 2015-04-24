@@ -20,7 +20,7 @@ export GREP_OPTIONS="--color=auto"
 # vi editing mode
 #set -o vi
 
-export GOPATH=~/dev/gopath
+export GOPATH=~/dev/go
 
 if [ `uname` == "Darwin" ]; then
   # Link Homebrew casks in `/Applications` rather than `~/Applications`

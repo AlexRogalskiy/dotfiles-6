@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-									
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -17,6 +17,7 @@ Plugin 'bling/vim-airline'
 
 " tab markers
 "Plugin 'Yggdroot/indentLine'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " tab for autocomplete
 Plugin 'ervandew/supertab'
@@ -57,8 +58,15 @@ set incsearch
 set ignorecase
 set smartcase
 
+" tab guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+"hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=black
+
 " show tabs as pipes
-"set list lcs=tab:|  
+"set list lcs=tab:\|\  
 
 " syntastic
 " always populate the location list
