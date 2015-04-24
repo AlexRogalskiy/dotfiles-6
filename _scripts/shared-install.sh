@@ -11,6 +11,8 @@ done;
 
 popd &>/dev/null
 
+# ensure gopath is set
+source ~/.bash_exports
 vim +PluginInstall +GoInstallBinaries +qall
 
 # pulling pubkeys from github
