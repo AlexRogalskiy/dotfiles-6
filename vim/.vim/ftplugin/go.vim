@@ -1,4 +1,5 @@
 TagbarOpen
+IndentGuidesEnable
 
 " mappings for go tools
 nmap <Leader>d <Plug>(go-doc)
