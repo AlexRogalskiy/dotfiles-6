@@ -65,8 +65,8 @@ let g:indent_guides_guide_size = 1
 "hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=black
 
-" show tabs as pipes
-"set list lcs=tab:\|\  
+" show hidden files in tree
+let g:NERDTreeShowHidden=1
 
 " syntastic
 " always populate the location list
