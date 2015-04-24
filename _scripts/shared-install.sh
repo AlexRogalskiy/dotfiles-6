@@ -13,7 +13,7 @@ popd &>/dev/null
 
 # ensure gopath is set
 source ~/.bash_exports
-vim +PluginInstall +GoInstallBinaries +qall
+vim !silent +PluginInstall +GoInstallBinaries +qall
 
 # pulling pubkeys from github
 echo "pulling ssh keys from github"
