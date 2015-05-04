@@ -15,8 +15,6 @@ export LESS_TERMCAP_md="$ORANGE"
 export PAGER=vimpager
 export MANPAGER=vimpager
 
-export GREP_OPTIONS="--color=auto"
-
 # vi editing mode
 #set -o vi
 
