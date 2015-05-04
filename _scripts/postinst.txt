@@ -1,11 +1,14 @@
 Post Install Notes
 ==================
 
-1. ssh keys
-2. pgp keys
+1. keys - ssh, pgp
+2. sync
+	a. sign in to dropbox
+	b. open 1password
+	c. alfred powerpack and sync dir (~/.alfred2/)
 3. credentials files
   a. ~/.sbt/.credentials
   b. ~/.m2/settings.xml
   c. ~/.gradle/gradle.properties
-4. login to servives
+4. login to services
   a. gist --login
