@@ -16,29 +16,36 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 
 " tab markers
-"Plugin 'Yggdroot/indentLine'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " tab for autocomplete
 Plugin 'ervandew/supertab'
+
 " automatic closing of pairs ([{
 Plugin 'Raimondi/delimitMate'
 
+" comments toggled with <Leader>c<space>
+Plugin 'scrooloose/nerdcommenter'
+
 " languages
 Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
+
 Plugin 'ivalkeen/vim-simpledb'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
 
-Plugin 'airblade/vim-rooter'
-
 Plugin 'robertcboll/javacomplete'
+
+" set vim working directory to git root
+Plugin 'airblade/vim-rooter'
 
 " colors
 Plugin 'duythinht/inori'
 
 call vundle#end()
+
+" leader to comma
+let mapleader = ","
 
 filetype plugin indent on
 
