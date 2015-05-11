@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # get ready
-brew update
+brew update --all
 brew upgrade
 
 # basics
@@ -13,7 +13,7 @@ brew install gnu-sed --with-default-names
 brew install bash
 brew install bash-completion
 
-brew install wget --enable-iri
+brew install wget --with-iri
 brew install vim --override-system-vi --with-lua
 brew install vimpager
 brew install ctags

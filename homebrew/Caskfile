@@ -11,14 +11,14 @@ brew cask install java
 
 # apps
 brew cask install dropbox
-brew cask install google-chrome-dev
+brew cask install google-chrome
 brew cask install evernote
 brew cask install mou
 brew cask install spotify
-#brew cask install onepassword # paid for on app store
+brew cask install 1password
 
 # talk
-brew cask install hipchat
+#brew cask install hipchat
 brew cask install slack
 
 # utils
@@ -27,7 +27,7 @@ brew cask install alfred
 brew cask install switchresx
 #brew cask install flexiglass # paid for on app store
 
-# virt
+# virtualization
 brew cask install virtualbox
 brew cask install vagrant
 
