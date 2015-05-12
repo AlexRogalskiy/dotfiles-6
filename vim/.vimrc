@@ -45,7 +45,8 @@ Plugin 'duythinht/inori'
 call vundle#end()
 
 " leader to comma
-let mapleader = ","
+" this was too confusing
+" let mapleader = ","
 
 filetype plugin indent on
 
