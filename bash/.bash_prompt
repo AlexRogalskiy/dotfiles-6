@@ -11,24 +11,15 @@ git_prompt_prefix="${color_yellow}git${color_green}"
 
 git_prompt() {
   workdir="$(pwd)"
+  
+  # check if in git repo
   if git rev-parse 2>/dev/null; then
+    # in git
     gitroot="$(git rev-parse --show-toplevel)"
-    repo="$(basename $gitroot)"
-
-    if [[ `basename $workdir` == "$repo" ]]; then
-      # in the repo root
-      printf "$git_prompt_prefix $repo"
-    else
-      # check if we're symlinked out of the git repo
-      if [[ $workdir == $gitroot* ]]; then
-        printf "$git_prompt_prefix $repo/$(git ls-tree --full-name --name-only HEAD $workdir)"
-      else
-        # in a symlink outside the repo, ignore git
-        printf "${workdir/$HOME/~}"
-      fi 
-    fi
-  else
-    # not in a git repo
+    gitbase="$(basename $gitroot)"
+    printf "$git_prompt_prefix $gitbase${workdir/$gitroot/}"
+  else 
+    # not in git
     printf "${workdir/$HOME/~}"
   fi
 }
