@@ -40,6 +40,9 @@ brew install gradle
 brew install sbt
 brew install ant
 
+# for vim java integration
+brew install nailgun
+
 # virt
 brew install docker
 brew install boot2docker
