@@ -34,7 +34,9 @@ Plugin 'ivalkeen/vim-simpledb'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
 
+Plugin 'robertcboll/vim-cp'
 Plugin 'robertcboll/javacomplete'
+Plugin 'dscleaver/sbt-quickfix', {'rtp': 'src/main/resources/vim-sbt'}
 
 " set vim working directory to git root
 Plugin 'airblade/vim-rooter'
@@ -83,9 +85,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" don't compile java
-let g:loaded_syntastic_java_javac_checker = 1
-
 " don't conceal quotes in jsons
 let g:vim_json_syntax_conceal = 1
 
@@ -93,7 +92,8 @@ let g:vim_json_syntax_conceal = 1
 " show dotfiles
 let g:ctrlp_show_hidden = 1
 " populate list with git
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+" don't do this, show non-gitted files too
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 " file name matching, not path
 let g:ctrlp_by_filename = 1
 
@@ -110,6 +110,9 @@ let g:airline_right_sep = ''
 " navigation plugins
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>t :TagbarToggle<CR>
+
+" sbt quickfix loading
+nnoremap <leader>q :call sbtquickfix#LoadQuickFix()<CR>
 
 " move between buffers
 nnoremap <C-n> :bnext<CR>

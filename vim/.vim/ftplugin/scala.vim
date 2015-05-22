@@ -6,7 +6,11 @@ setlocal expandtab
 setlocal omnifunc=javacomplete#Complete
 map <leader>b :call javacomplete#GoToDefinition()<CR>
 
-let g:syntastic_java_javac_autoload_maven_classpath = 0 " dont autoload the entire maven classpath
+" use fsc only, not scalac
+let g:loaded_syntastic_scala_scalac_checker = 1
+
+" dont autoload the entire maven classpath
+let g:syntastic_java_javac_autoload_maven_classpath = 0 
 
 " autocomplete
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
