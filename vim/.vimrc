@@ -4,10 +4,18 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" ORDER HERE IS LOAD ORDER
+
 Plugin 'gmarik/Vundle.vim'
 
 " defaults
 Plugin 'tpope/vim-sensible'
+
+" set vim working directory to git root
+Plugin 'airblade/vim-rooter'
+
+" syntax
+Plugin 'scrooloose/syntastic'
 
 " helper windows
 Plugin 'majutsushi/tagbar'
@@ -15,31 +23,24 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 
-" tab markers
-Plugin 'nathanaelkane/vim-indent-guides'
-
-" tab for autocomplete
-Plugin 'ervandew/supertab'
-
-" automatic closing of pairs ([{
-Plugin 'Raimondi/delimitMate'
-
-" comments toggled with <Leader>c<space>
-Plugin 'scrooloose/nerdcommenter'
-
-" languages
-Plugin 'scrooloose/syntastic'
-
 Plugin 'ivalkeen/vim-simpledb'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'fatih/vim-go'
 
-Plugin 'robertcboll/vim-cp'
 Plugin 'robertcboll/javacomplete'
+Plugin 'robertcboll/vim-cp'
 Plugin 'dscleaver/sbt-quickfix', {'rtp': 'src/main/resources/vim-sbt'}
 
-" set vim working directory to git root
-Plugin 'airblade/vim-rooter'
+Plugin 'derekwyatt/vim-scala'
+
+" convenience plugins
+" tab markers
+Plugin 'nathanaelkane/vim-indent-guides'
+" tab for autocomplete
+Plugin 'ervandew/supertab'
+" automatic closing of pairs ([{
+Plugin 'Raimondi/delimitMate'
+" comments toggled with <Leader>c<space>
+Plugin 'scrooloose/nerdcommenter'
 
 " colors
 Plugin 'duythinht/inori'
@@ -106,6 +107,8 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
+
+let g:rooter_silent_chdir = 1
 
 " navigation plugins
 nnoremap <leader>f :NERDTreeToggle<CR>
