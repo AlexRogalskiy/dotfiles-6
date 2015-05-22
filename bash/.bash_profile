@@ -35,3 +35,7 @@ done;
 
 # autocomplete for ssh/scp/etc 
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
+
+for dir in $HOME/.gem/ruby/*; do
+  [ -d "$dir/bin" ] && PATH="${dir}/bin:${PATH}"
+done
