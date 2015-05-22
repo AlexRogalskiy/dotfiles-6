@@ -34,6 +34,11 @@ brew install postgresql
 # lang
 brew install go
 
+brew install scala
+brew install scalastyle
+
+brew install checkstyle
+
 # build tools
 brew install maven
 brew install gradle
