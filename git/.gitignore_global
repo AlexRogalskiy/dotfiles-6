@@ -26,3 +26,5 @@ target/
 # vim
 *.swp
 
+# vim-cp plugin
+.vimcp
