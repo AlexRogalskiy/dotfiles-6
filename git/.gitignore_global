@@ -28,3 +28,4 @@ target/
 
 # vim-cp plugin
 .vimcp
+.vimsp
