@@ -28,8 +28,8 @@ Plugin 'fatih/vim-go'
 
 Plugin 'robertcboll/javacomplete'
 Plugin 'robertcboll/vim-cp'
-Plugin 'dscleaver/sbt-quickfix', {'rtp': 'src/main/resources/vim-sbt'}
 
+Plugin 'derekwyatt/vim-sbt'
 Plugin 'derekwyatt/vim-scala'
 
 " convenience plugins
@@ -114,12 +114,12 @@ let g:rooter_silent_chdir = 1
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 
-" sbt quickfix loading
-nnoremap <leader>q :call sbtquickfix#LoadQuickFix()<CR>
-
 " move between buffers
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
+
+" vertical split buffer
+nnoremap <leader>w <C-w>v<C-w>l  
 
 " nerdtree for directory render
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
