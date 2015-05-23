@@ -2,7 +2,7 @@
 
 # tries to install git based on dist
 try_install_git() {
-  case `uname` in
+  case $(uname) in
     "Darwin")
       echo "installing xcode cli tools"
       xcode-select --install
@@ -20,7 +20,7 @@ try_install_git() {
 }
 
 # run
-if [ ! `which git` ]; then
+if [ ! "$(which git)" ]; then
   echo 'trying to install git'
   try_install_git || exit 1
 fi
