@@ -29,7 +29,7 @@ Plugin 'fatih/vim-go'
 Plugin 'robertcboll/javacomplete'
 Plugin 'robertcboll/vim-cp'
 
-Plugin 'derekwyatt/vim-sbt'
+"Plugin 'derekwyatt/vim-sbt'
 Plugin 'derekwyatt/vim-scala'
 
 " convenience plugins
@@ -44,15 +44,11 @@ Plugin 'scrooloose/nerdcommenter'
 
 " colors
 Plugin 'duythinht/inori'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()
 
-" leader to comma
-" this was too confusing
-" let mapleader = ","
-
 filetype plugin indent on
-
 set tabstop=2 shiftwidth=2
 set autoindent
 
@@ -86,16 +82,18 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" sbt files, maven/ivy downloaded sources, jdk source
+let g:syntastic_ignore_files = ['.*\.sbt', 
+			\'.*\.m2.*', '.*\.ivy2.*', 
+			\'/Library.*']
+
 " don't conceal quotes in jsons
 let g:vim_json_syntax_conceal = 1
 
 " ctrlp
 " show dotfiles
 let g:ctrlp_show_hidden = 1
-" populate list with git
-" don't do this, show non-gitted files too
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-" file name matching, not path
+" filename matching > path matching
 let g:ctrlp_by_filename = 1
 
 " airline
