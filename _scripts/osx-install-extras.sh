@@ -2,4 +2,4 @@
 
 gem install mdl
 
-npm install -g js-yaml
+npm install -g js-yaml jsonlint recess

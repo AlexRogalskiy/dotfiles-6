@@ -3,10 +3,10 @@
 pushd "$(dirname "${BASH_SOURCE}")/.." >/dev/null
 
 # stow app dirs
-stows=(bash git intellij iterm2 alfred psql sbt ssh vim gem)
+stows=(bash git intellij iterm2 alfred psql sbt ssh vim gem checkstyle)
 
-for dir in ${stows[@]}; do
-	stow --adopt -t ~ $dir
+for dir in "${stows[@]}"; do
+	stow --adopt -t ~ "$dir"
 done;
 
 popd &>/dev/null

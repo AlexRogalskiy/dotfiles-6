@@ -26,7 +26,7 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 ./../homebrew/Brewfile
 ./../homebrew/Caskfile
 
-./install-gems.sh
+./osx-install-extras.sh
 ./osx-defaults.sh
 popd >/dev/null
 
