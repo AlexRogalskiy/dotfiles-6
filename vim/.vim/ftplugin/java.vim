@@ -3,6 +3,8 @@ IndentGuidesEnable
 
 runtime! ftplugin/jvm.vim
 
+let g:syntastic_java_checkers = [ 'javac', 'checkstyle']
+
 setlocal expandtab
 let g:rooter_patterns = ['pom.xml', 'build.sbt', 'project/']
 

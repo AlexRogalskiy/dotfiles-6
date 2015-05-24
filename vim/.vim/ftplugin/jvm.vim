@@ -1,3 +1,7 @@
+" checkstyle
+let g:syntastic_java_checkstyle_classpath = "~/.checkstyle/checkstyle-6.4.1.jar"
+let g:syntastic_java_checkstyle_conf_file = "~/.checkstyle/checkstyle.xml"
+
 " javacomplete
 setlocal omnifunc=javacomplete#Complete
 map <leader>b :call javacomplete#GoToDefinition()<CR>
