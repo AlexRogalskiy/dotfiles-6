@@ -39,6 +39,7 @@ brew install scala
 brew install scalastyle
 brew install checkstyle
 brew install shellcheck
+brew install closure-compiler
 
 # build tools
 brew install maven

@@ -8,9 +8,8 @@ brew cask install caskroom/fonts/font-inconsolata
 # java
 brew cask install caskroom/versions/java7
 brew cask install java
-for i in `ls /Library/Java/JavaVirtualMachines/`; do 
-  unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip \ 
-  -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source; 
+for i in $(ls /Library/Java/JavaVirtualMachines/); do 
+  unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source; 
 done;
 
 # apps
