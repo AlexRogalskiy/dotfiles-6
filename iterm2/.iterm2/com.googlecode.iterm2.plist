@@ -5335,14 +5335,18 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>949 333 445 77 0 0 1920 1200 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>238 143 924 485 0 0 1920 1200 </string>
+	<string>236 143 924 485 0 0 1920 1200 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>170 673 592 584 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>208 118 598 399 0 0 1680 1027 </string>
+	<string>254 47 745 526 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>250 69 570 401 0 0 1680 1027 </string>
+	<string>304 47 745 526 0 0 1680 1050 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>317 77 745 526 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -9563,7 +9567,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Inconsolata 18</string>
+			<string>InconsolataForPowerline-dz 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -9740,6 +9744,10 @@
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesLost</key>
 	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>453698919.36243802</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>454219349.12655699</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -9804,7 +9812,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-12T21:44:37Z</date>
+	<date>2015-05-25T18:31:20Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -14571,6 +14579,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1</string>
+	<string>2.1.1</string>
 </dict>
 </plist>
