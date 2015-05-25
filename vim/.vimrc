@@ -21,7 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 
 Plugin 'ivalkeen/vim-simpledb'
 Plugin 'fatih/vim-go'
@@ -94,16 +94,6 @@ let g:ctrlp_show_hidden = 1
 " filename matching > path matching
 let g:ctrlp_by_filename = 1
 
-" airline
-" list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" straight lines because inconsolata doesn't like arrows
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
 let g:rooter_silent_chdir = 1
 
 " navigation plugins
@@ -115,7 +105,23 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
 
 " vertical split buffer
-nnoremap <leader>w <C-w>v<C-w>l  
+nnoremap <leader>w <C-w>v<C-w>l
+
+" status line
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
+      \ }
+      \ }
 
 " nerdtree for directory render
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
