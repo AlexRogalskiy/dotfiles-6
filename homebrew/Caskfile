@@ -4,6 +4,8 @@ brew install caskroom/cask/brew-cask
 
 # fonts
 brew cask install caskroom/fonts/font-inconsolata
+brew cask install caskroom/fonts/font-inconsolata-dz
+brew cask install caskroom/fonts/font-inconsolata-dz-for-powerline
 
 # java
 brew cask install caskroom/versions/java7
