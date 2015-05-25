@@ -16,11 +16,15 @@ git_prompt() {
   if git rev-parse 2>/dev/null; then
     # in git
     gitroot="$(git rev-parse --show-toplevel)"
-    gitbase="$(basename $gitroot)"
-    printf "$git_prompt_prefix $gitbase${workdir/$gitroot/}"
+    gitbase="$(basename "$gitroot")"
+    if [[ $workdir != $gitroot*  ]]; then
+      printf "%s %s %s"  "$git_prompt_prefix" "${workdir/$HOME/~}" "$color_ltblue[-> ${gitroot/$HOME/~}]$color_reset"
+    else
+      printf "%s %s"  "$git_prompt_prefix" "$gitbase${workdir/$gitroot/}"
+    fi
   else 
     # not in git
-    printf "${workdir/$HOME/~}"
+    printf "%s" "${workdir/$HOME/~}"
   fi
 }
 
