@@ -199,9 +199,10 @@
       <property name="checkFormat" value="$1"/>
       <property name="influenceFormat" value="1"/>
     </module>
-		
+		<!--	
     <module name="SuppressionFilter">
-      <property name="file" value="suppressions.xml"/>
+			<property name="file" value="./suppressions.xml"/>
 		</module>
+		-->
 </module>
 

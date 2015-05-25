@@ -1,5 +1,5 @@
 " checkstyle
-let g:syntastic_java_checkstyle_classpath = "~/.checkstyle/checkstyle-6.4.1.jar"
+let g:syntastic_java_checkstyle_classpath = "~/.checkstyle/checkstyle-5.9-all.jar"
 let g:syntastic_java_checkstyle_conf_file = "~/.checkstyle/checkstyle.xml"
 
 " javacomplete
