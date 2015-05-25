@@ -5336,7 +5336,7 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>949 333 445 77 0 0 1920 1200 </string>
+	<string>949 199 445 77 0 0 1920 1200 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>236 143 924 485 0 0 1920 1200 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
@@ -9563,7 +9563,7 @@
 			<key>Name</key>
 			<string>Desert++</string>
 			<key>Non Ascii Font</key>
-			<string>InconsolataForPowerline-dz 14</string>
+			<string>InconsolataForPowerline-dz 18</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
