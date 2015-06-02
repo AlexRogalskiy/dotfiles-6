@@ -22,14 +22,19 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
 
+" sql
 Plugin 'ivalkeen/vim-simpledb'
+
+" golang
 Plugin 'fatih/vim-go'
 
+" java / jvm
 Plugin 'robertcboll/javacomplete'
 Plugin 'robertcboll/vim-cp'
 
-"Plugin 'derekwyatt/vim-sbt'
+" scala
 Plugin 'derekwyatt/vim-scala'
 
 " convenience plugins
@@ -106,22 +111,6 @@ nnoremap <C-b> :bprevious<CR>
 
 " vertical split buffer
 nnoremap <leader>w <C-w>v<C-w>l
-
-" status line
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
-      \ }
-      \ }
 
 " nerdtree for directory render
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
