@@ -5758,9 +5758,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>949 199 445 77 0 0 1920 1200 </string>
+	<string>1312 287 445 77 0 0 1920 1200 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>657 212 924 485 0 0 1920 1177 </string>
+	<string>657 219 924 485 0 0 1920 1200 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>170 673 592 584 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -9423,7 +9423,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.1000000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -9437,7 +9437,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453698919.36243802</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>454219349.12655699</real>
+	<real>454959189.213745</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -9502,7 +9502,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-25T18:31:20Z</date>
+	<date>2015-06-02T03:31:12Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
