@@ -29,4 +29,18 @@ git_prompt() {
   fi
 }
 
-PROMPT_COMMAND='PS1="$color_blue\u$color_ltblue@$color_blue\h:$color_green$(git_prompt) $color_grey\$ $color_reset"'
+set_bash_prompt() {
+  new_line=""
+  COLS=$(tput cols)
+  NOCOLOR_PROMPT_STRING="\u@\h:$(git_prompt) \$"
+  
+  if [[ $COLS -lt ${#NOCOLOR_PROMPT_STRING} ]]; then
+    new_line="\n"
+  fi
+
+  PS1="$color_blue\u$color_ltblue@$color_blue\h:$color_green$(git_prompt)$color_grey $new_line\$ $color_reset"
+}
+
+NOCOLOR_PROMPT_STRING=COLOR_PROMPT_STRING=
+
+PROMPT_COMMAND='set_bash_prompt'
