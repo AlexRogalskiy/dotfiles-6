@@ -46,6 +46,8 @@ Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
 " comments toggled with <Leader>c<space>
 Plugin 'scrooloose/nerdcommenter'
+" note taking
+Plugin 'fmoralesc/vim-pad'
 
 " colors
 Plugin 'duythinht/inori'
@@ -100,6 +102,8 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
 
 let g:rooter_silent_chdir = 1
+
+let g:pad#dir="~/.notes"
 
 " navigation plugins
 nnoremap <leader>f :NERDTreeToggle<CR>
