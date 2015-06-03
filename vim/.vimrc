@@ -51,7 +51,7 @@ Plugin 'fmoralesc/vim-pad'
 
 " colors
 Plugin 'duythinht/inori'
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'vim-scripts/tango-morning.vim' 
 
 call vundle#end()
 
