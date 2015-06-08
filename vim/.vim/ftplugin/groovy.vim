@@ -1,0 +1,4 @@
+TagbarOpen
+IndentGuidesEnable
+
+set expandtab

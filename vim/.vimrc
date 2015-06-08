@@ -22,7 +22,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-fugitive'
 
 " sql
 Plugin 'ivalkeen/vim-simpledb'
@@ -37,7 +36,13 @@ Plugin 'robertcboll/vim-cp'
 " scala
 Plugin 'derekwyatt/vim-scala'
 
-" convenience plugins
+" kotlin
+Plugin 'udalov/kotlin-vim'
+
+Plugin 'tfnico/vim-gradle'
+
+" git
+Plugin 'tpope/vim-fugitive'
 " tab markers
 Plugin 'nathanaelkane/vim-indent-guides'
 " tab for autocomplete
@@ -62,7 +67,6 @@ set autoindent
 set number
 
 syntax enable
-silent! colorscheme inori
 
 set clipboard+=unnamed
 set backspace=indent,eol,start

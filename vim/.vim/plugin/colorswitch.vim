@@ -1,7 +1,11 @@
 " switch between light and dark colors
 
-function! s:toggle_colors()
-	colorscheme tango-morning
-endfunction
-
-command! -bang -narg=0 ToggleColors call s:toggle_colors()
+if !empty($ITERM_PROFILE)
+	let iterm = $ITERM_PROFILE
+	if iterm ==# "light"
+		silent! colorscheme tango-morning
+	endif
+	if iterm ==# "hybrid"
+		silent! colorscheme inori
+	endif
+endif
