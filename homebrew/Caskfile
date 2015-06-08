@@ -38,7 +38,7 @@ brew cask install vagrant
 
 # tools
 brew cask install iterm2
-brew cask install intellij-idea
+brew cask install intellij-idea-ce
 brew cask install pgadmin3
 brew cask install visualvm
 
