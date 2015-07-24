@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "installing osx components"
+
 # check for computer name
 if [ -z "$COMPUTER_NAME" ]; then
   if [ ! -f ~/.name ]; then
@@ -26,7 +28,7 @@ echo "installing apps from homebrew"
 pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 ./../src/Brewfile
 
-gem --user-install install mdl
+gem install --user-install mdl
 npm install -g js-yaml jsonlint recess
 
 ./set-osx-defaults.sh

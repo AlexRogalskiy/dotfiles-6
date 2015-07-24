@@ -4,8 +4,8 @@
 install_git() {
   echo "installing git"
   case $(uname) in
-    darwin ) xcode-select --install    ;;
-    linux  )
+    Darwin ) xcode-select --install    ;;
+    Linux  )
         if [ command -v apt-get >/dev/null 2>&1 ]; then
             apt-get install -y git
         elif [ command -v yum >/dev/null 2>&1 ]; then

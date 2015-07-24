@@ -5,8 +5,8 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 
 # choose what to install based on os/dist
 case $(uname) in
-    darwin ) ./scripts/osx-install.sh    ;;
-    linux  )
+    Darwin ) ./scripts/osx-install.sh    ;;
+    Linux  )
         if [ command -v apt-get >/dev/null 2>&1 ]; then
             ./scripts/debian-install.sh
         elif [ command -v yum >/dev/null 2>&1 ]; then
@@ -15,6 +15,7 @@ case $(uname) in
             echo "couldn't recognize os :("
         fi
     ;;
+    *      ) echo "couldn't recognize os :(" ;;
 esac
 
 # setup shared components
