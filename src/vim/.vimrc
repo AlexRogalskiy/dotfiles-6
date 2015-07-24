@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/Vundle.vim
 call vundle#begin()
 
 " ORDER HERE IS LOAD ORDER
