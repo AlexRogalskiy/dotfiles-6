@@ -1,18 +1,19 @@
 #! /bin/bash
 
 # check for computer name
-if [ -z $COMPUTER_NAME ]; then
+if [ -z "$COMPUTER_NAME" ]; then
   if [ ! -f ~/.name ]; then
     echo "computer name not found; enter a name.."
     read name
-    echo $name > ~/.name
+    echo "$name" > ~/.name
   fi
 
-  export COMPUTER_NAME=`cat ~/.name`
+  COMPUTER_NAME=$(cat ~/.name)
+  export COMPUTER_NAME
 fi
 
 # check for homebrew
-if [ ! `which brew` ]; then
+if [ ! "$(command -v brew >/dev/null 2>&1)" ]; then
   echo "installing homebrew"
 
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install > /tmp/homebrew-install.rb
@@ -23,11 +24,12 @@ fi
 # install homebrew apps
 echo "installing apps from homebrew"
 pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
-./../homebrew/Brewfile
-./../homebrew/Caskfile
+./../src/Brewfile
 
-./osx-install-extras.sh
-./osx-defaults.sh
+gem --user-install install mdl
+npm install -g js-yaml jsonlint recess
+
+./set-osx-defaults.sh
 popd >/dev/null
 
 ln -sf ~/.iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/

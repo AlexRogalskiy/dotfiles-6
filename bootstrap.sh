@@ -1,36 +1,34 @@
 #! /usr/bin/env bash
 
-install_git_mac() {
-  xcode-select --install
-}
 
-install_git_linux() {
-  if [ "$(which apt-get)" ]; then
-    apt-get install -y git
-  fi
-}
-
-# delegates to platform specific install methods
 install_git() {
-  case $(uname) in 
-    darwin ) install_git_mac    ;;
-    linux  ) install_git_linux  ;;
+  echo "installing git"
+  case $(uname) in
+    darwin ) xcode-select --install    ;;
+    linux  )
+        if [ command -v apt-get >/dev/null 2>&1 ]; then
+            apt-get install -y git
+        elif [ command -v yum >/dev/null 2>&1 ]; then
+            yum install git
+        else
+            echo "couldn't install git :("
+            return 1
+        fi
+    ;;
   esac
 }
 
+# ensure git is installed
+command -v git >/dev/null 2>&1 || { install_git; }
 
-# run
-if [ ! "$(which git)" ]; then
-  echo 'trying to install git'
-  try_install_git || exit 1
-fi
-
-echo "updating dotfiles"
+# clone or pull
+echo "getting dotfiles..."
 if [ ! -d ~/.dotfiles ]; then
-  git clone --recursive --quiet https://github.com/robertcboll/dotfiles.git ~/.dotfiles
+  git clone --recursive --quiet https://github.com/roboll/dotfiles ~/.dotfiles
 else
   pushd ~/.dotfiles >/dev/null
   git pull
   popd >/dev/null
 fi
-exec ~/.dotfiles/install.sh
+
+#exec ~/.dotfiles/install.sh
