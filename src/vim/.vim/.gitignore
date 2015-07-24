@@ -1,4 +1,5 @@
 doc/tags
 javacomplete.txt
-vimcp.log
+*.log
+bundle/
 .netrwhist
