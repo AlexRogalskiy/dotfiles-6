@@ -1,16 +1,26 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+export EDITOR='vim'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups:ignorespace
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+shopt -s histappend
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+export PAGER=vimpager
+export MANPAGER=vimpager
+
+# vi editing mode
+#set -o vi
+
+export GOPATH=~/dev/go
+# on mac only TODO
+export GOROOT=/usr/local/opt/go/libexec
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -19,8 +29,6 @@ alias l='ls -CF'
 
 alias grep='grep --color=auto $@'
 
-#! /usr/bin/env bash
-
 # Easier navigation: .., ..., ....
 alias ..="cd .."
 alias ...="cd ../.."
@@ -28,11 +36,10 @@ alias ....="cd ../../.."
 
 alias g="git"
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
+if ls --color > /dev/null 2>&1; then
+    colorflag="--color" # GNU `ls`
+else
+	colorflag="-G" # OS X `ls`
 fi
 
 # List all files colorized in long format
@@ -60,7 +67,7 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '.DS_Store' -ls -delete; find . -type d -name '.idea' | xargs rm -r; find . -type f -name '*.iml' | xargs rm; find . -name 'target' | xargs rm -r;"
+alias dsclean="find . -type f -name '.DS_Store' -ls -delete; find . -type d -name '.idea' | xargs rm -r; find . -type f -name '*.iml' | xargs rm; find . -name 'target' | xargs rm -r;"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -90,7 +97,7 @@ function extract() {
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
-function server() {
+function http() {
   local port="${1:-8000}"
   sleep 1 && open "http://localhost:${port}/" &
   # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
@@ -114,25 +121,3 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 function vnc() {
   open vnc://$@
 }
-
-# osx specific
-if [ `uname` == "Darwin" ]; then
-  alias j6="export JAVA_HOME='$(echo /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home)'"
-  alias j7="export JAVA_HOME='$(echo /Library/Java/JavaVirtualMachines/jdk1.7.0_*.jdk/Contents/Home)'"
-  alias j8="export JAVA_HOME='$(echo /Library/Java/JavaVirtualMachines/jdk1.8.0_*.jdk/Contents/Home)'"
-
-  alias java6="j6 && java $@"
-  alias java7="j7 && java $@"
-  alias java8="j8 && java $@"
-
-  alias chrome="open -a Google\ Chrome $@"
-  alias mou="open /Applications/Mou.app"
-  alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app"
-  
-  boot2dock() {
-    if [ ! "running" == "$(boot2docker status)" ]; then
-      boot2docker up
-    fi
-    $(boot2docker shellinit)
-  }
-fi

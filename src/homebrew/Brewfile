@@ -1,0 +1,117 @@
+#! /bin/sh
+
+# get ready
+brew update --all
+brew upgrade --all
+
+# install cask first
+brew install caskroom/cask/brew-cask
+
+# first
+brew cask install iterm2
+brew install stow
+
+# talk
+#brew cask install hipchat
+#brew cask install slack
+
+# apps
+brew cask install dropbox
+brew cask install 1password
+brew cask install google-chrome
+brew cask install evernote
+brew cask install mou
+brew cask install spotify
+
+# enhancements
+brew cask install caffeine
+brew cask install alfred
+brew cask install switchresx
+#brew cask install flexiglass # paid for on app store
+
+# basics
+brew install coreutils
+brew install findutils --with-default-names
+brew install gnu-sed --with-default-names
+brew install ack
+brew install bash
+brew install bash-completion
+
+brew install wget --with-iri
+brew install vim --override-system-vi --with-lua
+brew install vimpager
+brew install ctags
+brew install homebrew/dupes/grep --with-default-names
+
+brew install tree
+
+# vcs
+brew install git
+brew install hg
+
+# github
+brew install hub
+brew install gist
+
+# java and friends, and unzip jdk_source
+brew cask install caskroom/versions/java7
+brew cask install java
+brew install scala
+
+for i in $(ls /Library/Java/JavaVirtualMachines/); do
+unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source;
+done;
+
+brew install maven
+brew install gradle
+brew install leiningen
+brew install sbt
+brew install ant
+
+brew install nailgun # for vim java integration
+
+brew cask install intellij-idea-ce
+brew cask install visualvm
+
+# lang
+brew install go
+brew install python
+brew install ruby
+brew install node
+
+# db
+brew install postgresql
+brew cask install pgadmin3
+
+# virt
+brew cask install virtualbox
+brew cask install vagrant
+brew install docker
+brew install boot2docker
+
+# style
+brew install shellcheck # has a dependency on gch, ~3hr build
+brew install closure-compiler
+
+# other
+brew install keybase
+brew install jsonpp
+
+# fonts
+brew cask install caskroom/fonts/font-inconsolata
+brew cask install caskroom/fonts/font-inconsolata-dz
+brew cask install caskroom/fonts/font-inconsolata-dz-for-powerline
+
+# quicklook plugins
+brew cask install quicklook-json
+brew cask install quicklook-csv
+brew cask install qlcolorcode
+brew cask install qlmarkdown
+brew cask install qlprettypatch
+brew cask install betterzipql
+
+brew cleanup
+brew cask cleanup
+
+brew list
+brew cask list

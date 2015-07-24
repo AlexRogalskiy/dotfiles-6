@@ -1,23 +1,23 @@
 #! /usr/bin/env bash
 
-# tries to install git based on dist
-try_install_git() {
-  case $(uname) in
-    "Darwin")
-      echo "installing xcode cli tools"
-      xcode-select --install
-      ;;
-    "Linux")
-      if [ -f /etc/debian_version ]; then
-        echo "(apt output in /tmp/apt.log)"
-        apt-get install -y git >/tmp/apt.log
-      else
-        echo "could not install git"
-        return 1
-      fi
-      ;;
+install_git_mac() {
+  xcode-select --install
+}
+
+install_git_linux() {
+  if [ "$(which apt-get)" ]; then
+    apt-get install -y git
+  fi
+}
+
+# delegates to platform specific install methods
+install_git() {
+  case $(uname) in 
+    darwin ) install_git_mac    ;;
+    linux  ) install_git_linux  ;;
   esac
 }
+
 
 # run
 if [ ! "$(which git)" ]; then
