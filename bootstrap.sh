@@ -31,4 +31,4 @@ else
   popd >/dev/null
 fi
 
-#exec ~/.dotfiles/install.sh
+exec ~/.dotfiles/install.sh
