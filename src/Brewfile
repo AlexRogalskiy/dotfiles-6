@@ -1,5 +1,8 @@
 #! /bin/sh
 
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # get ready
 brew update --all
 brew upgrade --all
@@ -59,7 +62,7 @@ brew cask install java
 brew install scala
 
 for i in $(ls /Library/Java/JavaVirtualMachines/); do
-unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source;
+  sudo unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source;
 done;
 
 brew install maven
@@ -68,7 +71,8 @@ brew install leiningen
 brew install sbt
 brew install ant
 
-brew install nailgun # for vim java integration
+# for vim java integration
+brew install nailgun
 
 brew cask install intellij-idea-ce
 brew cask install visualvm
@@ -90,7 +94,7 @@ brew install docker
 brew install boot2docker
 
 # style
-brew install shellcheck # has a dependency on gch, ~3hr build
+# brew install shellcheck # has a dependency on gch, ~3hr build
 brew install closure-compiler
 
 # other
