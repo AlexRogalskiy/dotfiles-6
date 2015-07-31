@@ -22,6 +22,8 @@ export GOPATH=~/dev/go
 # on mac only TODO
 export GOROOT=/usr/local/opt/go/libexec
 
+export DOCKER_RUN_OPTS="-v $HOME:/root"
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -120,4 +122,11 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 # open vnc with the default utility
 function vnc() {
   open vnc://$@
+}
+
+function cleandocker() {
+  # Delete all containers
+  docker rm -f $(docker ps -a -q)
+  # Delete all images
+  docker rmi -f $(docker images -q)
 }
