@@ -1,5 +1,7 @@
 " switch between light and dark colors
 
+silent! colorscheme inori
+
 if !empty($ITERM_PROFILE)
 	let iterm = $ITERM_PROFILE
 	if iterm ==# "light"

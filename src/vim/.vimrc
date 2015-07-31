@@ -61,7 +61,7 @@ Plugin 'vim-scripts/tango-morning.vim'
 call vundle#end()
 
 filetype plugin indent on
-set tabstop=2 shiftwidth=2
+set tabstop=4 shiftwidth=4 expandtab softtabstop=4
 set autoindent
 
 set number
