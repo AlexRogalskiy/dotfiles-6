@@ -39,3 +39,7 @@ done;
 for dir in $HOME/.gem/ruby/*; do
   [ -d "$dir/bin" ] && PATH="${dir}/bin:${PATH}"
 done
+
+# nvim > vim
+alias vi=nvim
+alias vim=nvim
