@@ -3,10 +3,12 @@
 let g:lightline = {
     \ 'colorscheme': 'wombat',
     \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
-    \   'right': [ [ 'syntastic', 'lineinfo' ], 
-		\ 							['percent'], 
-		\ 							[ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \   'left': [ [ 'mode', 'paste' ],
+    \		  [ 'fugitive', 'filename' ],
+    \		  ['ctrlpmark'] ],
+    \   'right': [ [ 'lineinfo' ],
+    \ 		   [ 'percent' ],
+    \		   [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component_function': {
     \   'fugitive': 'MyFugitive',
@@ -17,78 +19,77 @@ let g:lightline = {
     \   'mode': 'MyMode',
     \   'ctrlpmark': 'CtrlPMark',
     \ },
-    \ 'component_expand': {
-    \   'syntastic': 'SyntasticStatuslineFlag',
-    \ },
     \ 'component_type': {
-    \   'syntastic': 'error',
+    \   'neomake': 'error',
     \ },
-		\ 	'separator': { 'left': "\ue0b0", 'right': "\ue0b2"},
-		\   'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"}
+    \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2"},
+    \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3"}
     \ }
 
-function! MyModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+function! g:MyModified()
+  return &filetype =~# 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
-function! MyReadonly()
-  return &ft !~? 'help' && &readonly ? 'RO' : ''
+function! g:MyReadonly()
+  return &filetype !~? 'help' && &readonly ? 'RO' : ''
 endfunction
 
-function! MyFilename()
-  let fname = expand('%:t')
-  return fname == 'ControlP' ? g:lightline.ctrlp_item :
-        \ fname == '__Tagbar__' ? g:lightline.fname :
-        \ fname =~ '__Gundo\|NERD_tree' ? '' :
-        \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \ &ft == 'unite' ? unite#get_status_string() :
-        \ &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
+function! g:MyFilename()
+  let l:fname = expand('%:t')
+  return l:fname ==# 'ControlP' ? g:lightline.ctrlp_item :
+        \ l:fname ==# '__Tagbar__' ? g:lightline.fname :
+        \ l:fname =~# '__Gundo\|NERD_tree' ? '' :
+        \ &filetype ==# 'vimfiler' ? g:vimfiler#get_status_string() :
+        \ &filetype ==# 'unite' ? g:unite#get_status_string() :
+        \ &filetype ==# 'vimshell' ? g:vimshell#get_status_string() :
+        \ ('' !=# g:MyReadonly() ? g:MyReadonly() . ' ' : '') .
+        \ ('' !=# l:fname ? l:fname : '[No Name]') .
+        \ ('' !=# g:MyModified() ? ' ' . g:MyModified() : '')
 endfunction
 
-function! MyFugitive()
+function! g:MyFugitive()
   try
-    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-      let mark = "\ue0a0 "  " edit here for cool mark
-      let _ = fugitive#head()
-      return strlen(_) ? mark._ : ''
+    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD'
+	\ && &filetype !~? 'vimfiler' && exists('*fugitive#head')
+      let l:mark = "\ue0a0 "  " edit here for cool mark
+      let l:_ = g:fugitive#head()
+      return strlen(l:_) ? l:mark.l:_ : ''
     endif
   catch
   endtry
   return ''
 endfunction
 
-function! MyFileformat()
+function! g:MyFileformat()
   return winwidth(0) > 70 ? &fileformat : ''
 endfunction
 
-function! MyFiletype()
+function! g:MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
 endfunction
 
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+function! g:MyFileencoding()
+  return winwidth(0) > 70 ?
+	\ (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
 endfunction
 
-function! MyMode()
-  let fname = expand('%:t')
-  return fname == '__Tagbar__' ? 'Tagbar' :
-        \ fname == 'ControlP' ? 'CtrlP' :
-        \ fname == '__Gundo__' ? 'Gundo' :
-        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-        \ fname =~ 'NERD_tree' ? 'NERDTree' :
-        \ &ft == 'unite' ? 'Unite' :
-        \ &ft == 'vimfiler' ? 'VimFiler' :
-        \ &ft == 'vimshell' ? 'VimShell' :
-        \ winwidth(0) > 60 ? lightline#mode() : ''
+function! g:MyMode()
+  let l:fname = expand('%:t')
+  return l:fname ==# '__Tagbar__' ? 'Tagbar' :
+        \ l:fname ==# 'ControlP' ? 'CtrlP' :
+        \ l:fname ==# '__Gundo__' ? 'Gundo' :
+        \ l:fname ==# '__Gundo_Preview__' ? 'Gundo Preview' :
+        \ l:fname =~# 'NERD_tree' ? 'NERDTree' :
+        \ &filetype ==# 'unite' ? 'Unite' :
+        \ &filetype ==# 'vimfiler' ? 'VimFiler' :
+        \ &filetype ==# 'vimshell' ? 'VimShell' :
+        \ winwidth(0) > 60 ? g:lightline#mode() : ''
 endfunction
 
-function! CtrlPMark()
-  if expand('%:t') =~ 'ControlP'
-    call lightline#link('iR'[g:lightline.ctrlp_regex])
-    return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
+function! g:CtrlPMark()
+  if expand('%:t') =~# 'ControlP'
+    call g:lightline#link('iR'[g:lightline.ctrlp_regex])
+    return g:lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
           \ , g:lightline.ctrlp_next], 0)
   else
     return ''
@@ -100,31 +101,21 @@ let g:ctrlp_status_func = {
   \ 'prog': 'CtrlPStatusFunc_2',
   \ }
 
-function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
+function! g:CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
   let g:lightline.ctrlp_regex = a:regex
   let g:lightline.ctrlp_prev = a:prev
   let g:lightline.ctrlp_item = a:item
   let g:lightline.ctrlp_next = a:next
-  return lightline#statusline(0)
+  return g:lightline#statusline(0)
 endfunction
 
-function! CtrlPStatusFunc_2(str)
-  return lightline#statusline(0)
+function! g:CtrlPStatusFunc_2(str)
+  return g:lightline#statusline(0)
 endfunction
 
 let g:tagbar_status_func = 'TagbarStatusFunc'
 
-function! TagbarStatusFunc(current, sort, fname, ...) abort
+function! g:TagbarStatusFunc(current, sort, fname, ...) abort
     let g:lightline.fname = a:fname
-  return lightline#statusline(0)
+    return g:lightline#statusline(0)
 endfunction
-
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost *.c,*.cpp call s:syntastic()
-augroup END
-function! s:syntastic()
-  SyntasticCheck
-  call lightline#update()
-endfunction
-

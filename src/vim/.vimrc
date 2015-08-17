@@ -1,124 +1,103 @@
-set nocompatible
-filetype off
+call g:plug#begin('~/.nvim/managed')
 
-set rtp+=~/.vim/Vundle.vim
-call vundle#begin()
+" visual
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-buftabline'
 
-" ORDER HERE IS LOAD ORDER
+" search
+Plug 'kien/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 
-Plugin 'gmarik/Vundle.vim'
+" behavior
+Plug 'airblade/vim-rooter'
+Plug 'sjl/gundo.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ntpeters/vim-better-whitespace'
 
-" defaults
-Plugin 'tpope/vim-sensible'
+Plug 'scrooloose/syntastic'
 
-" set vim working directory to git root
-Plugin 'airblade/vim-rooter'
+Plug 'Shougo/neocomplete.vim'
+Plug 'ervandew/supertab'
 
-" syntax
-Plugin 'scrooloose/syntastic'
+" tools
+Plug 'tpope/vim-fugitive'
+Plug 'tfnico/vim-gradle'
 
-" helper windows
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'itchyny/lightline.vim'
-
-" sql
-Plugin 'ivalkeen/vim-simpledb'
-
-" golang
-Plugin 'fatih/vim-go'
-
-" java / jvm
-Plugin 'robertcboll/javacomplete'
-Plugin 'robertcboll/vim-cp'
-
-" scala
-Plugin 'derekwyatt/vim-scala'
-
-" kotlin
-Plugin 'udalov/kotlin-vim'
-
-Plugin 'tfnico/vim-gradle'
-
-" git
-Plugin 'tpope/vim-fugitive'
-" tab markers
-Plugin 'nathanaelkane/vim-indent-guides'
-" tab for autocomplete
-Plugin 'ervandew/supertab'
-" automatic closing of pairs ([{
-Plugin 'Raimondi/delimitMate'
-" comments toggled with <Leader>c<space>
-Plugin 'scrooloose/nerdcommenter'
-" note taking
-Plugin 'fmoralesc/vim-pad'
+" lang
+Plug 'sheerun/vim-polyglot'
+Plug 'chase/vim-ansible-yaml', { 'for': 'ansible' }
+Plug 'ivalkeen/vim-simpledb', { 'for': 'sql' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'roboll/javacomplete', { 'for': 'java' }
+Plug 'roboll/vim-cp', { 'for': 'java' }
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': 'html' }
+Plug 'elzr/vim-json', { 'for': 'json'}
 
 " colors
-Plugin 'duythinht/inori'
-Plugin 'vim-scripts/tango-morning.vim' 
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'roboll/Apprentice'
 
-call vundle#end()
+call g:plug#end()
 
+" general settings
 filetype plugin indent on
-set tabstop=4 shiftwidth=4 expandtab softtabstop=4
-set autoindent
-
-set number
-
 syntax enable
 
-set clipboard+=unnamed
-set backspace=indent,eol,start
-set mouse=a
-
-set incsearch
+set number
+set hidden
 set ignorecase
-set smartcase
+set noshowmode
 
-" tab guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-"hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=black
-hi ColorColumn ctermbg=black
+set mouse=a                       " mousing, always
+set list listchars=tab:\|\ |      " show tabs vs spaces
+set clipboard+=unnamedplus        " use system clipboard
+set backspace=indent,eol,start    " sane backspace
+set colorcolumn=80                " highlight 80th col
+set laststatus=2 showtabline=2    " always show status and bufs
+set updatetime=500                " speed up plugin effects
+set directory=~/.nvim/swapfiles// " centralize swap files
 
-" show hidden files in tree
-let g:NERDTreeShowHidden=1
+command! Notes split ~/notes
+
+" leader mappings
+nnoremap <leader>fs :NERDTreeToggle<CR>
+nnoremap <leader>ts :TagbarToggle<CR>
+nnoremap <leader>gs :IndentGuidesToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
+
+augroup *
+	autocmd FileType html,css,less,javascript,
+	    \sql,scala,kotlin,groovy,java,json
+            \ set expandtab tabstop=4 shiftwidth=4 softtabstop=0
+augroup end
 
 " syntastic
-" always populate the location list
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" sbt files, maven/ivy downloaded sources, jdk source
-let g:syntastic_ignore_files = ['.*\.sbt', 
-			\'.*\.m2.*', '.*\.ivy2.*', 
-			\'/Library.*']
+" indent guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1 " will only work with soft tabs
 
-" ctrlp
-" show dotfiles
+" enable plugins
+let g:strip_whitespace_on_save = 1
+
 let g:ctrlp_show_hidden = 1
-" filename matching > path matching
 let g:ctrlp_by_filename = 1
 
-let g:rooter_silent_chdir = 1
+let g:neocomplete#enable_at_startup = 1
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
-let g:pad#dir="~/.notes"
-
-" navigation plugins
-nnoremap <leader>f :NERDTreeToggle<CR>
-nnoremap <leader>t :TagbarToggle<CR>
-
-" move between buffers
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-b> :bprevious<CR>
-
-" vertical split buffer
-nnoremap <leader>w <C-w>v<C-w>l
-
-" nerdtree for directory render
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" exit automatically when only buffer is nerdtree
+autocmd bufenter * if (winnr('$') == 1 &&
+			\ exists('b:NERDTreeType') &&
+			\ b:NERDTreeType == 'primary') | q | endif
