@@ -23,7 +23,7 @@ for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null
 done
 
-# homebrew autocomplete 
+# homebrew autocomplete
 if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 	source "$(brew --prefix)/etc/bash_completion"
 fi
@@ -33,13 +33,9 @@ for key in `ls ~/.ssh | grep -E '.*(_rsa).*' | grep -Ev '.*pub'`; do
   ssh-add ~/.ssh/$key &>/dev/null
 done;
 
-# autocomplete for ssh/scp/etc 
+# autocomplete for ssh/scp/etc
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
 for dir in $HOME/.gem/ruby/*; do
   [ -d "$dir/bin" ] && PATH="${dir}/bin:${PATH}"
 done
-
-# nvim > vim
-alias vi=nvim
-alias vim=nvim

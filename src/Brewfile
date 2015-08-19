@@ -44,7 +44,7 @@ brew tap neovim/neovim
 brew install neovim
 
 brew install wget --with-iri
-#brew install vim --override-system-vi --with-lua
+brew install vim --override-system-vi --with-lua
 #brew install vimpager
 brew install ctags
 brew install homebrew/dupes/grep --with-default-names
@@ -64,8 +64,9 @@ brew cask install caskroom/versions/java7
 brew cask install java
 brew install scala
 
-for i in $(ls /Library/Java/JavaVirtualMachines/); do
-  sudo unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source;
+for i in "$(ls /Library/Java/JavaVirtualMachines/)"; do
+  sudo unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip \
+          -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source;
 done;
 
 brew install maven
@@ -73,6 +74,8 @@ brew install gradle
 brew install leiningen
 brew install sbt
 brew install ant
+
+brew install markdown
 
 # for vim java integration
 brew install nailgun
