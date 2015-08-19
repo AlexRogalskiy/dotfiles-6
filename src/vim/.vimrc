@@ -57,7 +57,7 @@ set noshowmode
 
 set mouse=a                       " mousing, always
 set list listchars=tab:\|\ |      " show tabs vs spaces
-set clipboard+=unnamedplus        " use system clipboard
+set clipboard+=unnamed            " use system clipboard
 set backspace=indent,eol,start    " sane backspace
 set colorcolumn=80                " highlight 80th col
 set laststatus=2 showtabline=2    " always show status and bufs
@@ -73,8 +73,8 @@ nnoremap <leader>gs :IndentGuidesToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 
 augroup *
-	autocmd FileType html,css,less,javascript,
-	    \sql,scala,kotlin,groovy,java,json
+    autocmd FileType vim,html,css,less,javascript,
+        \sql,scala,kotlin,groovy,java,json,xml
             \ set expandtab tabstop=4 shiftwidth=4 softtabstop=0
 augroup end
 
@@ -99,5 +99,5 @@ let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 " exit automatically when only buffer is nerdtree
 autocmd bufenter * if (winnr('$') == 1 &&
-			\ exists('b:NERDTreeType') &&
-			\ b:NERDTreeType == 'primary') | q | endif
+            \ exists('b:NERDTreeType') &&
+            \ b:NERDTreeType == 'primary') | q | endif
