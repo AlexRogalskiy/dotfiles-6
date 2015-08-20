@@ -64,10 +64,9 @@ brew cask install caskroom/versions/java7
 brew cask install java
 brew install scala
 
-for i in "$(ls /Library/Java/JavaVirtualMachines/)"; do
-  sudo unzip -q /Library/Java/JavaVirtualMachines/$i/Contents/Home/src.zip \
-          -d /Library/Java/JavaVirtualMachines/$i/Contents/Home/jdk_source;
-done;
+for i in /Library/Java/JavaVirtualMachines/*; do
+    unzip -quo "$i/Contents/Home/src.zip" -d "$i/Contents/Home/jdk_source"
+done
 
 brew install maven
 brew install gradle
@@ -85,6 +84,7 @@ brew cask install visualvm
 
 # lang
 brew install go
+brew install python
 brew install python3
 brew install ruby
 brew install node
@@ -102,7 +102,7 @@ brew install docker
 brew install boot2docker
 
 # style
-# brew install shellcheck # has a dependency on gch, ~3hr build
+brew install shellcheck # has a dependency on gch, ~3hr build
 brew install closure-compiler
 
 # other
