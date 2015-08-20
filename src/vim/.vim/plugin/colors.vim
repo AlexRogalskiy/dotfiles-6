@@ -1,12 +1,12 @@
-command Light colorscheme PaperColor |
+command Light colorscheme cake16 |
 			\set background=light |
-			\let g:lightline.colorscheme = 'PaperColor' |
+			\let g:lightline.colorscheme = 'default' |
 			\call lightline#init() |
 			\call lightline#colorscheme() |
 			\call lightline#update() |
 			\call buftabline#update("")
 
-command Dark colorscheme apprentice |
+command Dark colorscheme Apprentice |
 			\set background=dark |
 			\let g:lightline.colorscheme = 'apprentice' |
 			\call lightline#init() |

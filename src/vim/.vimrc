@@ -41,8 +41,8 @@ Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json'}
 
 " colors
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'roboll/Apprentice'
+Plug 'romainl/Apprentice'
+Plug 'zefei/cake16'
 
 call g:plug#end()
 
@@ -56,7 +56,7 @@ set ignorecase
 set noshowmode
 
 set mouse=a                       " mousing, always
-set list listchars=tab:\|\ |      " show tabs vs spaces
+set list listchars=tab:»\ |      " show tabs vs spaces
 set clipboard+=unnamed            " use system clipboard
 set backspace=indent,eol,start    " sane backspace
 set colorcolumn=80                " highlight 80th col
@@ -74,7 +74,7 @@ nnoremap <leader>u :GundoToggle<CR>
 
 augroup *
     autocmd FileType vim,html,css,less,javascript,
-        \sql,scala,kotlin,groovy,java,json,xml
+        \sql,scala,kotlin,groovy,java,json,xml,sh
             \ set expandtab tabstop=4 shiftwidth=4 softtabstop=0
 augroup end
 

@@ -1,14 +1,14 @@
 " configs for status line and interop with plugins
 
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'default',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \		  [ 'fugitive', 'filename' ],
-    \		  ['ctrlpmark'] ],
+    \         [ 'fugitive', 'filename' ],
+    \         ['ctrlpmark'] ],
     \   'right': [ [ 'lineinfo' ],
-    \ 		   [ 'percent' ],
-    \		   [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \          [ 'percent' ],
+    \          [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component_function': {
     \   'fugitive': 'MyFugitive',
@@ -50,7 +50,7 @@ endfunction
 function! g:MyFugitive()
   try
     if expand('%:t') !~? 'Tagbar\|Gundo\|NERD'
-	\ && &filetype !~? 'vimfiler' && exists('*fugitive#head')
+    \ && &filetype !~? 'vimfiler' && exists('*fugitive#head')
       let l:mark = "\ue0a0 "  " edit here for cool mark
       let l:_ = g:fugitive#head()
       return strlen(l:_) ? l:mark.l:_ : ''
@@ -70,7 +70,7 @@ endfunction
 
 function! g:MyFileencoding()
   return winwidth(0) > 70 ?
-	\ (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
+    \ (strlen(&fileencoding) ? &fileencoding : &encoding) : ''
 endfunction
 
 function! g:MyMode()
