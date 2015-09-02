@@ -122,6 +122,9 @@ brew cask install qlmarkdown
 brew cask install qlprettypatch
 brew cask install betterzipql
 
+brew install awscli
+brew install ansible
+
 brew cleanup
 brew cask cleanup
 
