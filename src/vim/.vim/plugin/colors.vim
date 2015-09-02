@@ -1,14 +1,14 @@
-command Light colorscheme cake16 |
+command Light colorscheme base16-default |
 			\set background=light |
-			\let g:lightline.colorscheme = 'default' |
+			\let g:lightline.colorscheme = '16color' |
 			\call lightline#init() |
 			\call lightline#colorscheme() |
 			\call lightline#update() |
 			\call buftabline#update("")
 
-command Dark colorscheme Apprentice |
+command Dark colorscheme base16-default |
 			\set background=dark |
-			\let g:lightline.colorscheme = 'apprentice' |
+			\let g:lightline.colorscheme = '16color' |
 			\call lightline#init() |
 			\call lightline#colorscheme() |
 			\call lightline#update() |

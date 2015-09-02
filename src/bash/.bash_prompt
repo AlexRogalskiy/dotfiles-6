@@ -10,7 +10,6 @@ color_dark="\[\e[1;30m\]"
 color_path="\[\e[0;32m\]"
 color_prompt="\[\e[0;31m\]"
 
-
 git_prompt_prefix="${color_accent}git${color_path}"
 
 git_prompt() {

@@ -1,4 +1,4 @@
-call g:plug#begin('~/.nvim/managed')
+call g:plug#begin('~/.vim/managed')
 
 " visual
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -41,8 +41,7 @@ Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json'}
 
 " colors
-Plug 'romainl/Apprentice'
-Plug 'zefei/cake16'
+Plug 'chriskempson/base16-vim'
 
 call g:plug#end()
 
@@ -56,7 +55,7 @@ set ignorecase
 set noshowmode
 
 set mouse=a                       " mousing, always
-set list listchars=tab:»\ |      " show tabs vs spaces
+set list listchars=tab:»\ |       " show tabs vs spaces
 set clipboard+=unnamed            " use system clipboard
 set backspace=indent,eol,start    " sane backspace
 set colorcolumn=80                " highlight 80th col
