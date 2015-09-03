@@ -16,8 +16,11 @@ Plug 'sjl/gundo.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'janko-m/vim-test'
 
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 
 Plug 'Shougo/neocomplete.vim'
 Plug 'ervandew/supertab'
@@ -41,7 +44,8 @@ Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': 'html' }
 Plug 'elzr/vim-json', { 'for': 'json'}
 
 " colors
-Plug 'chriskempson/base16-vim'
+Plug 'roboll/Apprentice'
+Plug 'jonathanfilip/vim-lucius'
 
 call g:plug#end()
 
@@ -51,6 +55,7 @@ syntax enable
 
 set number
 set hidden
+set incsearch
 set ignorecase
 set noshowmode
 
@@ -63,19 +68,15 @@ set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
 set directory=~/.nvim/swapfiles// " centralize swap files
 
-command! Notes split ~/notes
-
-" leader mappings
-nnoremap <leader>fs :NERDTreeToggle<CR>
-nnoremap <leader>ts :TagbarToggle<CR>
-nnoremap <leader>gs :IndentGuidesToggle<CR>
-nnoremap <leader>u :GundoToggle<CR>
-
 augroup *
     autocmd FileType vim,html,css,less,javascript,
         \sql,scala,kotlin,groovy,java,json,xml,sh
             \ set expandtab tabstop=4 shiftwidth=4 softtabstop=0
 augroup end
+
+autocmd! BufEnter,BufWritePost * Neomake
+let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
+let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
 
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -86,6 +87,9 @@ let g:syntastic_check_on_wq = 0
 " indent guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1 " will only work with soft tabs
+
+" editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " enable plugins
 let g:strip_whitespace_on_save = 1

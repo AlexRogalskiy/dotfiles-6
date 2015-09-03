@@ -1,4 +1,4 @@
-command Light colorscheme base16-default |
+command Light colorscheme lucius |
 			\set background=light |
 			\let g:lightline.colorscheme = '16color' |
 			\call lightline#init() |
@@ -6,9 +6,9 @@ command Light colorscheme base16-default |
 			\call lightline#update() |
 			\call buftabline#update("")
 
-command Dark colorscheme base16-default |
+command Dark colorscheme apprentice |
 			\set background=dark |
-			\let g:lightline.colorscheme = '16color' |
+			\let g:lightline.colorscheme = 'apprentice' |
 			\call lightline#init() |
 			\call lightline#colorscheme() |
 			\call lightline#update() |
