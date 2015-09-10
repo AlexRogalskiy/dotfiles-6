@@ -1,9 +1,9 @@
 call g:plug#begin('~/.vim/managed')
 
 " visual
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'scrooloose/nerdtree',             { 'on':  'NERDTreeToggle' }
+Plug 'majutsushi/tagbar',               { 'on': 'TagbarToggle' }
+Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 
@@ -31,17 +31,17 @@ Plug 'tfnico/vim-gradle'
 
 " lang
 Plug 'sheerun/vim-polyglot'
-Plug 'chase/vim-ansible-yaml', { 'for': 'ansible' }
-Plug 'ivalkeen/vim-simpledb', { 'for': 'sql' }
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-Plug 'roboll/javacomplete', { 'for': 'java' }
-Plug 'roboll/vim-cp', { 'for': 'java' }
-Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': 'html' }
-Plug 'elzr/vim-json', { 'for': 'json'}
+Plug 'chase/vim-ansible-yaml',          { 'for': 'ansible' }
+Plug 'ivalkeen/vim-simpledb',           { 'for': 'sql' }
+Plug 'derekwyatt/vim-scala',            { 'for': 'scala' }
+Plug 'roboll/javacomplete',             { 'for': 'java' }
+Plug 'roboll/vim-cp',                   { 'for': 'java' }
+Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
+Plug 'fatih/vim-go',                    { 'for': 'go' }
+Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
+Plug 'groenewege/vim-less',             { 'for': 'less' }
+Plug 'vim-scripts/HTML-AutoCloseTag',   { 'for': 'html' }
+Plug 'elzr/vim-json',                   { 'for': 'json'}
 
 " colors
 Plug 'roboll/Apprentice'
@@ -102,6 +102,7 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
 
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#disable_auto_complete = 1
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 " exit automatically when only buffer is nerdtree
