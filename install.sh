@@ -7,18 +7,17 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 case $(uname) in
     Darwin ) ./scripts/osx-install.sh    ;;
     Linux  )
-        if [ command -v apt-get >/dev/null 2>&1 ]; then
+        if command -v apt-get >/dev/null 2>&1; then
             ./scripts/debian-install.sh
-        elif [ command -v yum >/dev/null 2>&1 ]; then
+        elif command -v yum >/dev/null 2>&1; then
             ./scripts/fedora-install.sh
         else
-            echo "couldn't recognize os :("
+            echo "couldn't recognize linux flavor"
         fi
     ;;
-    *      ) echo "couldn't recognize os :(" ;;
+    *      ) echo "couldn't recognize os" ;;
 esac
 
-# setup shared components
 echo "installing cross platform components"
 ./scripts/common-install.sh
 

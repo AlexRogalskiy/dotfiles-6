@@ -58,15 +58,16 @@ set hidden
 set incsearch
 set ignorecase
 set noshowmode
+set splitright
 
 set mouse=a                       " mousing, always
-set list listchars=tab:»\ |       " show tabs vs spaces
+set list listchars=tab:»\ |      " show tabs vs spaces
 set clipboard+=unnamed            " use system clipboard
 set backspace=indent,eol,start    " sane backspace
 set colorcolumn=80                " highlight 80th col
 set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
-set directory=~/.nvim/swapfiles// " centralize swap files
+set directory=~/.vim/swapfiles// " centralize swap files
 
 augroup *
     autocmd FileType vim,html,css,less,javascript,
@@ -90,6 +91,9 @@ let g:indent_guides_guide_size = 1 " will only work with soft tabs
 
 " editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" nerdtree
+let NERDTreeShowHidden=1
 
 " enable plugins
 let g:strip_whitespace_on_save = 1

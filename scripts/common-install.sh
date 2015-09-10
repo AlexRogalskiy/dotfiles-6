@@ -10,10 +10,7 @@ done;
 popd &>/dev/null
 
 # ensure gopath is set
-if [ -f ~/.bash_settings ]; then
-    source ~/.bash_settings
-fi
-vim !silent +PluginInstall +GoInstallBinaries +qall
+vim !silent +PluginInstall +qall
 
 echo "pulling ssh pubkeys from github"
 curl -s https://github.com/roboll.keys > ~/.ssh/authorized_keys
