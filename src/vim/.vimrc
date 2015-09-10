@@ -66,7 +66,8 @@ set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
 set directory=~/.vim/swapfiles// " centralize swap files
 
-autocmd! BufEnter,BufWritePost * Neomake
+autocmd! BufReadPost,BufWritePost * Neomake
+let g:neomake_open_list = 1
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
 
