@@ -25,3 +25,6 @@ iprof() {
 alias dark="iprof dark"
 alias light="iprof light"
 alias blue="iprof blue"
+
+alias vi="nvim"
+alias vim="nvim"

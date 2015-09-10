@@ -14,7 +14,7 @@ case $(uname) in
         else
             echo "couldn't recognize linux flavor"
         fi
-    ;;
+        ;;
     *      ) echo "couldn't recognize os" ;;
 esac
 

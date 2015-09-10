@@ -4,7 +4,6 @@ runtime! ftplugin/jvm.vim
 map <leader>b :call g:javacomplete#GoToDefinition()<cr>
 map <leader>i :call g:javacomplete#ReplaceWithImport()<cr>
 
-
 " javacomplete
 setlocal omnifunc=g:javacomplete#Complete
 
@@ -16,7 +15,4 @@ call g:javacomplete#AddSourcePath(getcwd())
 " preemptively start the server
 call g:javacomplete#StartServer()
 
-" syntastic
-let g:syntastic_java_checkers = [ 'javac' ]
-" dont autoload the entire maven classpath
-"let g:syntastic_java_javac_autoload_maven_classpath = 0
+set expandtab tabstop=4 shiftwidth=4 softtabstop=0

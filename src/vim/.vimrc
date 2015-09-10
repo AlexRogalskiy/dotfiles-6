@@ -1,11 +1,11 @@
 call g:plug#begin('~/.vim/managed')
 
 " visual
-Plug 'scrooloose/nerdtree',             { 'on':  'NERDTreeToggle' }
-Plug 'majutsushi/tagbar',               { 'on': 'TagbarToggle' }
-Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
+Plug 'majutsushi/tagbar',               { 'on': 'TagbarToggle' }
+Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
 
 " search
 Plug 'kien/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
@@ -17,13 +17,10 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
+
 Plug 'janko-m/vim-test'
-
-"Plug 'scrooloose/syntastic'
 Plug 'benekastah/neomake'
-
-Plug 'Shougo/neocomplete.vim'
-Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe',          { 'do': './install.sh' }
 
 " tools
 Plug 'tpope/vim-fugitive'
@@ -69,21 +66,9 @@ set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
 set directory=~/.vim/swapfiles// " centralize swap files
 
-augroup *
-    autocmd FileType vim,html,css,less,javascript,
-        \sql,scala,kotlin,groovy,java,json,xml,sh
-            \ set expandtab tabstop=4 shiftwidth=4 softtabstop=0
-augroup end
-
 autocmd! BufEnter,BufWritePost * Neomake
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " indent guides
 let g:indent_guides_auto_colors = 0
@@ -101,11 +86,6 @@ let g:strip_whitespace_on_save = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
 
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#disable_auto_complete = 1
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+let g:ycm_min_num_of_chars_for_completion = 5
 
-" exit automatically when only buffer is nerdtree
-autocmd bufenter * if (winnr('$') == 1 &&
-            \ exists('b:NERDTreeType') &&
-            \ b:NERDTreeType == 'primary') | q | endif
+let loaded_netrwPlugin = 1
