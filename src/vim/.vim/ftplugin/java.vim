@@ -1,7 +1,7 @@
 runtime! ftplugin/jvm.vim
 
 " mappings
-map <leader>b :call g:javacomplete#GoToDefinition()<cr>
+map <leader>ds :call g:javacomplete#GoToDefinition()<cr>
 map <leader>i :call g:javacomplete#ReplaceWithImport()<cr>
 
 " javacomplete

@@ -39,6 +39,9 @@ Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
 Plug 'groenewege/vim-less',             { 'for': 'less' }
 Plug 'vim-scripts/HTML-AutoCloseTag',   { 'for': 'html' }
 Plug 'elzr/vim-json',                   { 'for': 'json'}
+Plug 'markcornick/vim-terraform',       { 'for': 'terraform' }
+
+Plug 'reedes/vim-pencil'
 
 " colors
 Plug 'roboll/Apprentice'
@@ -66,8 +69,8 @@ set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
 set directory=~/.vim/swapfiles// " centralize swap files
 
-autocmd! BufReadPost,BufWritePost * Neomake
-let g:neomake_open_list = 1
+autocmd! BufReadPost,BufWritePost * Neomake!
+"let g:neomake_open_list = 1
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
 

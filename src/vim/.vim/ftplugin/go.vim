@@ -6,6 +6,10 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+
 let g:neomake_go_go_maker = {
         \ 'args': [
             \ 'build',
@@ -20,4 +24,4 @@ let g:neomake_go_go_maker = {
         \ }
 let g:neomake_go_enabled_makers = [ 'go', 'golint' ]
 
-set tabstop=4 shiftwidth=4 colorcolumn=0
+set tabstop=4 shiftwidth=4 colorcolumn=100
