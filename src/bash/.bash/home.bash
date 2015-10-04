@@ -20,8 +20,8 @@ function vnc() {
 }
 
 function cleandocker() {
-  docker rm -f "$(docker ps -a -q)"
-  docker rmi -f "$(docker images -q)"
+  for i in $(docker ps -a -q); do docker rm -f $i; done;
+  for i in $(docker images -q); do docker rmi -f $i; done;
 }
 
 function http() {

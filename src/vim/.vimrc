@@ -18,8 +18,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'janko-m/vim-test'
-Plug 'benekastah/neomake'
+"Plug 'janko-m/vim-test'
+"Plug 'benekastah/neomake'
+Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe',          { 'do': './install.sh' }
 
 " tools
@@ -42,6 +43,7 @@ Plug 'elzr/vim-json',                   { 'for': 'json'}
 Plug 'markcornick/vim-terraform',       { 'for': 'terraform' }
 
 Plug 'reedes/vim-pencil'
+Plug 'powerman/vim-plugin-AnsiEsc'
 
 " colors
 Plug 'roboll/Apprentice'
@@ -69,7 +71,7 @@ set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
 set directory=~/.vim/swapfiles// " centralize swap files
 
-autocmd! BufReadPost,BufWritePost * Neomake!
+"autocmd! BufReadPost,BufWritePost * Neomake!
 "let g:neomake_open_list = 1
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }

@@ -18,4 +18,6 @@ alias reload="exec \$SHELL -l"
 for file in $HOME/.bash/{all,path,mac,home,home_prompt}.bash; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+[ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 unset file

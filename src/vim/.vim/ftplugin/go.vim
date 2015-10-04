@@ -12,8 +12,7 @@ au FileType go nmap <Leader>gd <Plug>(go-doc)
 
 let g:neomake_go_go_maker = {
         \ 'args': [
-            \ 'build',
-            \ '-o', '.generated'
+            \ 'build'
             \ ],
         \ 'errorformat':
             \ '%W%f:%l: warning: %m,' .
