@@ -26,4 +26,6 @@ alias dark="iprof dark"
 alias light="iprof light"
 alias blue="iprof blue"
 
+alias k="kubectl"
+
 export PATH=$HOME/dev/go/bin:$PATH
