@@ -35,6 +35,7 @@ brew cask install switchresx
 # basics
 brew install coreutils
 brew install findutils --with-default-names
+brew install gnu-tar --with-default-names
 brew install gnu-sed --with-default-names
 brew install ack
 brew install bash
