@@ -66,7 +66,7 @@ set mouse=a                       " mousing, always
 set list listchars=tab:»\ |      " show tabs vs spaces
 set clipboard+=unnamed            " use system clipboard
 set backspace=indent,eol,start    " sane backspace
-set colorcolumn=80                " highlight 80th col
+set colorcolumn=100                " highlight 80th col
 set laststatus=2 showtabline=2    " always show status and bufs
 set updatetime=500                " speed up plugin effects
 set directory=~/.vim/swapfiles// " centralize swap files
