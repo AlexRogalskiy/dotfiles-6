@@ -1,37 +1,19 @@
-#! /usr/bin/env bash
+#! /bin/bash
 
-install_git_linux() {
-    if command -v apt-get >/dev/null 2>&1; then
-        apt-get update && apt-get install -y git
-    elif command -v yum >/dev/null 2>&1; then
-        yum install git
-    else
-        echo "failed to install git"
-        exit 1
-    fi
-}
+set -e
 
-install_git() {
-    echo "installing git"
-
+command -v git >/dev/null 2>&1 || {
     case $(uname) in
-        Darwin ) exec "xcode-select --install"      ;;
-        Linux  ) install_git_linux                  ;;
-        * ) echo "failed to install git" && exit 1  ;;
+        Darwin ) xcode-select --install ;;
+        *      ) echo "!! Install git & try again." && exit 1 ;;
     esac
 }
 
-# ensure git is installed
-command -v git >/dev/null 2>&1 || { install_git; }
-
-# clone or pull
-echo "getting dotfiles..."
+echo ">> Getting dotfiles."
 if [ ! -d ~/.dotfiles ]; then
-    git clone --recursive --quiet https://github.com/roboll/dotfiles ~/.dotfiles
+    git clone --recursive --quiet --depth 1 https://github.com/roboll/dotfiles ~/.dotfiles
 else
-    pushd ~/.dotfiles >/dev/null
-    git pull
-    popd >/dev/null
+    pushd ~/.dotfiles >/dev/null && git pull && popd >/dev/null
 fi
 
-exec ~/.dotfiles/install.sh
+exec ~/.dotfiles/scripts/install.sh

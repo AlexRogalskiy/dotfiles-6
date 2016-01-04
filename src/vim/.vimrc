@@ -21,7 +21,7 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'janko-m/vim-test'
 "Plug 'benekastah/neomake'
 Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe',          { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
 
 " tools
 Plug 'tpope/vim-fugitive'
