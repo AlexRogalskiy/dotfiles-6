@@ -1,5 +1,5 @@
-Post Install Notes
-==================
+
+=================================================
 
 1. sync
   a. sign in to dropbox
@@ -8,3 +8,5 @@ Post Install Notes
 2. keys - ssh, pgp
 3. login to services
   a. gist --login
+
+=================================================
