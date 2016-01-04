@@ -2,10 +2,13 @@
 set -e
 
 user=roboll
+oldid=$(id -u)
+newid=1001
+
 [ -n "$user" ] && {
     sudo dscl . -create /Users/$user UserShell /bin/bash
     sudo dscl . -create /Users/$user RealName "$user"
-    sudo dscl . -create /Users/$user UniqueID "1001"
+    sudo dscl . -create /Users/$user UniqueID "$newid"
     sudo dscl . -create /Users/$user PrimaryGroupID 80
     sudo dscl . -create /Users/$user NFSHomeDirectory /Users/$user
 
@@ -17,6 +20,10 @@ user=roboll
     sudo chown $user /Users/$user
 
     echo ">> Updated user $user."
+}
+
+[ "$oldid" -eq "$newid" ] || {
+    sudo find / -uid "$oldid" -exec chown "$newid" {} +
 }
 
 # Set computer name (as done via System Preferences → Sharing)
