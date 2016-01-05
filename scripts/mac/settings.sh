@@ -8,7 +8,6 @@ newid=1001
 [ -n "$user" ] && {
     sudo dscl . -create /Users/$user UserShell /bin/bash
     sudo dscl . -create /Users/$user RealName "$user"
-    sudo dscl . -create /Users/$user UniqueID "$newid"
     sudo dscl . -create /Users/$user PrimaryGroupID 80
     sudo dscl . -create /Users/$user NFSHomeDirectory /Users/$user
 
@@ -19,12 +18,19 @@ newid=1001
     sudo mkdir -p /Users/$user
     sudo chown $user /Users/$user
 
+    [ "$oldid" -eq "$newid" ] || {
+        sudo find / -uid "$oldid" -exec chown "$newid" {} +
+        echo "!! User ID changed. Reboot and run again." && exit 1
+    }
+
+    sudo dscl . -create /Users/$user UniqueID "$newid"
+
     echo ">> Updated user $user."
 }
 
-[ "$oldid" -eq "$newid" ] || {
-    sudo find / -uid "$oldid" -exec chown "$newid" {} +
-}
+
+
+
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "$BOXNAME"
