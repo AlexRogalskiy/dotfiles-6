@@ -32,9 +32,6 @@ sudo scutil --set HostName "$BOXNAME"
 sudo scutil --set LocalHostName "$BOXNAME"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$BOXNAME"
 
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
 # UI: Hide the Time Machine, Volume, User, and Bluetooth icons in menu bar
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
     defaults write "${domain}" dontAutoLoad -array \
