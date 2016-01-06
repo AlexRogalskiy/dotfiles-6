@@ -4,10 +4,10 @@ set -e
 echo ">> Installing for OS X."
 "$(dirname "${BASH_SOURCE}")"/settings.sh
 
-if [ $(command -v brew >/dev/null 2>&1) ]; then
+command -v brew >/dev/null 2>&1) || {
     echo ">> Installing homebrew."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+}
 
 echo ">> Installing from homebrew."
 brew update --all
