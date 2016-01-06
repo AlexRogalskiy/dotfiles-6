@@ -4,7 +4,7 @@ set -e
 echo ">> Installing for OS X."
 "$(dirname "${BASH_SOURCE}")"/settings.sh
 
-command -v brew >/dev/null 2>&1) || {
+command -v brew >/dev/null 2>&1 || {
     echo ">> Installing homebrew."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
