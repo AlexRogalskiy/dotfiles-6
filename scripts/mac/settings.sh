@@ -1,24 +1,17 @@
 #! /usr/bin/env bash
 set -e
 
-user=roboll
-oldid=$(id -u)
-newid=1001
+[ -n "roboll" ] && {
+    sudo dscl . -create /Users/roboll UserShell /bin/bash
+    sudo dscl . -create /Users/roboll RealName "rob boll"
+    sudo dscl . -create /Users/roboll PrimaryGroupID 80
+    sudo dscl . -create /Users/roboll NFSHomeDirectory /Volumes/home/roboll
 
-[ -n "$user" ] && {
-    sudo dscl . -create /Users/$user UserShell /bin/bash
-    sudo dscl . -create /Users/$user RealName "$user"
-    sudo dscl . -create /Users/$user PrimaryGroupID 80
-    sudo dscl . -create /Users/$user NFSHomeDirectory /Users/$user
+    sudo dscl . -append /Groups/staff GroupMembership roboll
+    sudo dscl . -append /Groups/admin GroupMembership roboll
+    sudo dscl . -append /Groups/wheel GroupMembership roboll
 
-    sudo dscl . -append /Groups/staff GroupMembership $user
-    sudo dscl . -append /Groups/admin GroupMembership $user
-    sudo dscl . -append /Groups/wheel GroupMembership $user
-
-    sudo mkdir -p /Users/$user
-    sudo chown $user /Users/$user
-    
-    echo ">> Updated user $user."
+    echo ">> Updated user roboll."
 }
 
 # Set computer name (as done via System Preferences → Sharing)

@@ -5,8 +5,8 @@
 [github]
   user = roboll
 
-[url "git@github.com:"]
-  insteadOf = https://github.com/
+[url "git@github.com:roboll"]
+  insteadOf = https://github.com/roboll/
 
 [credential]
   helper = osxkeychain

@@ -32,9 +32,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'chase/vim-ansible-yaml',          { 'for': 'ansible' }
 Plug 'ivalkeen/vim-simpledb',           { 'for': 'sql' }
 Plug 'derekwyatt/vim-scala',            { 'for': 'scala' }
-Plug 'roboll/javacomplete',             { 'for': 'java' }
-Plug 'roboll/vim-cp',                   { 'for': 'java' }
 Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
+Plug 'artur-shaik/vim-javacomplete2',   { 'for': 'java' }
 Plug 'fatih/vim-go',                    { 'for': 'go' }
 Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
 Plug 'groenewege/vim-less',             { 'for': 'less' }
@@ -46,7 +45,7 @@ Plug 'reedes/vim-pencil'
 Plug 'powerman/vim-plugin-AnsiEsc'
 
 " colors
-Plug 'roboll/Apprentice'
+Plug 'romainl/Apprentice'
 Plug 'jonathanfilip/vim-lucius'
 
 call g:plug#end()
