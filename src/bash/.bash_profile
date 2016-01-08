@@ -1,5 +1,4 @@
 #! /usr/bin/env bash
-
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups:ignorespace

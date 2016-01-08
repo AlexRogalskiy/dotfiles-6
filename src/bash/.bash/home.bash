@@ -4,7 +4,7 @@
 # home.bash - home computer only
 ###############################################################################
 
-if [ ! "$(cat "$HOME/.name" 2>&1)" == "nomad" ]; then
+if [ ! "$(cat "$HOME/.boxname" 2>&1)" == "nomad" ]; then
     return
 fi
 

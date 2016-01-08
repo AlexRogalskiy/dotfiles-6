@@ -5,7 +5,7 @@
 [github]
   user = roboll
 
-[url "git@github.com:roboll"]
+[url "git@github.com:roboll/"]
   insteadOf = https://github.com/roboll/
 
 [credential]
