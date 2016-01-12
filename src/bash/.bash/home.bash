@@ -9,7 +9,6 @@ if [ ! "$(cat "$HOME/.boxname" 2>&1)" == "nomad" ]; then
 fi
 
 export GOPATH=~/dev/go
-export GOROOT=/usr/local/opt/go/libexec
 
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add "$HOME/.ssh/$key" &>/dev/null

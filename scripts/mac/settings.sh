@@ -5,7 +5,7 @@ set -e
     sudo dscl . -create /Users/roboll UserShell /bin/bash
     sudo dscl . -create /Users/roboll RealName "rob boll"
     sudo dscl . -create /Users/roboll PrimaryGroupID 80
-    sudo dscl . -create /Users/roboll NFSHomeDirectory /Volumes/home/roboll
+    sudo dscl . -create /Users/roboll NFSHomeDirectory /Users/roboll
 
     sudo dscl . -append /Groups/staff GroupMembership roboll
     sudo dscl . -append /Groups/admin GroupMembership roboll

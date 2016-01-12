@@ -21,7 +21,8 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'janko-m/vim-test'
 Plug 'benekastah/neomake'
 "Plug 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe',          { 'do': './install.sh' }
+Plug 'Shougo/deoplete.nvim'
+"Plug 'Valloric/YouCompleteMe',          { 'do': './install.sh' }
 
 " tools
 Plug 'tpope/vim-fugitive'
@@ -90,6 +91,7 @@ let g:strip_whitespace_on_save = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
 
+let g:deoplete#enable_at_startup = 1
 let g:ycm_min_num_of_chars_for_completion = 5
 
 let loaded_netrwPlugin = 1
