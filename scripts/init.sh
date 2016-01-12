@@ -8,15 +8,15 @@ for dir in "${stows[@]}"; do stow --adopt -t ~ "$dir"; done;
 
 popd &>/dev/null
 
-#echo ">> Installing from gem."
-#gem install --user-install mdl
+echo ">> Installing from gem."
+sudo gem install mdl
 
-#echo ">> Installing from npm."
-#npm install -g js-yaml jsonlint recess
+echo ">> Installing from npm."
+sudo npm install -g js-yaml jsonlint recess
 
-#echo ">> Installing from pip."
-#pip install neovim
-#pip3 install neovim
+echo ">> Installing from pip."
+sudo pip install neovim
+sudo pip3 install neovim
 
 echo ">> Installing vim plugins."
 [ -n "$GOPATH" ] && export GOPATH=$HOME/go

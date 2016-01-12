@@ -9,7 +9,6 @@ if [ ! "$(cat "$HOME/.boxname" 2>&1)" == "nomad" ]; then
 fi
 
 export GOPATH=~/dev/go
-export GOROOT=/usr/local/opt/go/libexec
 
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add "$HOME/.ssh/$key" &>/dev/null
@@ -29,6 +28,3 @@ function http() {
   sleep 1 && open "http://localhost:${port}/" &
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
-
-alias vi=nvim
-alias vim=nvim

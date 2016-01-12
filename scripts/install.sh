@@ -21,7 +21,10 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 
 case $(uname) in
     Darwin ) ./mac/install.sh; sudo -u roboll ./init.sh; cat ./mac/postinst.txt; ;;
-    Linux  ) [ -z "$(uname -a | grep nixos)" ] || exit 1; ./nix/install.sh; sudo -u roboll ./init.sh; ;;
+    Linux  ) 
+        if command -v apt-get > /dev/null; then
+            sudo ./apt/install.sh; sudo -u roboll ./init.sh; 
+        fi ;;
     *      ) echo "!! Couldn't recognize os." && exit 1 ;;
 esac
 
