@@ -45,6 +45,9 @@ Plug 'markcornick/vim-terraform',       { 'for': 'terraform' }
 Plug 'reedes/vim-pencil'
 Plug 'powerman/vim-plugin-AnsiEsc'
 
+Plug 'romainl/Apprentice'
+Plug 'jonathanfilip/vim-lucius'
+
 call g:plug#end()
 
 " general settings
