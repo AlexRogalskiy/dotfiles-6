@@ -29,7 +29,7 @@ brew cask install slack \
 
 # basics
 brew install bash bash-completion coreutils ack
-brew install tree ctags hg git gist hub
+brew install tree ctags hg git gist hub ghi
 brew install findutils gnu-tar gnu-sed homebrew/dupes/grep --with-default-names
 
 brew install python python3 ruby node go
@@ -39,6 +39,7 @@ brew install neovim
 
 brew install wget --with-iri
 brew install vim --override-system-vi --with-lua
+brew install vimpager
 
 brew cask install openzfs
 brew cask install osxfuse
