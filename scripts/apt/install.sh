@@ -21,7 +21,7 @@ apt-get install -ym bash bash-completion \
     gradle leiningen maven ansible awscli \
     jq docker.io vagrant virtualbox shellcheck markdown \
     chromium-browser dropbox spotify-client visualvm fonts-inconsolata \
-    gnome-screensaver 
+    gnome-screensaver touchegg 
 
 curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb && \
 sudo dpkg -i /tmp/chrome.deb && rm /tmp/chrome.deb

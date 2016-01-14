@@ -9,8 +9,6 @@ shopt -s cdspell
 shopt -s nocaseglob
 
 export EDITOR=vim
-export PAGER=vimpager
-export MANPAGER=vimpager
 
 alias reload="exec \$SHELL -l"
 
