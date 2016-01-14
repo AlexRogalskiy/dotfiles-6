@@ -15,7 +15,7 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 apt-get update 
 
 apt-get install -ym bash bash-completion \
-    gparted hfsutils stow terminator coreutils exuberant-ctags encfs \
+    gparted hfsutils stow tmux coreutils exuberant-ctags encfs \
     neovim openjdk-8-jdk scudcloud \
     vim mercurial gist cmake python-dev python-pip python3-dev python3-pip nodejs npm golang-go scala \
     gradle leiningen maven ansible awscli \
