@@ -10,6 +10,9 @@ shopt -s nocaseglob
 
 export EDITOR=vim
 
+alias vi=nvim
+alias vim=nvim
+
 alias reload="exec \$SHELL -l"
 
 for file in $HOME/.bash/{all,path,mac,home,home_prompt,tmux}.bash; do

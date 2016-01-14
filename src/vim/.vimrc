@@ -1,4 +1,5 @@
-call g:plug#begin('~/.vim/managed')
+call g:plug#begin()
+"call g:plug#begin('~/.vim/managed')
 
 " visual
 Plug 'scrooloose/nerdtree'

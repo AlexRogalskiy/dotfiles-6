@@ -6,6 +6,7 @@ echo ">> Installing for apt-based system."
 add-apt-repository -y ppa:openjdk-r/ppa
 add-apt-repository -y ppa:neovim-ppa/unstable
 add-apt-repository -y ppa:rael-gc/scudcloud
+add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
 
 apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 echo deb http://linux.dropbox.com/ubuntu/ wily main | sudo tee /etc/apt/sources.list.d/dropbox.list
