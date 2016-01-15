@@ -70,6 +70,7 @@ set colorcolumn=100                       " highlight 80th col
 set laststatus=2 showtabline=2            " always show status and bufs
 set updatetime=500                        " speed up plugin effects
 set directory=~/.config/nvim/swapfiles//  " centralize swap files
+set t_Co=256
 
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
