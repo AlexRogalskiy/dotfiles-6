@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=0.1
+Name=Caffine
+GenericName=Caffeine
+Comment=Caffeine Anti-Sleep
+Exec=/usr/bin/caffeine
+Terminal=false
+Type=Application

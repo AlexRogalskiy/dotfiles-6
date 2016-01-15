@@ -7,6 +7,7 @@ add-apt-repository -y ppa:openjdk-r/ppa
 add-apt-repository -y ppa:neovim-ppa/unstable
 add-apt-repository -y ppa:rael-gc/scudcloud
 add-apt-repository -y ppa:ubuntu-lxc/lxd-stable
+add-apt-repository -y ppa:caffeine-developers/ppa
 
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -20,7 +21,7 @@ apt-get install -ym bash bash-completion \
     gradle leiningen maven ansible awscli \
     jq docker.io vagrant virtualbox shellcheck markdown \
     chromium-browser spotify-client visualvm fonts-inconsolata \
-    gnome-screensaver touchegg
+    gnome-screensaver touchegg caffeine
 
 curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/chrome.deb && \
 sudo dpkg -i /tmp/chrome.deb && rm /tmp/chrome.deb
@@ -30,7 +31,6 @@ sudo dpkg -i /tmp/keybase.deb && rm /tmp/keybase.deb
 
 curl http://launchpadlibrarian.net/227235832/tmux_2.1-3_amd64.deb -o /tmp/tmux.deb && \
 sudo dpkg -i /tmp/tmux.deb && rm /tmp/tmux.deb
-
 
 sudo -u roboll git clone https://github.com/roboll/elementary-dropbox /tmp/elementary-dropbox && \
 sudo -u roboll /tmp/elementary-dropbox/install.sh -y && \
