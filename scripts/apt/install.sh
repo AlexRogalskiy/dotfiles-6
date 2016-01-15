@@ -14,7 +14,7 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 apt-get update
 
 apt-get install -ym bash bash-completion \
-    gparted hfsutils stow tmux coreutils exuberant-ctags encfs \
+    gparted hfsutils stow coreutils exuberant-ctags encfs \
     neovim openjdk-8-jdk scudcloud \
     vim mercurial gist cmake python-dev python-pip python3-dev python3-pip nodejs npm golang-go scala \
     gradle leiningen maven ansible awscli \
@@ -27,6 +27,10 @@ sudo dpkg -i /tmp/chrome.deb && rm /tmp/chrome.deb
 
 curl https://dist.keybase.io/linux/deb/keybase-latest-amd64.deb -o /tmp/keybase.deb && \
 sudo dpkg -i /tmp/keybase.deb && rm /tmp/keybase.deb
+
+curl http://launchpadlibrarian.net/227235832/tmux_2.1-3_amd64.deb -o /tmp/tmux.deb && \
+sudo dpkg -i /tmp/tmux.deb && rm /tmp/tmux.deb
+
 
 sudo -u roboll git clone https://github.com/roboll/elementary-dropbox /tmp/elementary-dropbox && \
 sudo -u roboll /tmp/elementary-dropbox/install.sh -y && \
