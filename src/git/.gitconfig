@@ -31,18 +31,21 @@
   tool = nvimdiff
   renames = copy
   renamelimit = 0
+
+[difftool]
   prompt = false
 
 [difftool "nvimdiff"]
   cmd = nvim -d -u ~/.vimrc "$LOCAL" "$REMOTE"
-  prompt = false
 
 [merge]
   tool = nvimdiff
 
+[mergetool]
+  prompt = false
+
 [mergetool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-  prompt = false
 
 [color]
   ui = auto
