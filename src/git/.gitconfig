@@ -28,19 +28,21 @@
   default = tracking
 
 [diff]
-  tool = nvim -d
+  tool = nvimdiff
   renames = copy
   renamelimit = 0
   prompt = false
 
-[difftool]
-  prompt=false
+[difftool "nvimdiff"]
+  cmd = nvim -d -u ~/.vimrc "$LOCAL" "$REMOTE"
+  prompt = false
 
 [merge]
-  tool = vimdiff
+  tool = nvimdiff
 
-[mergetool "vimdiff"]
+[mergetool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+  prompt = false
 
 [color]
   ui = auto
