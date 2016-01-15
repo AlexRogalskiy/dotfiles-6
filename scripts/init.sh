@@ -18,10 +18,19 @@ echo ">> Installing from pip."
 sudo pip install neovim
 sudo pip3 install neovim
 
-echo ">> Installing vim plugins."
+command -v gsettings > /dev/null && {
+    gsettings set org.pantheon.terminal.settings tab-bar-behavior 'Hide When Single Tab'
+}
+
 [ -n "$GOPATH" ] && export GOPATH=$HOME/go
-command -v vim > /dev/null && vim !silent +PlugInstall +qall
-command -v nvim > /dev/null && nvim !silent +PlugInstall +qall
+command -v vim > /dev/null && {
+    echo ">> Installing vim plugins."
+    vim !silent +PlugInstall +qall
+}
+command -v nvim > /dev/null &&  {
+    echo ">> Installing neovim plugins."
+    nvim !silent +PlugInstall +qall
+}
 
 echo ">> Pulling SSH pubkeys from github."
 curl -s https://github.com/roboll.keys > ~/.ssh/authorized_keys

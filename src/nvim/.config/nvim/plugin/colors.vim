@@ -1,6 +1,6 @@
-command Light colorscheme lucius |
+command Light colorscheme seoul256-light |
             \set background=light |
-            \let g:lightline.colorscheme = '16color' |
+            \let g:lightline.colorscheme = 'seoul256' |
             \call lightline#init() |
             \call lightline#colorscheme() |
             \call lightline#update() |
@@ -14,6 +14,14 @@ command Dark colorscheme apprentice |
             \call lightline#update() |
             \call buftabline#update("")
 
+command Med colorscheme seoul256 |
+            \set background=dark |
+            \let g:lightline.colorscheme = 'seoul256' |
+            \call lightline#init() |
+            \call lightline#colorscheme() |
+            \call lightline#update() |
+            \call buftabline#update("")
+
 function SetColors()
     if !empty($ITERM_PROFILE)
         if $ITERM_PROFILE ==# "light"
@@ -22,6 +30,8 @@ function SetColors()
         if $ITERM_PROFILE ==# "dark"
             Dark
         endif
+    else
+        Med
     endif
 endfunction
 

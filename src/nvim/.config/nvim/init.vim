@@ -47,6 +47,7 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 
 Plug 'romainl/Apprentice'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'junegunn/seoul256.vim'
 
 call g:plug#end()
 

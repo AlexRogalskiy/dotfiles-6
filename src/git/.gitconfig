@@ -28,16 +28,19 @@
   default = tracking
 
 [diff]
-  tool = vimdiff
+  tool = nvim -d
   renames = copy
   renamelimit = 0
   prompt = false
 
 [difftool]
-  prompt = false
+  prompt=false
 
 [merge]
   tool = vimdiff
+
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [color]
   ui = auto
