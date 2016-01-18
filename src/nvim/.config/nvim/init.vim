@@ -64,13 +64,12 @@ set splitright
 
 set mouse=a                               " mousing, always
 set list listchars=tab:»\ |               " show tabs vs spaces
-set clipboard+=unnamed                    " use system clipboard
+set clipboard+=unnamedplus                " use system clipboard
 set backspace=indent,eol,start            " sane backspace
 set colorcolumn=100                       " highlight 80th col
 set laststatus=2 showtabline=2            " always show status and bufs
 set updatetime=500                        " speed up plugin effects
 set directory=~/.config/nvim/swapfiles//  " centralize swap files
-set t_Co=256
 
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
