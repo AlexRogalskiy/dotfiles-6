@@ -36,7 +36,7 @@
   prompt = false
 
 [difftool "nvimdiff"]
-  cmd = nvim -d -u ~/.vimrc "$LOCAL" "$REMOTE"
+  cmd = nvim -d "$LOCAL" "$REMOTE"
 
 [merge]
   tool = nvimdiff
