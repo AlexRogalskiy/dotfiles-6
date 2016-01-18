@@ -18,7 +18,7 @@ echo ">> Installing from pip."
 sudo pip install neovim
 sudo pip3 install neovim
 
-command -v gsettings > /dev/null && {
+command -v gsettings > /dev/null && [ $(uname) == "Linux" ] && {
     gsettings set org.pantheon.terminal.settings tab-bar-behavior 'Hide When Single Tab'
 }
 
