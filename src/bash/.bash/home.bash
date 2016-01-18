@@ -33,7 +33,7 @@ function tmx() {
     if [[ -z "$TMUX" ]]; then
         base_session="uber"
         # ensure there is an uber session
-        tmux has -t "$base_session" || tmux new-session -s "$base_session"
+        tmux has -t "$base_session" || tmux -2 new-session -s "$base_session"
 
         # Kill defunct sessions first
         old_sessions=$(tmux ls 2>/dev/null | egrep "^[0-9]{14}.*[0-9]+\)$" | cut -f 1 -d:)
@@ -48,7 +48,7 @@ function tmx() {
         echo "Launching copy of base session $base_session, named $session_id ..."
 
         # Create a new session (without attaching it) and link to base session to share windows
-        tmux new-session -d -t "$base_session" -s "$session_id"
+        tmux -2 new-session -d -t "$base_session" -s "$session_id"
 
         # Attach to the new session
         tmux attach-session -t "$session_id"
