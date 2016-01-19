@@ -17,7 +17,7 @@ apt-get update
 apt-get install -ym bash bash-completion \
     gparted hfsutils stow coreutils exuberant-ctags encfs htop \
     neovim openjdk-8-jdk scudcloud \
-    vim xsel mercurial gist cmake python-dev python-pip python3-dev python3-pip nodejs npm golang-go scala \
+    xsel mercurial gist cmake python-dev python-pip python3-dev python3-pip nodejs npm golang-go scala \
     gradle leiningen maven ansible awscli \
     jq docker.io vagrant virtualbox shellcheck markdown \
     chromium-browser spotify-client visualvm fonts-inconsolata \
