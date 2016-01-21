@@ -56,7 +56,7 @@
 
 [alias]
   a = add
-  aa = add .
+  aa = add --all .
   b = branch
   c = commit
   cm = commit -m
