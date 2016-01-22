@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=0.1
+Name=Settings
+GenericName=Settings
+Comment=load user saved settings
+Exec=/usr/bin/gnome-settings-daemon --replace
+Terminal=false
+Type=Application
