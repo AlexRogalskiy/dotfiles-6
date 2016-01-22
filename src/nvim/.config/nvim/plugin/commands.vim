@@ -1,1 +1,1 @@
-command! Notes split ~/.notes
+command! Notes split ~/Dropbox/Notes
