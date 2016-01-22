@@ -20,6 +20,7 @@ sudo pip3 install neovim
 
 command -v gsettings > /dev/null && [ $(uname) == "Linux" ] && {
     gsettings set org.pantheon.terminal.settings tab-bar-behavior 'Hide When Single Tab'
+    gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 15
 }
 
 [ -n "$GOPATH" ] && export GOPATH=$HOME/go
