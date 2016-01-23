@@ -8,8 +8,6 @@ shopt -s checkwinsize
 shopt -s cdspell
 shopt -s nocaseglob
 
-export EDITOR=vim
-
 alias vi=nvim
 alias vim=nvim
 

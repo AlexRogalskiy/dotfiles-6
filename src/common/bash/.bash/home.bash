@@ -7,6 +7,7 @@ if [ ! "$(cat "$HOME/.boxname" 2>&1)" == "nomad" ]; then
     return
 fi
 
+export EDITOR=nvim
 export GOPATH=~/dev
 
 for key in $HOME/.ssh/*_rsa*.pub; do
