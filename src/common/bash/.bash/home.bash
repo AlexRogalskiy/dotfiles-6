@@ -16,7 +16,7 @@ export GOPATH=~/dev
 
 export PAGER="nvim -c 'set nolist' -MR -"
 function man() {
-    nvim -c "Man $@"
+    nvim -c "let g:no_man_maps=1" -c "let g:man=1" -c "nnoremap q :qall!<CR>" -c "Man $@"
 }
 
 function vnc() {
@@ -34,9 +34,7 @@ function http() {
     python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-function notes() {
-    vi ~/Dropbox/Notes
-}
+alias notes="vi ~/Dropbox/Notes"
 
 function tmx() {
     # Make sure we are not already in a tmux session
