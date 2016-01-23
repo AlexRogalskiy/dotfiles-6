@@ -33,7 +33,7 @@ function tmx() {
     if [[ -z "$TMUX" ]]; then
         base_session="uber"
         tmux has -t "$base_session" || tmux -2 new-session -s "$base_session"
-        tmux attach-session -t "$base_session"
+        tmux -2 attach-session -t "$base_session"
         builtin exit
     else
         echo "You're already in a tmux session"
