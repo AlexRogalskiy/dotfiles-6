@@ -14,7 +14,7 @@ done;
 export EDITOR=nvim
 export GOPATH=~/dev
 
-export PAGER="nvim -c 'set nolist' -MR -"
+export PAGER="nvim -MR -c 'nnoremap q :q!<CR>' -"
 function man() {
     nvim -c "let g:no_man_maps=1" -c "let g:man=1" -c "nnoremap q :qall!<CR>" -c "Man $@"
 }
