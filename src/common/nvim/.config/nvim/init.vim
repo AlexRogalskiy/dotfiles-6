@@ -84,6 +84,8 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " nerdtree
 let NERDTreeShowHidden=1
 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " enable plugins
 let g:strip_whitespace_on_save = 1
 
