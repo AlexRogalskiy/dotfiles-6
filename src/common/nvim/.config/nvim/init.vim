@@ -84,7 +84,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " nerdtree
 let NERDTreeShowHidden=1
 
-
 " enable plugins
 let g:strip_whitespace_on_save = 1
 
@@ -95,5 +94,3 @@ let g:deoplete#enable_at_startup = 1
 let g:ycm_min_num_of_chars_for_completion = 5
 
 let loaded_netrwPlugin = 1
-
-let $PAGER=''
