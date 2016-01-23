@@ -7,12 +7,17 @@ if [ ! "$(cat "$HOME/.boxname" 2>&1)" == "nomad" ]; then
     return
 fi
 
-export EDITOR=nvim
-export GOPATH=~/dev
-
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add "$HOME/.ssh/$key" &>/dev/null
 done;
+
+export EDITOR=nvim
+export GOPATH=~/dev
+
+export PAGER="nvim -c 'set nolist' -MR -"
+function man() {
+    nvim -c "Man $@"
+}
 
 function vnc() {
     open vnc://\$@
