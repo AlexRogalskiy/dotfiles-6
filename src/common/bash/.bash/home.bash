@@ -7,7 +7,7 @@ if [ ! "$(cat "$HOME/.boxname" 2>&1)" == "nomad" ]; then
     return
 fi
 
-export GOPATH=~/dev/go
+export GOPATH=~/dev
 
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add "$HOME/.ssh/$key" &>/dev/null
@@ -43,6 +43,10 @@ function tmx() {
         echo "You're already in a tmux session"
     fi
 }
+
+alias sm="xrandr --output eDP1 --mode 2560x1600"
+alias md="xrandr --output eDP1 --mode 1920x1200"
+alias lg="xrandr --output eDP1 --mode 1440x900"
 
 function exit() {
     # if in tmux session, detach, don't exit
