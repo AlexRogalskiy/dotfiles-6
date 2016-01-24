@@ -47,10 +47,14 @@ alias sm="xrandr --output eDP1 --mode 2560x1600"
 alias md="xrandr --output eDP1 --mode 1920x1200"
 alias lg="xrandr --output eDP1 --mode 1440x900"
 
+# if in tmux, default behavior is kill-pane. if last pane, fall back to detach
 function exit() {
-    # if in tmux session, detach, don't exit
     [ -z "$TMUX" ] || {
-        tmux detach
+        if [[ "$(tmux list-panes | wc -l)" == "1" ]]; then
+            tmux detach
+        else
+            tmux kill-pane
+        fi
     }
 }
 
