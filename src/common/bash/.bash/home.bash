@@ -16,7 +16,7 @@ export GOPATH=~/dev
 
 export PAGER="nvim -MR -c 'nnoremap q :q!<CR>' -"
 function man() {
-    nvim -c "let g:no_man_maps=1" -c "let g:man=1" -c "nnoremap q :qall!<CR>" -c "Man $@"
+    nvim -c "let g:no_man_maps=1" -c "let g:man=1" -c "nnoremap q :qall!<CR>" -c "Man $@" -c "bdel 1"
 }
 
 function vnc() {
@@ -37,15 +37,10 @@ function http() {
 alias notes="vi ~/Dropbox/Notes"
 
 function tmx() {
-    # Make sure we are not already in a tmux session
-    if [[ -z "$TMUX" ]]; then
-        base_session="uber"
-        tmux has -t "$base_session" || tmux -2 new-session -s "$base_session"
-        tmux -2 attach-session -t "$base_session"
+    [ -z "$TMUX" ] && {
+        tmux -2 new-session -A -s "uber"
         builtin exit
-    else
-        echo "You're already in a tmux session"
-    fi
+    }
 }
 
 alias sm="xrandr --output eDP1 --mode 2560x1600"
