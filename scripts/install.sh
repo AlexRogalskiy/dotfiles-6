@@ -20,7 +20,7 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 }
 
 case $(uname) in
-    Darwin ) ./mac/install.sh; sudo -u roboll DISTRO=osx ./init.sh; cat ./mac/postinst.txt; ;;
+    Darwin ) ./osx/install.sh; sudo -u roboll DISTRO=osx ./init.sh; cat ./osx/postinst.txt; ;;
     Linux  )
         if command -v apt-get > /dev/null; then
             lsb_release -is | grep -q elementary || (echo "Unknown apt-based distro." && exit 1)

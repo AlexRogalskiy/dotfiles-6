@@ -41,6 +41,8 @@ brew install wget --with-iri
 brew install vim --override-system-vi --with-lua
 brew install vimpager
 
+brew cask install seil
+
 brew cask install openzfs
 brew cask install osxfuse
 brew install homebrew/fuse/encfs
@@ -88,3 +90,7 @@ brew cask install \
 
 brew cleanup
 brew cask cleanup
+
+echo ">> Importing keymap settings."
+"$(dirname "${BASH_SOURCE}")"/seil.sh
+echo ""

@@ -1,6 +1,8 @@
 
 =================================================
 
+-- start seil for keymap to work --
+
 1. sync
   a. sign in to dropbox
   b. sync 1password
