@@ -22,7 +22,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'benekastah/neomake'
 "Plug 'scrooloose/syntastic'
 Plug 'Shougo/deoplete.nvim'
-Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
+"Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
 
 " tools
 Plug 'tpope/vim-fugitive'
