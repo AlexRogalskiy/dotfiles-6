@@ -33,9 +33,9 @@ sudo pip3 install neovim
 command -v gsettings > /dev/null && uname | grep Linux && {
     gsettings set org.pantheon.terminal.settings tab-bar-behavior 'Hide When Single Tab'
     gsettings set org.pantheon.terminal.settings font 'Inconsolata 18'
-    gsettings set org.pantheon.terminal.settings foreground '#CFCFCF'
-    gsettings set org.pantheon.terminal.settings background '#1B1B1B'
-    gsettings set org.pantheon.terminal.settings palette '#1C1C1C:#8B5F61:#D69F74:#747474:#8B373C:#5F3A3C:#87875F:#878787:#444444:#9E744D:#C79A71:#FED975:#9E4C04:#AF0000:#87AFAF:#FFFFFF'
+    gsettings set org.pantheon.terminal.settings foreground '#878787'
+    gsettings set org.pantheon.terminal.settings background '#202020'
+    gsettings set org.pantheon.terminal.settings palette '#151515:#AC4142:#7E8D50:#E5B567:#6C99BB:#9E4E85:#7DD5CF:#D0D0D0:#505050:#AC4142:#7E8D50:#E5B567:#6C99BB:#9E4E85:#7DD5CF:#F5F5F5'
     gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 15
 }
 
