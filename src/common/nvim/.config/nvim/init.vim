@@ -31,8 +31,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'chase/vim-ansible-yaml',          { 'for': 'ansible' }
 Plug 'ivalkeen/vim-simpledb',           { 'for': 'sql' }
 Plug 'derekwyatt/vim-scala',            { 'for': 'scala' }
-Plug 'artur-shaik/vim-javacomplete2',   { 'for': 'java' }
-Plug 'Shougo/deoplete.nvim',            { 'for': 'java' }
+Plug 'roboll/vim-javacomplete2'
+Plug 'Shougo/deoplete.nvim'
 Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
 Plug 'fatih/vim-go',                    { 'for': 'go' }
 Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
