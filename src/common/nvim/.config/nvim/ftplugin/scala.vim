@@ -1,8 +1,15 @@
 runtime! ftplugin/jvm.vim
 
-let g:syntastic_scala_checkers = [ 'fsc', 'scalastyle' ]
+let g:neomake_scala_fsc_maker = {
+        \ 'args': [ '-d', '/tmp' ],
+        \ 'errorformat':
+            \ '%E%f:%l: %trror: %m,' .
+            \ '%Z%p^,' .
+            \ '%-G%.%#'
+        \ }
 
-" use fsc only, not scalac
-let g:loaded_syntastic_scala_scalac_checker = 1
+let g:neomake_scala_enabled_makers= [ 'fsc', 'scalastyle' ]
+
+au! BufWritePost *.scala Neomake
 
 set expandtab tabstop=4 shiftwidth=4 softtabstop=0
