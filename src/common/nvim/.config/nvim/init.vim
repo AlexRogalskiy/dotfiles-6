@@ -12,7 +12,6 @@ Plug 'kien/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 
 " behavior
 Plug 'airblade/vim-rooter'
-"Plug 'sjl/gundo.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -21,7 +20,6 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'janko-m/vim-test'
 Plug 'benekastah/neomake'
 "Plug 'scrooloose/syntastic'
-"Plug 'Shougo/deoplete.nvim'
 Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
 
 " tools
@@ -34,6 +32,7 @@ Plug 'chase/vim-ansible-yaml',          { 'for': 'ansible' }
 Plug 'ivalkeen/vim-simpledb',           { 'for': 'sql' }
 Plug 'derekwyatt/vim-scala',            { 'for': 'scala' }
 Plug 'artur-shaik/vim-javacomplete2',   { 'for': 'java' }
+Plug 'Shougo/deoplete.nvim',            { 'for': 'java' }
 Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
 Plug 'fatih/vim-go',                    { 'for': 'go' }
 Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
@@ -71,6 +70,8 @@ set laststatus=2 showtabline=2            " always show status and bufs
 set updatetime=500                        " speed up plugin effects
 set directory=~/.config/nvim/swapfiles//  " centralize swap files
 
+nmap q :q<CR>"
+
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
 
@@ -89,8 +90,5 @@ let g:strip_whitespace_on_save = 1
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
-
-let g:deoplete#enable_at_startup = 1
-let g:ycm_min_num_of_chars_for_completion = 5
 
 let loaded_netrwPlugin = 1
