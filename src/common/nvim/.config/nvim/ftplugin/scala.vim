@@ -1,5 +1,7 @@
 runtime! ftplugin/jvm.vim
 
+setlocal omnifunc=javacomplete#Complete
+
 let g:neomake_scala_fsc_maker = {
         \ 'args': [ '-d', '/tmp' ],
         \ 'errorformat':

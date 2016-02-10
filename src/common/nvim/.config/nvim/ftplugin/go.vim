@@ -23,6 +23,6 @@ let g:neomake_go_go_maker = {
         \ }
 let g:neomake_go_enabled_makers = [ 'go', 'golint' ]
 
-au! BufWritePost *.go Neomake
+au! BufWritePost *.go GoBuild
 
 set tabstop=4 shiftwidth=4 colorcolumn=100

@@ -23,7 +23,8 @@ git_prompt() {
   if git rev-parse 2>/dev/null; then
     # in git
     gitroot="$(git rev-parse --show-toplevel)"
-    gitbase="$(basename "$gitroot")"
+    gitowner="$(pushd $gitroot/.. > /dev/null && echo `basename $(pwd)` && popd > /dev/null)"
+    gitbase="$gitowner/$(basename "$gitroot")"
     # detect if in a symlink
     if [[ $workdir != $gitroot*  ]]; then
       printf "%s %s %s"  "$git_prompt_prefix" "${workdir/$HOME/~}" "$color_dark[-> ${gitroot/$HOME/~}]$color_reset"
