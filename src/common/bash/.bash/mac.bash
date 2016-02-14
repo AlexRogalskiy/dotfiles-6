@@ -28,4 +28,9 @@ alias blue="iprof blue"
 
 alias k="kubectl"
 
+docker-up() {
+  docker-machine env dev 2>/dev/null || docker-machine create --driver virtualbox --virtualbox-memory 2048 dev
+  eval $(docker-machine env dev 2>/dev/null)
+}
+
 export PATH=$HOME/dev/go/bin:$PATH
