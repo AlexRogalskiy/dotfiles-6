@@ -69,7 +69,7 @@ brew cask install vagrant virtualbox
 brew install \
     keybase \
     jsonpp jq \
-    docker boot2docker \
+    docker docker-machine \
     closure-compiler shellcheck markdown \
     ansible awscli
 
