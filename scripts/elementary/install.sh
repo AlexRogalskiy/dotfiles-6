@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -e
 
-echo ">> Installing for apt-based system."
+echo ">> Installing with apt."
 
 add-apt-repository -y ppa:openjdk-r/ppa
 add-apt-repository -y ppa:neovim-ppa/unstable
