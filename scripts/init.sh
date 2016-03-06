@@ -9,13 +9,15 @@ echo ">> Distribution is $DISTRO."
     pushd common >/dev/null
     stows=($(ls -d */))
     echo ">> Stowing ${stows[@]}."
-    for dir in "${stows[@]}"; do stow --adopt -t ~ "$dir"; done;
+    [ -f ~/.bashrc ] && rm -f ~/.bashrc
+    [ -f ~/.bash_profile ] && rm -f ~/.bash_profile
+    for dir in "${stows[@]}"; do stow -t ~ "$dir"; done;
     popd &>/dev/null
 }
 
 [ -d $DISTRO ] && {
     echo ">> Stowing $DISTRO/."
-    for dir in "$DISTRO/"; do stow --adopt -t ~ "$dir"; done;
+    for dir in "$DISTRO/"; do stow -t ~ "$dir"; done;
 }
 
 popd &>/dev/null
@@ -27,8 +29,9 @@ echo ">> Installing from npm."
 sudo npm install -g js-yaml jsonlint recess
 
 echo ">> Installing from pip."
-sudo pip install neovim
-sudo pip3 install neovim
+command -v pip && sudo pip install neovim
+command -v pip2 && sudo pip2 install neovim
+command -v pip3 && sudo pip3 install neovim
 
 command -v gsettings > /dev/null && uname | grep Linux && {
     # pantheon terminal
@@ -45,7 +48,8 @@ command -v gsettings > /dev/null && uname | grep Linux && {
     # gnome desktop
     gsettings set org.gnome.desktop.wm.preferences visual-bell true || true
     gsettings set org.gnome.desktop.wm.preferences audible-bell true || true
-    
+
+    gsettings set org.gnome.desktop.interface gtk-theme "Arc" || true
     gsettings set org.gnome.desktop.interface clock-format 12h || true
 
     gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15 || true
@@ -54,8 +58,8 @@ command -v gsettings > /dev/null && uname | grep Linux && {
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true || true
 
     # gnome terminal
-    gsettings set org.gnome.terminal.legacy confirm-close false || true
-    gsettings set org.gnome.terminal.legacy default-show-menubar false || true
+    gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false || true
+    gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false || true
 }
 
 [ -n "$GOPATH" ] && export GOPATH=$HOME/go
