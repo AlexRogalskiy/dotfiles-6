@@ -5,10 +5,11 @@ set -e
 command -v git >/dev/null 2>&1 || {
     case $(uname) in
         Darwin ) xcode-select --install ;;
-        Linux  ) 
-            if command -v apt-get > /dev/null; then 
+        Linux  )
+            if command -v apt-get > /dev/null; then
                 sudo apt-get install -y git
-            fi 
+            fi
+            ;;
         *      ) echo "!! Install git & try again." && exit 1 ;;
     esac
 }
