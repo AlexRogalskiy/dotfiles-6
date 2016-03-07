@@ -12,12 +12,14 @@ grep archlinuxfr /etc/pacman.conf > /dev/null || {
 pacman --noconfirm -Syu stow neovim xsel xorg-xmodmap htop hfsprogs jdk8-openjdk git mercurial \
     ruby go cmake python-pip python2 python2-pip npm nodejs scala gradle maven docker markdown \
     vagrant virtualbox shellcheck jq keybase tmux tree \
-    keybase dropbox pantheon-terminal yaourt
+    keybase dropbox pantheon-terminal light-locker yaourt
 
 pacman -Q | grep gnome-terminal && pacman --noconfirm -R gnome-terminal
 
+sudo -u roboll yaourt --noconfirm -S lightdm-webkit2-greeter
+sudo -u roboll yaourt --noconfirm -S lightdm-webkit-google-git
+
 sudo -u roboll yaourt --noconfirm -S google-chrome touchegg \
-    lightdm-webkit2-greeter lightdm-webkit-google-git \
     gtk-theme-arc elementary-icon-theme gnome-shell-extension-dynamic-top-bar \
     ttf-inconsolata-lgc-for-powerline
 
