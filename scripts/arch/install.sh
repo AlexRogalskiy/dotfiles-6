@@ -18,7 +18,7 @@ pacman -Q | grep gnome-terminal && pacman --noconfirm -R gnome-terminal
 
 sudo -u roboll yaourt --noconfirm -S google-chrome touchegg \
     lightdm-webkit2-greeter lightdm-webkit-google-git \
-    gtk-theme-arc paper-icon-theme-git gnome-shell-extension-dynamic-top-bar \
+    gtk-theme-arc elementary-icon-theme gnome-shell-extension-dynamic-top-bar \
     ttf-inconsolata-lgc-for-powerline
 
 sed -i /etc/lightdm/lightdm.conf \

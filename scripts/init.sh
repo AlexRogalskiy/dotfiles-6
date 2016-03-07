@@ -54,7 +54,7 @@ command -v gsettings > /dev/null && uname | grep -q Linux && {
     gsettings set org.gnome.desktop.wm.preferences audible-bell true || true
 
     gsettings set org.gnome.desktop.interface gtk-theme "Arc" || true
-    gsettings set org.gnome.desktop.interface icon-theme "Paper" || true
+    gsettings set org.gnome.desktop.interface icon-theme "Elementary" || true
     gsettings set org.gnome.desktop.interface clock-format 12h || true
 
     gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15 || true
