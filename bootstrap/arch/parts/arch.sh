@@ -3,7 +3,7 @@
 set -e
 
 function install-arch() {
-    pacstrap -i /mnt base base-devel dkms lvm2 linux-headers \
+    pacstrap -i /mnt base base-devel dkms lvm2 linux-headers git \
         gnome lightdm lightdm-gtk-greeter
 
     genfstab -U /mnt >> /mnt/etc/fstab
