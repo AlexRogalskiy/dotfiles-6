@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=0.1
-Name=Touchegg
-GenericName=Touchégg
-Comment=Touchégg Gestures Manager
-Exec=/usr/bin/touchegg %u
-Terminal=false
-Type=Application
