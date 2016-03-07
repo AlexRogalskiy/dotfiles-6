@@ -13,7 +13,7 @@ alias vim=nvim
 
 alias reload="exec \$SHELL -l"
 
-for file in $HOME/.bash/{all,path,mac,linux,home,home_prompt,tmux}.bash; do
+for file in $HOME/.bash/{all,path,mac,linux,nomad,scepter,home_prompt,tmux}.bash; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
