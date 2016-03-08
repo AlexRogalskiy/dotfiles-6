@@ -3,9 +3,7 @@
 set -e
 
 function install-arch() {
-    pacstrap -i /mnt base base-devel dkms lvm2 linux-headers git \
-        gnome lightdm lightdm-gtk-greeter
-
+    pacstrap -i /mnt base base-devel dkms lvm2 linux-headers git gnome
     genfstab -U /mnt >> /mnt/etc/fstab
 }
 
@@ -38,7 +36,7 @@ function configure-arch() {
         bootctl install
 
         # enable services
-        systemctl enable dhcpcd bluetooth lightdm NetworkManager
+        systemctl enable dhcpcd bluetooth gdm NetworkManager
 SCRIPT
 }
 
