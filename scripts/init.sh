@@ -40,6 +40,7 @@ command -v gnome-shell-extension-tool > /dev/null && {
 command -v gsettings > /dev/null && uname | grep -q Linux && {
     # pantheon terminal
     gsettings set org.pantheon.terminal.settings tab-bar-behavior 'Hide When Single Tab' || true
+    gsettings set org.pantheon.terminal.settings natural-copy-paste true || true
     gsettings set org.pantheon.terminal.settings font 'Inconsolata LGC for Powerline Medium' || true
     gsettings set org.pantheon.terminal.settings foreground '#878787' || true
     gsettings set org.pantheon.terminal.settings background '#202020' || true
