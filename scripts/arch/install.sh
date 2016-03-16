@@ -23,16 +23,10 @@ sudo -u roboll yaourt --noconfirm -S google-chrome touchegg \
     gtk-theme-arc elementary-icon-theme gnome-shell-extension-dynamic-top-bar \
     ttf-inconsolata-lgc-for-powerline
 
-sed -i /etc/lightdm/lightdm.conf \
-    -e 's/#greeter-session=.*/greeter-session=lightdm-webkit2-greeter/g' \
-    -e 's/#user-session=.*/user-session=gnome/g'
-
-sed -i /etc/lightdm/lightdm-webkit2-greeter.conf -e 's/antergos/lightdm-webkit-google/g'
-
 cp $(dirname "${BASH_SOURCE}")/roboll.jpg /usr/share/roboll.jpg
 echo "Icon=/usr/share/roboll.jpg" >> /var/lib/AccountsService/users/roboll
 
-echo "options hid_magicmouse scroll-speed=50 scroll-acceleration=1" | \
+echo "options hid_magicmouse scroll-speed=50 scroll-acceleration=1 emulate_3button=0" | \
     sudo tee /etc/modprobe.d/magicmouse.conf > /dev/null
 
 cat <<MOUSE > /usr/share/X11/xorg.conf.d/10-magicmouse.conf
