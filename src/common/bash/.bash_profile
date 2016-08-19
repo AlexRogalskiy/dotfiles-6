@@ -2,7 +2,7 @@
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups:ignorespace
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE="pwd:exit:date"
 shopt -s histappend
 shopt -s checkwinsize
 shopt -s cdspell
@@ -13,9 +13,13 @@ alias vim=nvim
 
 alias reload="exec \$SHELL -l"
 
-for file in $HOME/.bash/{all,path,mac,linux,home,home_prompt,tmux}.bash; do
+for file in $HOME/.bash/{$(hostname),all,path,mac,linux,prompt}.bash; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 unset file
+
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
