@@ -35,11 +35,18 @@ Plug 'roboll/vim-javacomplete2'
 Plug 'Shougo/deoplete.nvim'
 Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
 Plug 'fatih/vim-go',                    { 'for': 'go' }
+Plug 'zchee/deoplete-go',               { 'for': 'go', 'do': 'make'}
 Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
 Plug 'groenewege/vim-less',             { 'for': 'less' }
 Plug 'vim-scripts/HTML-AutoCloseTag',   { 'for': 'html' }
 Plug 'elzr/vim-json',                   { 'for': 'json'}
 Plug 'markcornick/vim-terraform',       { 'for': 'terraform' }
+Plug 'uarun/vim-protobuf'
+
+Plug 'tpope/vim-fireplace',             { 'for': 'clojure' }
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-classpath'
+Plug 'tpope/vim-salve'
 
 Plug 'reedes/vim-pencil'
 Plug 'powerman/vim-plugin-AnsiEsc'
@@ -88,7 +95,12 @@ let NERDTreeShowHidden=1
 " enable plugins
 let g:strip_whitespace_on_save = 1
 
+let g:enable_ycm_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
 
 let loaded_netrwPlugin = 1
+
+au BufNewFile,BufRead Dockerfile* set filetype=dockerfile
