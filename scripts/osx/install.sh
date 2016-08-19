@@ -2,7 +2,7 @@
 set -e
 
 echo ">> Installing for OS X."
-"$(dirname "${BASH_SOURCE}")"/settings.sh
+"$(dirname "${BASH_SOURCE}")"/configure.sh
 
 command -v brew >/dev/null 2>&1 || {
     echo ">> Installing homebrew."
@@ -40,8 +40,6 @@ brew install neovim
 brew install wget --with-iri
 brew install vim --override-system-vi --with-lua
 brew install vimpager
-
-brew cask install seil
 
 brew cask install openzfs
 brew cask install osxfuse
@@ -90,7 +88,3 @@ brew cask install \
 
 brew cleanup
 brew cask cleanup
-
-echo ">> Importing keymap settings."
-"$(dirname "${BASH_SOURCE}")"/seil.sh
-echo ""

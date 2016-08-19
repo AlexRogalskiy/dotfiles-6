@@ -74,10 +74,6 @@ command -v gsettings > /dev/null && uname | grep -q Linux && {
 }
 
 [ -n "$GOPATH" ] && export GOPATH=$HOME/go
-command -v vim > /dev/null && {
-    echo ">> Installing vim plugins."
-    vim !silent +PlugInstall +qall
-}
 command -v nvim > /dev/null &&  {
     echo ">> Installing neovim plugins."
     nvim !silent +PlugInstall +qall

@@ -20,15 +20,10 @@ pushd "$(dirname "${BASH_SOURCE}")" >/dev/null
 }
 
 case $(uname) in
-    Darwin ) ./osx/install.sh; sudo -u roboll DISTRO=osx ./init.sh; cat ./osx/postinst.txt; ;;
+    Darwin ) ./osx/install.sh; sudo -u roboll DISTRO=osx ./configure.sh; cat ./osx/postinst.txt; ;;
     Linux  )
-        if command -v apt-get > /dev/null; then
-            lsb_release -is | grep -q elementary || (echo "Unknown apt-based distro." && exit 1)
-            sudo ./elementary/install.sh; sudo -u roboll DISTRO=elementary ./init.sh;
-            cat ./elementary/postinst.txt;
-        elif command -v pacman > /dev/null; then
-            sudo ./arch/install.sh; sudo -u roboll DISTRO=arch ./init.sh;
-            cat ./arch/postinst.txt;     
+        if command -v pacman > /dev/null; then
+            sudo ./arch/install.sh; sudo -u roboll DISTRO=arch ./configure.sh;
         fi ;;
     *      ) echo "!! Couldn't recognize os." && exit 1 ;;
 esac

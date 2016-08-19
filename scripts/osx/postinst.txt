@@ -1,14 +1,11 @@
 
 =================================================
 
--- start seil for keymap to work --
-
 1. sync
   a. sign in to dropbox
   b. sync 1password
-  c. alfred powerpack and sync dir (~/.alfred/)
-2. keys - ssh, pgp
-3. login to services
-  a. gist --login
+2. remap keys in sys prefs -> keyboard
+  a. caps lock to ctrl
+3. keys - ssh, pgp
 
 =================================================
