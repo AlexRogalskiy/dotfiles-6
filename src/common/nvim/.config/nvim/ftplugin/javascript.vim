@@ -3,4 +3,4 @@ let g:syntastic_javascript_closurecompiler_script =
 
 let g:syntastic_javascript_checkers = [ 'closurecompiler' ]
 
-set expandtab tabstop=4 shiftwidth=4 softtabstop=0
+set expandtab tabstop=2 shiftwidth=2 softtabstop=0
