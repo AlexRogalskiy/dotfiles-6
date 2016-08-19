@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=nautilus
-Comment=nautilus file manager
-Exec=nautilus --no-default-window %U
-Icon=system-file-manager
-Terminal=false
-Type=Application
-StartupNotify=true
