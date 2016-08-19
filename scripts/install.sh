@@ -26,6 +26,9 @@ case $(uname) in
             lsb_release -is | grep -q elementary || (echo "Unknown apt-based distro." && exit 1)
             sudo ./elementary/install.sh; sudo -u roboll DISTRO=elementary ./init.sh;
             cat ./elementary/postinst.txt;
+        elif command -v pacman > /dev/null; then
+            sudo ./arch/install.sh; sudo -u roboll DISTRO=arch ./init.sh;
+            cat ./arch/postinst.txt;     
         fi ;;
     *      ) echo "!! Couldn't recognize os." && exit 1 ;;
 esac
