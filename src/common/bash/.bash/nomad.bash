@@ -57,5 +57,3 @@ function exit() {
         fi
     }
 }
-
-[ -n "$TMUX" ] || tmx
