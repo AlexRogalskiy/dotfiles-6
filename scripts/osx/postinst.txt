@@ -5,7 +5,7 @@
   a. sign in to dropbox
   b. sync 1password
 2. remap keys in sys prefs -> keyboard
-  a. caps lock to ctrl
+  a. caps lock to option
 3. keys - ssh, pgp
 
 =================================================
