@@ -10164,19 +10164,19 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1099 118 445 77 0 0 1680 1050 </string>
+	<string>1235 471 445 77 0 0 1680 1027 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>323 569 606 456 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 493 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>656 344 1016 502 0 0 1680 1050 </string>
+	<string>534 169 1016 502 0 0 1680 1050 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>170 673 592 584 0 0 2048 1257 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1579 283 1594 1205 0 0 3840 2137 </string>
+	<string>1274 808 1133 794 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1662 1579 570 402 0 0 3840 2137 </string>
+	<string>564 569 570 402 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1049 359 570 402 0 0 3840 2160 </string>
 	<key>NeverWarnAboutShortLivedSessions_105B27BE-1287-415C-8FFF-5F25C2BA613F</key>
@@ -10440,7 +10440,7 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
-				<key>0x2d-0x40000</key>
+				<key>0x2d-0x80000</key>
 				<dict>
 					<key>Action</key>
 					<integer>28</integer>
@@ -10496,26 +10496,33 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
-				<key>0x5c-0x40000</key>
+				<key>0x5c-0x80000</key>
 				<dict>
 					<key>Action</key>
 					<integer>29</integer>
 					<key>Text</key>
 					<string>105B27BE-1287-415C-8FFF-5F25C2BA613F</string>
 				</dict>
-				<key>0x7a-0x40000</key>
+				<key>0x61-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>27</integer>
+					<key>Text</key>
+					<string>105B27BE-1287-415C-8FFF-5F25C2BA613F</string>
+				</dict>
+				<key>0x71-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>25</integer>
+					<key>Text</key>
+					<string>Close</string>
+				</dict>
+				<key>0x7a-0x80000</key>
 				<dict>
 					<key>Action</key>
 					<integer>25</integer>
 					<key>Text</key>
 					<string>Maximize Active Pane</string>
-				</dict>
-				<key>0x7c-0x60000</key>
-				<dict>
-					<key>Action</key>
-					<integer>29</integer>
-					<key>Text</key>
-					<string>105B27BE-1287-415C-8FFF-5F25C2BA613F</string>
 				</dict>
 				<key>0x9-0x40000</key>
 				<dict>
@@ -10758,11 +10765,11 @@
 			<key>Name</key>
 			<string>dark</string>
 			<key>Non Ascii Font</key>
-			<string>DroidSansMono 11</string>
+			<string>DroidSansMono 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DroidSansMono 11</string>
+			<string>DroidSansMono 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -11037,7 +11044,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-17T20:04:49Z</date>
+	<date>2016-08-22T01:36:30Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -11053,7 +11060,7 @@
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10393880804379785</real>
 	<key>SwitchTabModifier</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
 	<key>TabStyle</key>
