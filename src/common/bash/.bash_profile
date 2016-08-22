@@ -19,7 +19,3 @@ done
 
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 unset file
-
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
