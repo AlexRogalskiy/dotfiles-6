@@ -11,6 +11,10 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias g="git"
+alias k="kubectl"
+alias tf="terraform"
+
+alias notes="vi ~/Dropbox/Notes"
 
 # colors for ls
 if ls --color > /dev/null 2>&1; then

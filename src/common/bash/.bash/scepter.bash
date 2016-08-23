@@ -7,10 +7,6 @@ export GOPATH=~/dev
 
 export HOST_PROMPT_COLOR="\[\e[0;34m\]"
 
-alias notes="vi ~/Dropbox/Notes"
-alias tf="terraform"
-alias k="kubectl"
-
 function add-keys() {
     for key in $HOME/.ssh/*_rsa*.pub; do
         ssh-add "${key%.pub}"
