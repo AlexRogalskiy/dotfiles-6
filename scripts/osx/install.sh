@@ -2,7 +2,7 @@
 set -e
 
 echo ">> Installing for OS X."
-"$(dirname "${BASH_SOURCE}")"/settings.sh
+"$(dirname "${BASH_SOURCE}")"/configure.sh
 
 command -v brew >/dev/null 2>&1 || {
     echo ">> Installing homebrew."
@@ -24,7 +24,8 @@ ln -sf ~/.iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/
 brew cask install slack \
     1password dropbox \
     caffeine alfred switchresx \
-    google-chrome spotify
+    google-chrome spotify \
+    pritunl
 #brew cask install flexiglass # paid for on app store
 
 # basics
@@ -41,15 +42,13 @@ brew install wget --with-iri
 brew install vim --override-system-vi --with-lua
 brew install vimpager
 
-brew cask install seil
-
-brew cask install openzfs
-brew cask install osxfuse
-brew install homebrew/fuse/encfs
+#brew cask install openzfs
+#brew cask install osxfuse
+#brew install homebrew/fuse/encfs
 
 # java and friends, and unzip jdk_source
-brew cask install java caskroom/versions/java7
-brew cask install intellij-idea-ce visualvm
+brew cask install java
+#brew cask install intellij-idea-ce visualvm
 
 brew install scala gradle leiningen sbt ant nailgun maven
 
@@ -90,7 +89,3 @@ brew cask install \
 
 brew cleanup
 brew cask cleanup
-
-echo ">> Importing keymap settings."
-"$(dirname "${BASH_SOURCE}")"/seil.sh
-echo ""

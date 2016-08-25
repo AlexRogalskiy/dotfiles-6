@@ -1,9 +1,5 @@
 #! /bin/bash
 
-###############################################################################
-# all.bash - basic helpers / configuration
-###############################################################################
-
 # autocomplete for ssh/scp/etc
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
 
@@ -15,6 +11,10 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 alias g="git"
+alias k="kubectl"
+alias tf="terraform"
+
+alias notes="vi ~/Dropbox/Notes"
 
 # colors for ls
 if ls --color > /dev/null 2>&1; then
@@ -31,9 +31,9 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 alias ls="command ls ${colorflag}"
 
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias myips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 function extract() {
   if [ -f "$1" ] ; then

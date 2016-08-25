@@ -1,9 +1,5 @@
 #! /bin/bash
 
-###############################################################################
-# prompt.bash - set the shell prompt
-###############################################################################
-
 color_reset="\[\e[0;0m\]"
 color_main="\[\e[0;34m\]"
 
@@ -40,7 +36,7 @@ git_prompt() {
 set_bash_prompt() {
   new_line=""
   COLS=$(tput cols)
-  NOCOLOR_PROMPT_STRING="\u@\h:$(git_prompt) \$"
+  NOCOLOR_PROMPT_STRING="\u@$HOST_COLOR\h:$(git_prompt) \$"
 
   if [[ $COLS -lt ${#NOCOLOR_PROMPT_STRING} ]]; then
     new_line="\n"

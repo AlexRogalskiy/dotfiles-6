@@ -26,5 +26,9 @@ let g:neomake_go_enabled_makers = [ 'go', 'golint' ]
 au! BufReadPost *.go DeopleteEnable
 
 au! BufWritePost *.go GoBuild
+au! BufWritePost *_test.go GoTestCompile
 
-set tabstop=4 shiftwidth=4 colorcolumn=100
+let g:enable_ycm_at_startup = 0
+let g:deoplete#enable_at_startup = 1
+
+set tabstop=4 shiftwidth=4 colorcolumn=80

@@ -1,7 +1,0 @@
-
-=================================================
-
-edit power settings in /etc/systemd/logind.conf
-edit screen resolution with xrandr
-
-=================================================

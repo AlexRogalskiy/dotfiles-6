@@ -31,7 +31,7 @@ echo "options hid_magicmouse scroll-speed=50 scroll-acceleration=1 emulate_3butt
 
 cat <<MOUSE > /usr/share/X11/xorg.conf.d/10-magicmouse.conf
 Section "InputClass"
-        Identifier "Rob's Home Mouse"
+        Identifier "roboll mouse"
         Option "ButtonMapping" "1 0 3 5 4 7 6 0 0 0 0 0"
 EndSection
 MOUSE
