@@ -7,10 +7,12 @@ export GOPATH=~/dev
 
 export PROMPT_HOST_COLOR="\[\e[0;36m\]"
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  tmux -2 new -s $(hostname) -A
-  builtin exit
-fi
+function tmx() {
+    [ -z "$TMUX" ] && {
+        tmux -2 new-session -A -s "uber"
+        builtin exit
+    }
+}
 
 function exit() {
   [ -z "$TMUX" ] || {
@@ -42,3 +44,7 @@ function http() {
     sleep 1 && open "http://localhost:${port}/" &
     python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  tmx
+fi
