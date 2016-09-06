@@ -5,7 +5,7 @@ export PAGER="nvim -MR -c 'nnoremap q :q!<CR>' -"
 
 export GOPATH=~/dev
 
-export HOST_PROMPT_COLOR="\[\e[0;34m\]"
+export PROMPT_HOST_COLOR="\[\e[0;36m\]"
 
 function add-keys() {
     for key in $HOME/.ssh/*_rsa*.pub; do
