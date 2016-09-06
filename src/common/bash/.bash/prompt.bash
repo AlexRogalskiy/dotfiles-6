@@ -42,7 +42,11 @@ set_bash_prompt() {
     new_line="\n"
   fi
 
-  PS1="$color_main\u$color_symbol@$color_main\h:$color_path$(git_prompt)$color_prompt $new_line\$ $color_reset"
+  extra=""
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    extra="$color_accent[ remote ]$color_reset"
+  fi
+  PS1="$extra$color_main\u$color_symbol@$color_main\h:$color_path$(git_prompt)$color_prompt $new_line\$ $color_reset"
 }
 
 NOCOLOR_PROMPT_STRING=COLOR_PROMPT_STRING=
