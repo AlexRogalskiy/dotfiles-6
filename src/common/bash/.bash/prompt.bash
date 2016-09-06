@@ -3,14 +3,15 @@
 color_reset="\[\e[0;0m\]"
 color_main="\[\e[0;34m\]"
 
-color_symbol="\[\e[0;32m\]"
+color_symbol="\[\e[2;32m\]"
 color_accent="\[\e[1;31m\]"
 color_dark="\[\e[1;30m\]"
 
 color_path="\[\e[0;32m\]"
 color_prompt="\[\e[0;31m\]"
+color_type="\[\e[2;38m\]"
 
-git_prompt_prefix="${color_accent}git${color_path}"
+git_prompt_prefix="${color_type}git${color_path}"
 
 git_prompt() {
   workdir="$(pwd)"
