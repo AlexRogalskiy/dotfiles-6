@@ -73,7 +73,7 @@ command -v gsettings > /dev/null && uname | grep -q Linux && {
     gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$uuid/ font "Inconsolata LGC for Powerline Medium 12" || true
 }
 
-[ -n "$GOPATH" ] && export GOPATH=$HOME/go
+[ -n "$GOPATH" ] && export GOPATH=$HOME/dev
 command -v nvim > /dev/null &&  {
     echo ">> Installing neovim plugins."
     nvim !silent +PlugInstall +qall
