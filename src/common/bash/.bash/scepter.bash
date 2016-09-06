@@ -8,7 +8,7 @@ export GOPATH=~/dev
 export PROMPT_HOST_COLOR="\[\e[0;36m\]"
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  tmux attach || tmux -2 new -s $(hostname)
+  tmux -2 new -s $(hostname) -A
 fi
 
 function add-keys() {
