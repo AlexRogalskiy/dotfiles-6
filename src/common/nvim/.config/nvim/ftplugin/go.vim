@@ -23,6 +23,8 @@ let g:neomake_go_go_maker = {
         \ }
 let g:neomake_go_enabled_makers = [ 'go', 'golint' ]
 
+au! BufReadPost *.go DeopleteEnable
+
 au! BufWritePost *.go GoBuild
 au! BufWritePost *_test.go GoTestCompile
 
