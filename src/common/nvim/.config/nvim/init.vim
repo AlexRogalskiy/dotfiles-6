@@ -47,6 +47,7 @@ Plug 'tpope/vim-fireplace',             { 'for': 'clojure' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-salve'
+Plug 'kien/rainbow_parentheses.vim',    { 'for': 'clojure' }
 
 Plug 'reedes/vim-pencil'
 Plug 'powerman/vim-plugin-AnsiEsc'
