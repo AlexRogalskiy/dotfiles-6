@@ -7,6 +7,10 @@ export GOPATH=~/dev
 
 export PROMPT_HOST_COLOR="\[\e[0;36m\]"
 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  tmux attach || tmux -2 new -s $(hostname)
+fi
+
 function add-keys() {
     for key in $HOME/.ssh/*_rsa*.pub; do
         ssh-add "${key%.pub}"
