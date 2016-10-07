@@ -25,13 +25,14 @@ Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
 " tools
 Plug 'tpope/vim-fugitive'
 Plug 'tfnico/vim-gradle'
+Plug 'hashivim/vim-hashicorp-tools'
 
 " lang
 Plug 'sheerun/vim-polyglot'
 Plug 'chase/vim-ansible-yaml',          { 'for': 'ansible' }
 Plug 'ivalkeen/vim-simpledb',           { 'for': 'sql' }
 Plug 'derekwyatt/vim-scala',            { 'for': 'scala' }
-Plug 'roboll/vim-javacomplete2'
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'Shougo/deoplete.nvim'
 Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
 Plug 'fatih/vim-go',                    { 'for': 'go' }
