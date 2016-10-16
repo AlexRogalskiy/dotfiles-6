@@ -1,0 +1,71 @@
+#! /bin/bash
+set -eo pipefail
+
+dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+provider="$1"
+
+case "$provider" in
+    google)
+        server_one="8.8.8.8"
+        server_two="8.8.4.4"
+        ;;
+    opendns)
+        server_one="208.67.222.222"
+        server_two="208.67.220.220"
+        ;;
+    unlocator)
+        server_one="185.37.37.37"
+        server_two="185.37.39.39"
+        ;;
+    *)
+        echo "Provider $provider not defined in $0." >2
+        exit 1
+esac
+
+osascript <<EOF $servers
+on run argv
+    activate application "AirPort Utility"
+    tell application "System Events"
+        tell process "AirPort Utility"
+            delay 1
+            tell window 1
+                # File -> Configure Other...
+                keystroke "O" using command down
+                delay 1
+
+                # Address and password from env vars
+                keystroke (system attribute "AIRPORT_ADDR")
+                keystroke tab
+                keystroke (system attribute "AIRPORT_PASSWORD")
+                keystroke tab
+                keystroke return
+                delay 5
+
+                # Tab over to dns
+                keystroke tab
+                delay .5
+                key code 124
+                delay 1
+                key code 124
+                delay 1
+
+                # Enter dns servers
+                keystroke tab
+                keystroke tab
+                keystroke tab
+                keystroke "$server_one"
+                keystroke tab
+                keystroke "$server_two"
+
+                # Submit
+                click button "UPDATE"
+                delay 2
+                keystroke tab
+                keystroke tab
+                keystroke space
+                keystroke return
+            end tell
+        end tell
+    end tell
+end run
+EOF

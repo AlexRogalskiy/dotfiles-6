@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -e
 
-[ -n "roboll" ] && {
+if [ -n "roboll" ]; then
     sudo dscl . -create /Users/roboll UserShell /bin/bash
     sudo dscl . -create /Users/roboll RealName "rob boll"
     sudo dscl . -create /Users/roboll PrimaryGroupID 80
@@ -12,7 +12,7 @@ set -e
     sudo dscl . -append /Groups/wheel GroupMembership roboll
 
     echo ">> Updated user roboll."
-}
+fi
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "$BOXNAME"
@@ -20,13 +20,6 @@ sudo scutil --set HostName "$BOXNAME"
 sudo scutil --set LocalHostName "$BOXNAME"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$BOXNAME"
 
-# UI: Hide the Time Machine, Volume, User, and Bluetooth icons in menu bar
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-    defaults write "${domain}" dontAutoLoad -array \
-        "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-        "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-        "/System/Library/CoreServices/Menu Extras/User.menu"
-done
 defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
     "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
