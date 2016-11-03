@@ -2,6 +2,11 @@
 
 if [ ! "$(uname)" == "Darwin" ]; then return; fi
 
+# title for iterm2 tabs
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
 # homebrew autocomplete
 if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 	source "$(brew --prefix)/etc/bash_completion"
