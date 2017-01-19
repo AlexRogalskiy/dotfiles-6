@@ -1,0 +1,33 @@
+.generated
+
+# misc os files
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# logs
+*.log
+
+# java
+*.class
+
+# intellij
+.idea/
+*.iml
+
+# gradle
+.gradle
+build/
+
+# maven
+target/
+
+# sql buffers
+*_buffer.sql
+
+# vim
+*.swp
+
+# vim-cp plugin
+.vimcp
+.vimsp

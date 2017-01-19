@@ -2,12 +2,6 @@
 
 set -eo pipefail
 
-confirm_var() {
-    name=${1}
-    value=$(printenv ${1})
-    read -p "?? Using $name=$value. Continue? "
-}
-
 log_info() {
     echo ">> $1"
 }
@@ -15,6 +9,18 @@ log_info() {
 log_err() {
     echo "!! $1" >&2
     exit 1
+}
+
+confirm_var() {
+    name=${1}
+    value=$(printenv "${1}")
+    message="Using $name=$value."
+
+    if [ -v SKIP_CONFIRM ]; then
+        log_info "$message"
+    else
+        read -rp "?? $message Continue? "
+    fi
 }
 
 require_git() {
@@ -34,12 +40,12 @@ require_git() {
 install_dotfiles() {
     target=${1}
     remote=${2}
-    if [ ! -d $target ]; then
-        git clone --recursive --quiet --depth 1 $remote $target
+    if [ ! -d "$target" ]; then
+        git clone --recursive --quiet --depth 1 "$remote" "$target"
     else
-        pushd $target >/dev/null
+        pushd "$target" >/dev/null
         current=$(git remote show origin)
-        if [ ! $current ~== $remote ]; then
+        if [ "$current" != "$remote" ]; then
             log_err "$target has wrong git remote: $current (expected $remote)"
         fi
         git pull

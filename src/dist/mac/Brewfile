@@ -1,0 +1,82 @@
+cask_args appdir: '/Applications'
+tap 'caskroom/cask'
+
+brew 'stow'
+
+brew 'bash'
+brew 'bash-completion'
+
+brew 'jq'
+brew 'ack'
+brew 'tree'
+brew 'wget', args: ['with-iri']
+brew 'ctags'
+brew 'gnu-tar'
+brew 'gnu-sed'
+brew 'coreutils'
+brew 'findutils'
+brew 'homebrew/dupes/grep', args: ['with-default-names']
+
+cask 'iterm2'
+
+tap 'neovim/neovim'
+brew 'neovim'
+
+brew 'vim', args: ['override-system-vi', 'with-lua']
+brew 'vimpager'
+
+brew 'hg'
+brew 'git'
+brew 'gist'
+
+brew 'go'
+brew 'node'
+brew 'ruby'
+brew 'docker'
+
+cask 'java' unless system '/usr/libexec/java_home --failfast >/dev/null'
+
+brew 'sbt'
+brew 'ant'
+brew 'scala'
+brew 'maven'
+brew 'gradle'
+brew 'nailgun'
+brew 'leiningen'
+cask 'visualvm'
+cask 'intellij-idea-ce'
+
+brew 'postgresql'
+cask 'pgadmin3'
+
+brew 'keybase'
+brew 'awscli'
+
+brew 'kubernetes-cli'
+brew 'kubernetes-helm'
+
+brew 'markdown'
+brew 'shellcheck'
+
+cask 'vagrant'
+cask 'virtualbox'
+
+cask 'alfred'
+cask 'spotify'
+cask 'caffeine'
+cask 'google-chrome'
+
+cask 'cura'
+mas '1Password', id: 443987910
+mas 'Flexiglass', id: 426410278
+
+cask 'caskroom/fonts/font-inconsolata'
+cask 'caskroom/fonts/font-inconsolata-dz'
+cask 'caskroom/fonts/font-inconsolata-dz-for-powerline'
+
+cask 'quicklook-json'
+cask 'quicklook-csv'
+cask 'qlcolorcode'
+cask 'qlmarkdown'
+cask 'qlprettypatch'
+cask 'betterzipql'
