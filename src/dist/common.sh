@@ -3,18 +3,22 @@ set -eo pipefail
 
 install_dotfiles() {
     if [ -d common ]; then
+        [ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.old
+        [ -f ~/.bash_profile ] && mv ~/.bash_profile ~/.bash_profile.old
+
         pushd common >/dev/null
         stows=($(ls -d */))
         log_info "Stowing ${stows[*]}."
-        [ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.old
-        [ -f ~/.bash_profile ] && mv ~/.bash_profile ~/.bash_profile.old
         for dir in "${stows[@]}"; do stow -t ~ "$dir"; done;
         popd >/dev/null
     fi
 
     if [ -d "$DISTRO" ]; then
-        log_info "Stowing $DISTRO/."
-        for dir in $DISTRO/; do stow -t ~ "$dir"; done;
+        pushd "$DISTRO" >/dev/null
+        stows=($(ls -d */))
+        log_info "Stowing ${stows[*]}."
+        for dir in "${stows[@]}"; do stow -t ~ "$dir"; done;
+        popd >/dev/null
     fi
 
     log_info "Installing from gem."
