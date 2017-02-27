@@ -8,7 +8,7 @@ Plug 'majutsushi/tagbar',               { 'on': 'TagbarToggle' }
 Plug 'nathanaelkane/vim-indent-guides', { 'on': 'IndentGuidesToggle' }
 
 " search
-Plug 'kien/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'ctrlpvim/ctrlp.vim' | Plug 'FelikZ/ctrlp-py-matcher'
 
 " behavior
 Plug 'airblade/vim-rooter'
@@ -57,6 +57,10 @@ Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'romainl/Apprentice'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/seoul256.vim'
+
+"experimental
+Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser-github.vim'
 
 call g:plug#end()
 
