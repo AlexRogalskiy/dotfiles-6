@@ -11,6 +11,7 @@ setup() {
     brew tap homebrew/bundle
     brew bundle --file=./Brewfile
     brew cleanup
+    brew cask cleanup
 
     for i in /Library/Java/JavaVirtualMachines/*; do
         sudo mkdir -p "$i/Contents/Home/jdk_source"
