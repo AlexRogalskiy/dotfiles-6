@@ -17,5 +17,5 @@ alias tf="terraform"
 alias notes="vi ~/Dropbox/Notes"
 
 for key in $HOME/.ssh/*_rsa*.pub; do
-    ssh-add -K "$(sed s,.pub,,g <<< "$key")" &>/dev/null
+    ssh-add "$HOME/.ssh/$key" &>/dev/null
 done
