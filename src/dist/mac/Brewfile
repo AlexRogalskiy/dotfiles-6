@@ -47,7 +47,7 @@ cask 'visualvm'
 cask 'intellij-idea-ce'
 
 brew 'postgresql'
-cask 'pgadmin3'
+#cask 'pgadmin3'
 
 brew 'keybase'
 brew 'awscli'
