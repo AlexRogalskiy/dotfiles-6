@@ -54,7 +54,7 @@ Plug 'kien/rainbow_parentheses.vim',    { 'for': 'clojure' }
 Plug 'reedes/vim-pencil'
 Plug 'powerman/vim-plugin-AnsiEsc'
 
-Plug 'romainl/Apprentice'
+Plug 'romainl/Apprentice',              { 'branch': 'fancylines-and-neovim' }
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/seoul256.vim'
 
