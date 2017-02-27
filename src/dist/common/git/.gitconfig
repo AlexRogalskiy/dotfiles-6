@@ -42,12 +42,7 @@
   aa = add --all .
   dt = difftool
   tree =  log --graph --abbrev-commit --decorate --format=format:'%h - %aD (%ar)%d%n''          %s - %an' --all
-    treed =  log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all --date-order
-
-[diff]
-  tool = nvimdiff
-  renames = copy
-  renamelimit = 0
+  treed =  log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all --date-order
 
 [difftool]
   prompt = false
@@ -55,11 +50,16 @@
 [difftool "nvimdiff"]
   cmd = nvim -d "$LOCAL" "$REMOTE"
 
-[merge]
+[diff]
   tool = nvimdiff
+  renames = copy
+  renamelimit = 0
 
 [mergetool]
   prompt = false
 
 [mergetool "nvimdiff"]
   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[merge]
+  tool = nvimdiff
