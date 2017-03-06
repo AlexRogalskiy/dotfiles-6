@@ -1,0 +1,19 @@
+#! /bin/bash
+
+protected_branches='master prod'
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+upstream_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+
+for branch in $protected_branches; do
+    if [ "$branch" == "$current_branch" ] || [ "$branch" == "$upstream_branch" ] ; then
+        read -p "You're about to push master, is that what you intended? [y|n] " -n 1 -r < /dev/tty
+        echo
+        if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+        then
+            exit 0 # push will execute
+        fi
+        exit 1 # push will not execute
+    else
+        exit 0 # push will execute
+    fi
+done
