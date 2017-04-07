@@ -48,7 +48,6 @@ cask 'intellij-idea-ce'
 brew 'postgresql'
 #cask 'pgadmin3'
 
-brew 'keybase'
 brew 'awscli'
 
 brew 'kubernetes-cli'
@@ -66,6 +65,7 @@ cask 'spotify'
 cask 'caffeine'
 cask 'google-chrome'
 
+cask 'keybase'
 cask 'cura'
 mas '1Password', id: 443987910
 mas 'Flexiglass', id: 426410278
