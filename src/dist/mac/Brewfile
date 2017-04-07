@@ -15,7 +15,7 @@ brew 'gnu-tar'
 brew 'gnu-sed'
 brew 'coreutils'
 brew 'findutils'
-brew 'homebrew/dupes/grep', args: ['with-default-names']
+brew 'grep', args: ['with-default-names']
 
 cask 'iterm2'
 
