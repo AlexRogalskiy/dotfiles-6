@@ -38,6 +38,8 @@
   interactive = auto
 
 [alias]
+  co = checkout
+  cob = checkout -b
   s = status .
   a = add
   aa = add --all .
