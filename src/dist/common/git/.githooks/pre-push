@@ -1,17 +1,22 @@
 #! /bin/bash
 
 protected_branches='master prod'
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
-upstream_branch=$(git rev-parse --abbrev-ref --symbolic-full-name @{u})
 
-for branch in $protected_branches; do
-    if [ "$branch" == "$current_branch" ] || [ "$branch" == "$upstream_branch" ] ; then
-        read -p "You're about to push master, is that what you intended? [y|n] " -n 1 -r < /dev/tty
-        echo
-        if echo $REPLY | grep -E '^[Yy]$' > /dev/null
-        then
-            exit 0 # push will execute
+remote_name="$1"
+remote_url="$2"
+
+while read local_ref local_sha remote_ref remote_sha; do
+    for branch in $protected_branches; do
+        if grep -q "${branch}" <<< ${remote_ref}; then
+            read -p "pushing to $remote_ref - are you sure? [y|n] " -n 1 -r < /dev/tty
+            echo
+
+            if echo "$REPLY" | grep -E '^[Yy]$' > /dev/null; then
+                exit 0
+            fi
+            exit 1
         fi
-        exit 1 # push will not execute
-    fi
+    done
 done
+
+exit 0
