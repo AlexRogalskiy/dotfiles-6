@@ -30,6 +30,9 @@ function SetColors()
         if $ITERM_PROFILE ==# "dark"
             Dark
         endif
+        if $ITERM_PROFILE ==# "default"
+            Dark
+        endif
     else
         Med
     endif
