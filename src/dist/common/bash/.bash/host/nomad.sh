@@ -13,6 +13,7 @@ export PATH
 alias g="git"
 alias k="kubectl"
 alias tf="terraform"
+alias vi="nvim"
 
 alias notes="vi ~/Dropbox/Notes"
 
