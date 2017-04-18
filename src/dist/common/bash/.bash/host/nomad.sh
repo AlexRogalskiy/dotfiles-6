@@ -16,6 +16,8 @@ alias tf="terraform"
 
 alias notes="vi ~/Dropbox/Notes"
 
+function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
+
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add -K "$(sed s,.pub,,g <<< "$key")" &>/dev/null
 done
