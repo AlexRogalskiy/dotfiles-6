@@ -1,1 +1,3 @@
-command! Notes split ~/Dropbox/Notes
+command! -nargs=1 Notes split ~/Dropbox/Notes.d/<args>.md
+
+command! NotesPreview !open http://localhost:8080

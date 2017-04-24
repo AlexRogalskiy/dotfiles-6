@@ -1,0 +1,13 @@
+#! /bin/bash
+
+note="$@"
+test -z "$note" && note="default"
+
+{
+    cd "$HOME/Dropbox/Notes.d"
+    livemd 2>/dev/null &
+    pid="$!"
+    trap "kill $pid" exit
+}
+
+"$EDITOR" "$HOME/Dropbox/Notes.d/$note.md"
