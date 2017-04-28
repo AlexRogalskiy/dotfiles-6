@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
-
-set -eo pipefail
-
+set -euo pipefail
+set -x
 log_info() {
     echo ">> $1"
 }
@@ -13,7 +12,7 @@ log_err() {
 
 confirm_var() {
     name=${1}
-    value=$(printenv "${1}")
+    value=$(printenv "${1}" || true)
     message="Using $name=$value."
 
     if [ -v SKIP_CONFIRM ]; then
@@ -30,10 +29,6 @@ export BOXNAME=${BOXNAME:=$(hostname -s)}
 confirm_var "BOXNAME"
 echo "$BOXNAME" > ~/.boxname
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-pushd "$SCRIPT_DIR" >/dev/null
-trap "popd>/dev/null" EXIT
-
 case $(uname) in
     Darwin ) export DISTRO=mac ;;
     Linux  ) if command -v pacman >/dev/null;    then export DISTRO=arch;
@@ -43,30 +38,28 @@ case $(uname) in
 esac
 confirm_var "DISTRO"
 
+# keep sudo until exit
 if [ "$(id -u)" -ne 0 ]; then
     echo "!! Requires root, elevating with sudo."
     sudo -v
     while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
-source "./src/dist/common.sh"
-if [ -f "./src/dist/${DISTRO}.sh" ]; then
-    source "./src/dist/$DISTRO.sh"
+# pushd into repo directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+pushd "$SCRIPT_DIR" >/dev/null
+trap "popd>/dev/null" EXIT
+
+source "./scripts/common.sh"
+if [ -f "./scripts/${DISTRO}.sh" ]; then
+    source "./scripts/$DISTRO.sh"
 else
     log_err "No script for DISTRO=${DISTRO}."
 fi
 
-pushd "src/dist/$DISTRO" >/dev/null
 setup
-popd >/dev/null
-
-pushd "src/dist" >/dev/null
-install_dotfiles
-popd >/dev/null
-
-pushd "src/dist/$DISTRO" >/dev/null
+install
 configure
-popd >/dev/null
 
 log_info "Pulling SSH pubkeys from Github."
 curl -s https://github.com/roboll.keys > ~/.ssh/authorized_keys
