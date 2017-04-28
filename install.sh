@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -euo pipefail
-set -x
+
 log_info() {
     echo ">> $1"
 }
