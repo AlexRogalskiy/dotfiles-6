@@ -49,6 +49,7 @@ brew 'postgresql'
 #cask 'pgadmin3'
 
 brew 'awscli'
+brew 'linode/cli/linode'
 
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
