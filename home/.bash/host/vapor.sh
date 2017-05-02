@@ -16,6 +16,10 @@ alias vi="nvim"
 
 eval `gimme 1.8`
 
+for key in $HOME/.ssh/*_rsa*.pub; do
+    ssh-add -K "$(sed s,.pub,,g <<< "$key")" &>/dev/null
+done
+
 function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
 
 function tmx() {
