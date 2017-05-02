@@ -17,8 +17,8 @@ if [ -f "$hostfile" ]; then source "$hostfile"; fi
 secretfile="$HOME/.secrets.sh"
 if [ -f "$secretfile" ]; then source "$secretfile"; fi
 
-if [ "$(uname)" == "Darwin" ]; then source "$HOME/.bash/mac.sh"; fi
-if [ "$(uname)" == "Linux"  ]; then source "$HOME/.bash/linux.sh"; fi
+if [ "$(uname)" == "Darwin" ]; then source "$HOME/.bash/dist/mac.sh"; fi
+if [ "$(uname)" == "Linux"  ]; then source "$HOME/.bash/dist/linux.sh"; fi
 
 for file in $HOME/.bash/{config,util,prompt}.sh; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
