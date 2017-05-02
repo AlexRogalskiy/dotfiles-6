@@ -1,6 +1,12 @@
 home/.ssh/known_hosts
 home/.ssh/authorized_keys
 
+home/.ssh/control/*
+!home/.ssh/control/.keep
+
+home/.ssh/config.d/*
+!home/.ssh/config.d/.keep
+
 home/.ssh/*_rsa
 home/.ssh/*_rsa.pub
 
