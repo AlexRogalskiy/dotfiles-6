@@ -14,6 +14,8 @@ alias k="kubectl"
 alias tf="terraform"
 alias vi="nvim"
 
+eval `gimme 1.8`
+
 function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
 
 function tmx() {
