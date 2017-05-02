@@ -13,7 +13,6 @@ export PATH
 alias g="git"
 alias k="kubectl"
 alias tf="terraform"
-alias vi="nvim"
 
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add -K "$(sed s,.pub,,g <<< "$key")" &>/dev/null

@@ -14,8 +14,21 @@ alias g="git"
 alias k="kubectl"
 alias tf="terraform"
 
-alias notes="vi ~/Dropbox/Notes"
-
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add "$HOME/.ssh/$key" &>/dev/null
 done
+
+function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
+function cdd() { cd $GOPATH/src/github.com/DataDog/$@; }
+
+function vapor-status { linode show vapor | awk '/status/ { $1=""; print "vapor:"$0 }'; }
+function vapor-down { linode stop vapor; }
+function vapor-up {
+    linode show vapor | awk '/status/ { print $2 }' | grep -q running || linode start vapor
+    until linode show vapor | grep -q "status: running"; do
+        echo 'Waiting for vapor status running.'
+        sleep 5
+    done
+
+    ssh -t linode vapor
+}
