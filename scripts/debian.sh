@@ -3,12 +3,11 @@ set -euo pipefail
 
 setup() {
     sudo apt-get update
-    sudo apt-get install -y stow vim git jq tree wget findutils coreutils \
-        python-pip ruby
+    sudo apt-get install -y stow vim git jq tree curl wget findutils coreutils python-pip ruby \
+        build-essential libssl-dev
 
-    #TODO install nodejs
-    curl -sL -o /usr/local/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
-    chmod +x /usr/local/bin/gimme
+    sudo curl -sL -o /usr/local/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
+    sudo chmod +x /usr/local/bin/gimme
 
     sudo apt-get autoremove --purge
 }
