@@ -15,9 +15,20 @@ alias k="kubectl"
 alias tf="terraform"
 alias vi="nvim"
 
-
-function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
-
 for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add -K "$(sed s,.pub,,g <<< "$key")" &>/dev/null
 done
+
+function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
+
+function vapor-status { linode show vapor | awk '/status/ { $1=""; print "vapor:"$0 }'; }
+function vapor-down { linode stop vapor; }
+function vapor-up {
+    linode show vapor | awk '/status/ { print $2 }' | grep -q running || linode start vapor
+    until linode show vapor | grep -q "status: running"; do
+        echo 'Waiting for vapor status running.'
+        sleep 5
+    done
+
+    ssh -t linode vapor
+}
