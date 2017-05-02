@@ -2,11 +2,17 @@
 set -euo pipefail
 
 setup() {
-    echo "deb http://deb.debian.org/debian testing main" | sudo tee /etc/apt/sources.list.d/testing.list
+    sudo apt-get update && sudo apt-get install -y curl wget apt-transport-https
 
-    sudo apt-get update
-    sudo apt-get install -y stow git jq tree curl wget findutils coreutils ruby \
+    echo "deb http://deb.debian.org/debian testing main" | sudo tee /etc/apt/sources.list.d/testing.list
+    echo "deb https://deb.nodesource.com/node_7.x jessie main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+    curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+
+    sudo apt-get update && sudo apt-get install -y stow git jq tree \
+        findutils coreutils \
         vim neovim \
+        ruby nodejs \
         python-dev python-pip \
         build-essential libssl-dev
 
