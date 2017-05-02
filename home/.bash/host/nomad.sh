@@ -6,7 +6,7 @@ alias vim="nvim"
 
 export GOPATH=$HOME/dev
 
-PATH=/usr/local/bin:$HOME/bin:$HOME/macbin:$GOPATH/bin:$PATH
+PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin:$PATH
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH
 

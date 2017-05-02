@@ -31,7 +31,7 @@ install() {
         sudo pip3 install neovim
     }
 
-    [ -n "$GOPATH" ] && export GOPATH=$HOME/dev
+    export GOPATH=$HOME/dev
     command -v nvim >/dev/null && {
         log_info "Installing neovim plugins."
         nvim !silent +PlugInstall +qall

@@ -1,11 +1,20 @@
 #! /usr/bin/env bash
 
 export EDITOR=nvim
+alias vi="nvim"
+alias vim="nvim"
 
 export GOPATH=$HOME/dev
-export PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin:$PATH
 
-export PROMPT_HOST_COLOR="\[\e[0;36m\]"
+PATH=/usr/local/bin:$HOME/bin:$GOPATH/bin:$PATH
+export PATH
+
+alias g="git"
+alias k="kubectl"
+alias tf="terraform"
+alias vi="nvim"
+
+function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
 
 function tmx() {
     [ -z "$TMUX" ] && {

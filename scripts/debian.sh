@@ -2,8 +2,12 @@
 set -euo pipefail
 
 setup() {
+    echo "deb http://deb.debian.org/debian testing main" | sudo tee /etc/apt/sources.list.d/testing.list
+
     sudo apt-get update
-    sudo apt-get install -y stow vim git jq tree curl wget findutils coreutils python-pip ruby \
+    sudo apt-get install -y stow git jq tree curl wget findutils coreutils ruby \
+        vim neovim \
+        python-dev python-pip \
         build-essential libssl-dev
 
     sudo curl -sL -o /usr/local/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
