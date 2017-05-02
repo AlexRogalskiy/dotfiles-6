@@ -9,19 +9,22 @@ setup() {
 
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 
-    sudo apt-get update && sudo apt-get install -y stow git jq tree \
+    sudo apt-get update && sudo apt-get install -y xstow git jq tree \
         findutils coreutils \
         vim neovim \
         ruby nodejs \
         python-dev python-pip \
         build-essential libssl-dev
 
+    sudo ln -sf /usr/bin/xstow /usr/local/bin/stow
     sudo curl -sL -o /usr/local/bin/gimme https://raw.githubusercontent.com/travis-ci/gimme/master/gimme
     sudo chmod +x /usr/local/bin/gimme
+
+    eval `gimme 1.8`
 
     sudo apt-get autoremove --purge
 }
 
 configure() {
-    echo "no configure on debian"
+    echo ""
 }

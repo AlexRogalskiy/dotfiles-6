@@ -13,6 +13,7 @@ ENV BOXNAME=kit
 ENV SKIP_CONFIRM=true
 
 ADD . .dotfiles
-RUN sudo chown roboll:roboll /home/roboll && .dotfiles/install.sh
+RUN sudo chown -R roboll:roboll /home/roboll
+RUN .dotfiles/install.sh
 
 #ENTRYPOINT ["/bin/bash"]
