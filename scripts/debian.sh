@@ -10,7 +10,7 @@ setup() {
     curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 
     sudo apt-get update && sudo apt-get install -y xstow git jq tree \
-        findutils coreutils \
+        findutils coreutils tmux \
         vim neovim \
         ruby nodejs \
         python-dev python-pip \
