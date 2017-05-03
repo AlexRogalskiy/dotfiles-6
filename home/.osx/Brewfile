@@ -49,7 +49,8 @@ brew 'postgresql'
 #cask 'pgadmin3'
 
 brew 'awscli'
-brew 'linode/cli/linode-cli'
+tap 'linode/cli'
+brew 'linode-cli'
 
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
