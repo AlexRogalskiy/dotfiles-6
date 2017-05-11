@@ -18,6 +18,10 @@ for key in $HOME/.ssh/*_rsa*.pub; do
     ssh-add "$HOME/.ssh/$key" &>/dev/null
 done
 
+function make() {
+    make -j8 "$@"
+}
+
 function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
 function cdd() { cd $GOPATH/src/github.com/DataDog/$@; }
 
