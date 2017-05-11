@@ -21,7 +21,7 @@ git_prompt() {
     # in git
     gitroot="$(git rev-parse --show-toplevel)"
     gitowner="$(pushd $gitroot/.. > /dev/null && echo `basename $(pwd)` && popd > /dev/null)"
-    gitbase="${color_path}${gitowner}/$(basename "$gitroot")${color_reset}"
+    gitbase="${color_path}${gitowner}/$(basename "$gitroot")"
     gitbranch="${color_symbol}[$(git rev-parse --abbrev-ref HEAD)]${color_reset}"
     # detect if in a symlink
     if [[ $workdir != $gitroot*  ]]; then
