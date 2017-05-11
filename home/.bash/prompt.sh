@@ -11,7 +11,7 @@ color_path="\[\e[0;32m\]"
 color_prompt="\[\e[0;31m\]"
 color_type="\[\e[2;38m\]"
 
-git_prompt_prefix="${color_type}git${color_path}"
+git_prompt_prefix="${color_type}git${color_reset}"
 
 git_prompt() {
   workdir="$(pwd)"
@@ -21,12 +21,13 @@ git_prompt() {
     # in git
     gitroot="$(git rev-parse --show-toplevel)"
     gitowner="$(pushd $gitroot/.. > /dev/null && echo `basename $(pwd)` && popd > /dev/null)"
-    gitbase="$gitowner/$(basename "$gitroot")"
+    gitbase="${color_path}${gitowner}/$(basename "$gitroot")${color_reset}"
+    gitbranch="${color_symbol}[$(git rev-parse --abbrev-ref HEAD)]${color_reset}"
     # detect if in a symlink
     if [[ $workdir != $gitroot*  ]]; then
-      printf "%s %s %s"  "$git_prompt_prefix" "${workdir/$HOME/~}" "$color_dark[-> ${gitroot/$HOME/~}]$color_reset"
+      printf "%s %s%s %s"  "$git_prompt_prefix" "${workdir/$HOME/~}" "$gitbranch" "$color_dark[-> ${gitroot/$HOME/~}]$color_reset"
     else
-      printf "%s %s"  "$git_prompt_prefix" "$gitbase${workdir/$gitroot/}"
+      printf "%s%s %s" "$git_prompt_prefix" "$gitbranch" "$gitbase${workdir/$gitroot/}"
     fi
   else
     # not in git
