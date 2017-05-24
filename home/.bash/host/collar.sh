@@ -19,7 +19,7 @@ for key in $HOME/.ssh/*_rsa*.pub; do
 done
 
 function make() {
-    make -j8 "$@"
+    /usr/bin/make -j "$@"
 }
 
 function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
