@@ -25,14 +25,27 @@ function make() {
 function cdr() { cd $GOPATH/src/github.com/roboll/$@; }
 function cdd() { cd $GOPATH/src/github.com/DataDog/$@; }
 
-function vapor-status { linode show vapor | awk '/status/ { $1=""; print "vapor:"$0 }'; }
-function vapor-down { linode stop vapor; }
-function vapor-up {
+function vapor {
+    case "$1" in
+        up)     _vapor-up ;;
+        down)   _vapor-down ;;
+        status) _vapor-status ;;
+        *)
+            echo "up, down, ssh, or status"
+            return 1
+            ;;
+    esac
+}
+
+function _vapor-status { linode show vapor | awk '/status/ { $1=""; print "vapor:"$0 }'; }
+function _vapor-down { linode stop vapor; }
+function _vapor-up {
     linode show vapor | awk '/status/ { print $2 }' | grep -q running || linode start vapor
     until linode show vapor | grep -q "status: running"; do
         echo 'Waiting for vapor status running.'
         sleep 5
     done
 
+    echo "!! Enter decrypt passphrase, then control-a d to disconnect from login prompt."
     ssh -t linode vapor
 }
