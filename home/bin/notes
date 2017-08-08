@@ -1,5 +1,13 @@
 #! /bin/bash
 
+# bash autocomplete: complete -o "default" -o "nospace" -W "$(notes complete)" notes
+
+if [[ $1 == "complete" ]]; then
+    find $HOME/Dropbox/Notes.d/*.md | \
+        sed -e "s,$HOME/Dropbox/Notes.d/,,g" -e 's,\.md,,g'
+    exit 0
+fi
+
 note="$@"
 test -z "$note" && note="default"
 
@@ -7,7 +15,7 @@ test -z "$note" && note="default"
     cd "$HOME/Dropbox/Notes.d"
     livemd 2>/dev/null &
     pid="$!"
-    trap "kill $pid" exit
+    trap "kill $pid 2>/dev/null" exit
 }
 
 "$EDITOR" "$HOME/Dropbox/Notes.d/$note.md"

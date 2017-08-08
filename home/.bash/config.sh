@@ -7,6 +7,8 @@ if [ -e "$HOME/.ssh/config" ]; then
         grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" ssh scp sftp
 fi
 
+complete -o "default" -o "nospace" -W "$(notes complete)" notes
+
 # colors for ls
 if ls --color > /dev/null 2>&1; then
     # GNU
