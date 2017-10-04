@@ -66,6 +66,7 @@ cask 'virtualbox'
 
 cask 'alfred'
 cask 'spotify'
+cask 'sonos'
 cask 'caffeine'
 cask 'google-chrome'
 
