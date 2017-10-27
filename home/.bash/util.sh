@@ -52,14 +52,7 @@ function title {
 
 # http server for pwd
 function http() {
-    local port="${1:-8000}"
+    local port="${1:-8080}"
     sleep 1 && open "http://localhost:${port}/" &
-    python <<EOF
-import SimpleHTTPServer
-map = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map
-map[""] = "text/plain"
-for key, value in map.items():
-    map[key] = value + ";charset=UTF-8";
-SimpleHTTPServer.test();
-EOF
+    python -m SimpleHTTPServer "${port}"
 }
