@@ -49,7 +49,7 @@ brew 'postgresql'
 #cask 'pgadmin3'
 
 brew 'awscli'
-brew 'aws-vault'
+cask 'aws-vault'
 
 tap 'linode/cli'
 brew 'linode-cli'
