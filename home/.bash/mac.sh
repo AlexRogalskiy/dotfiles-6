@@ -23,6 +23,8 @@ function iterm-ssh() {
         trap "iterm-reset" INT EXIT
         if grep -q "prod" <<< $*; then
             iterm-profile ssh-prod
+        elif grep -q "build" <<< $*; then
+            iterm-profile ssh-build
         else
             iterm-profile ssh
         fi
