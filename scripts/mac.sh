@@ -42,8 +42,9 @@ configure() {
 1. sync
   a. sign in to dropbox
   b. sync 1password
-2. remap keys in sys prefs -> keyboard
-  a. caps lock to option
+2. usability tweaks
+  a. remap keys in sys prefs -> keyboard: caps lock to option
+  b. accessibility: three finger trackpad drag
 3. aws-vault configuration from notes
 4. user picture from dropbox
 5. keys - ssh, pgp
