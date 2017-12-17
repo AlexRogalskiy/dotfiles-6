@@ -51,9 +51,11 @@ cask 'virtualbox'
 
 cask 'alfred'
 cask 'spotify'
-cask 'sonos'
 cask 'caffeine'
 cask 'google-chrome'
+
+tap 'caskroom/drivers'
+cask 'sonos'
 
 cask 'keybase'
 # cask 'cura'
