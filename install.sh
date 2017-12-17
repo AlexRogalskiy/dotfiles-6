@@ -15,11 +15,7 @@ confirm_var() {
     value=$(printenv "${1}" || true)
     message="Using $name=$value."
 
-    if [ -v SKIP_CONFIRM ]; then
-        log_info "$message"
-    else
-        read -rp "?? $message Continue? "
-    fi
+    read -rp "?? $message Continue? "
 }
 
 USER=${USER:=roboll}
