@@ -34,25 +34,10 @@ brew 'node'
 brew 'ruby'
 
 cask 'java' unless system '/usr/libexec/java_home --failfast >/dev/null'
-
-brew 'sbt'
-brew 'ant'
-brew 'scala'
-brew 'maven'
-brew 'gradle'
 brew 'nailgun'
-brew 'leiningen'
-cask 'visualvm'
-cask 'intellij-idea-ce'
-
-brew 'postgresql'
-#cask 'pgadmin3'
 
 brew 'awscli'
 cask 'aws-vault'
-
-tap 'linode/cli'
-brew 'linode-cli'
 
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
@@ -71,7 +56,7 @@ cask 'caffeine'
 cask 'google-chrome'
 
 cask 'keybase'
-cask 'cura'
+# cask 'cura'
 mas '1Password', id: 443987910
 mas 'Flexiglass', id: 426410278
 
@@ -80,10 +65,3 @@ cask 'caskroom/fonts/font-hack'
 cask 'caskroom/fonts/font-inconsolata'
 cask 'caskroom/fonts/font-inconsolata-dz'
 cask 'caskroom/fonts/font-inconsolata-dz-for-powerline'
-
-cask 'quicklook-json'
-cask 'quicklook-csv'
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'qlprettypatch'
-cask 'betterzipql'
