@@ -45,7 +45,7 @@ configure() {
 2. remap keys in sys prefs -> keyboard
   a. caps lock to option
 3. keys - ssh, pgp
-4. aws configure, linode configure
+4. aws-vault configuration from notes
 
 =================================================
 EOF
