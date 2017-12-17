@@ -52,6 +52,7 @@ cask 'virtualbox'
 cask 'alfred'
 cask 'spotify'
 cask 'caffeine'
+cask 'dropbox'
 cask 'google-chrome'
 
 tap 'caskroom/drivers'
