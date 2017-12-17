@@ -44,8 +44,9 @@ configure() {
   b. sync 1password
 2. remap keys in sys prefs -> keyboard
   a. caps lock to option
-3. keys - ssh, pgp
-4. aws-vault configuration from notes
+3. aws-vault configuration from notes
+4. user picture from dropbox
+5. keys - ssh, pgp
 
 =================================================
 EOF
