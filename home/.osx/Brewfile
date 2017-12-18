@@ -7,7 +7,6 @@ brew 'bash'
 brew 'bash-completion'
 
 brew 'jq'
-brew 'ack'
 brew 'tree'
 brew 'wget', args: ['with-iri']
 brew 'ctags'
@@ -32,9 +31,8 @@ brew 'gist'
 brew 'go'
 brew 'node'
 brew 'ruby'
-
-cask 'java' unless system '/usr/libexec/java_home --failfast >/dev/null'
-brew 'nailgun'
+brew 'markdown'
+brew 'shellcheck'
 
 brew 'awscli'
 cask 'aws-vault'
@@ -42,26 +40,21 @@ cask 'aws-vault'
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
 
-brew 'markdown'
-brew 'shellcheck'
-
 cask 'docker'
 cask 'vagrant'
 cask 'virtualbox'
 
-cask 'alfred'
+# cask 'cura'
 cask 'spotify'
 cask 'caffeine'
 cask 'dropbox'
+cask 'keybase'
 cask 'google-chrome'
 
 tap 'caskroom/drivers'
 cask 'sonos'
 
-cask 'keybase'
-# cask 'cura'
 mas '1Password', id: 443987910
-mas 'Flexiglass', id: 426410278
 
 cask 'caskroom/fonts/font-hack'
 
