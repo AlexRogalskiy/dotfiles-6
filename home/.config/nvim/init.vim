@@ -23,7 +23,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'lambdalisue/vim-manpager'
 Plug 'benekastah/neomake'
 Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
-Plug 'Shougo/deoplete.nvim'
 
 " tools
 Plug 'tpope/vim-fugitive'
