@@ -43,6 +43,7 @@ cask 'vagrant'
 cask 'virtualbox'
 
 # cask 'cura'
+cask 'slack'
 cask 'spotify'
 cask 'caffeine'
 cask 'dropbox'
