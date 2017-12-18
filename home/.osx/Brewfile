@@ -57,7 +57,3 @@ cask 'sonos'
 mas '1Password', id: 443987910
 
 cask 'caskroom/fonts/font-hack'
-
-cask 'caskroom/fonts/font-inconsolata'
-cask 'caskroom/fonts/font-inconsolata-dz'
-cask 'caskroom/fonts/font-inconsolata-dz-for-powerline'
