@@ -15,8 +15,6 @@ brew 'grep', args: ['with-default-names']
 
 tap 'neovim/neovim'
 brew 'neovim'
-
-brew 'vim', args: ['override-system-vi', 'with-lua']
 brew 'vimpager'
 
 brew 'hg'
