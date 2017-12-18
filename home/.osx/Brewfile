@@ -49,13 +49,11 @@ cask 'spotify'
 cask 'caffeine'
 cask 'dropbox'
 cask 'keybase'
-cask  '1password'
+cask '1password'
 cask '1password-cli'
 cask 'google-chrome'
 
 tap 'caskroom/drivers'
 cask 'sonos'
-
-mas '1Password', id: 443987910
 
 cask 'caskroom/fonts/font-hack'
