@@ -1,3 +1,5 @@
+
+
 call g:plug#begin('~/.config/nvim/managed/')
 
 " visual
@@ -18,44 +20,28 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 
-"Plug 'janko-m/vim-test'
+Plug 'lambdalisue/vim-manpager'
 Plug 'benekastah/neomake'
-"Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe',          { 'do': './install.py' }
+Plug 'Shougo/deoplete.nvim'
 
 " tools
 Plug 'tpope/vim-fugitive'
-Plug 'tfnico/vim-gradle'
 Plug 'hashivim/vim-hashicorp-tools'
 
 " lang
 Plug 'sheerun/vim-polyglot'
-Plug 'chase/vim-ansible-yaml',          { 'for': 'ansible' }
 Plug 'ivalkeen/vim-simpledb',           { 'for': 'sql' }
-Plug 'derekwyatt/vim-scala',            { 'for': 'scala' }
-Plug 'artur-shaik/vim-javacomplete2'
-Plug 'Shougo/deoplete.nvim'
-Plug 'udalov/kotlin-vim',               { 'for': 'kotlin' }
 Plug 'fatih/vim-go',                    { 'for': 'go' }
 Plug 'zchee/deoplete-go',               { 'for': 'go', 'do': 'make'}
 Plug 'pangloss/vim-javascript',         { 'for': 'javascript' }
-Plug 'groenewege/vim-less',             { 'for': 'less' }
-Plug 'vim-scripts/HTML-AutoCloseTag',   { 'for': 'html' }
 Plug 'elzr/vim-json',                   { 'for': 'json'}
-Plug 'markcornick/vim-terraform',       { 'for': 'terraform' }
 Plug 'uarun/vim-protobuf'
-
-Plug 'tpope/vim-fireplace',             { 'for': 'clojure' }
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-classpath'
-Plug 'tpope/vim-salve'
-Plug 'kien/rainbow_parentheses.vim',    { 'for': 'clojure' }
 
 Plug 'reedes/vim-pencil'
 Plug 'powerman/vim-plugin-AnsiEsc'
 
 Plug 'romainl/Apprentice',              { 'branch': 'fancylines-and-neovim' }
-Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/seoul256.vim'
 
 "experimental

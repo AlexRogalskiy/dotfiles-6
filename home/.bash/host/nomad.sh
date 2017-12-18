@@ -2,6 +2,7 @@
 
 export EDITOR=nvim
 export PAGER=vimpager
+export MANPAGER="nvim -c MANPAGER -"
 
 alias vi="nvim"
 alias vim="nvim"

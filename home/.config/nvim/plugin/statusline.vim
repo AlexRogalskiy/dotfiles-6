@@ -23,8 +23,8 @@ let g:lightline = {
             \ 'component_type': {
             \   'neomake': 'error',
             \ },
-            \ 'separator': { 'left': "", 'right': ""},
-            \ 'subseparator': { 'left': "|", 'right': "|"}
+            \ 'separator': { 'left': "", 'right': ""},
+            \ 'subseparator': { 'left': "", 'right': ""}
             \ }
 
 function! g:MyModified()
