@@ -17,6 +17,9 @@ configure() {
     log_info "Linking iTerm2 setings."
     ln -sf "$HOME/.osx/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
 
+    log_info "Linking neovim to 'vim'."
+    ln -sf "/usr/local/bin/nvim" "/usr/local/bin/vim"
+
     log_info "Updating user $USER."
     sudo dscl . -create /Users/roboll UserShell /bin/bash
     sudo dscl . -create /Users/roboll RealName "rob boll"
