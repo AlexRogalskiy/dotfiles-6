@@ -35,6 +35,7 @@ cask 'iterm2'
 
 brew 'awscli'
 cask 'aws-vault'
+cask 'google-cloud-sdk'
 
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
