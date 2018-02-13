@@ -37,6 +37,8 @@ brew 'awscli'
 cask 'aws-vault'
 cask 'google-cloud-sdk'
 
+brew 'tfenv'
+
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
 
