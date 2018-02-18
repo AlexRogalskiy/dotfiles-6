@@ -20,6 +20,7 @@ brew 'vimpager'
 
 brew 'hg'
 brew 'git'
+brew 'hub'
 brew 'gist'
 
 brew 'go'
@@ -38,6 +39,7 @@ cask 'aws-vault'
 cask 'google-cloud-sdk'
 
 brew 'tfenv'
+brew 'vault'
 
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
