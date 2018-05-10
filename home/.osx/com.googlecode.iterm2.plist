@@ -10606,15 +10606,15 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>323 569 606 456 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 509 620 392 0 0 1680 1050 </string>
+	<string>530 490 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 157 606 456 0 0 1680 1050 </string>
+	<string>602 330 606 469 0 0 3008 1692 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1367 1173 796 473 0 0 3008 1669 </string>
+	<string>1020 1235 770 429 0 0 3008 1692 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2003 612 698 807 0 0 3008 1669 </string>
+	<string>0 526 650 501 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1102 -113 1770 1201 0 0 3008 1669 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -10802,7 +10802,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.091350555419922</real>
+			<real>14.533821605546825</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -11221,6 +11221,8 @@
 			<true/>
 			<key>Normal Font</key>
 			<string>Hack-Regular 13</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -16174,6 +16176,8 @@
 	<integer>0</integer>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -16199,13 +16203,15 @@
 		<string>000</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
-	<false/>
+	<true/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>2</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -16247,10 +16253,12 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string></string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<false/>
+	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
@@ -16268,7 +16276,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-27T16:00:21Z</date>
+	<date>2018-05-09T01:26:05Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -16311,6 +16319,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>UseSystemCursorWhenPossible</key>
+	<true/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -16318,7 +16328,7 @@
 	<key>Window Arrangements</key>
 	<dict/>
 	<key>WindowNumber</key>
-	<false/>
+	<true/>
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
@@ -16330,7 +16340,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.4</string>
+	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
