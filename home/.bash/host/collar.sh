@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-
-
 export EDITOR=nvim
 alias vi="nvim"
 alias vim="nvim"

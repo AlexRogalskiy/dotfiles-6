@@ -17,7 +17,7 @@ if [ -f "$hostfile" ]; then source "$hostfile"; fi
 secretfile="$HOME/.secrets.sh"
 if [ -f "$secretfile" ]; then source "$secretfile"; fi
 
-localfile="$HOME/.bash/.local.sh"
+localfile="$HOME/.local.sh"
 if [ -f "$localfile" ]; then source "$localfile"; fi
 
 if [ "$(uname)" == "Darwin" ]; then source "$HOME/.bash/mac.sh"; fi
