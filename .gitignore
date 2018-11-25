@@ -10,6 +10,8 @@ home/.ssh/config.d/*
 home/.ssh/*_rsa
 home/.ssh/*_rsa.pub
 
+home/.config/gcloud
+
 home/.config/nvim/managed/
 
 home/.config/nvim/swapfiles/
