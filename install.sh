@@ -25,15 +25,6 @@ export BOXNAME=${BOXNAME:=$(hostname -s)}
 confirm_var "BOXNAME"
 echo "$BOXNAME" > ~/.boxname
 
-case $(uname) in
-    Darwin ) export DISTRO=mac ;;
-    Linux  ) if command -v pacman >/dev/null;    then export DISTRO=arch;
-             elif command -v apt-get >/dev/null; then export DISTRO=debian;
-             else log_err "Couldn't recognize Linux distro."; fi ;;
-    *      ) log_err "Couldn't recognize OS." ;;
-esac
-confirm_var "DISTRO"
-
 # keep sudo until exit
 if [ "$(id -u)" -ne 0 ]; then
     echo "!! Requires root, elevating with sudo."
@@ -47,11 +38,7 @@ pushd "$SCRIPT_DIR" >/dev/null
 trap "popd>/dev/null" EXIT
 
 source "./scripts/common.sh"
-if [ -f "./scripts/${DISTRO}.sh" ]; then
-    source "./scripts/$DISTRO.sh"
-else
-    log_err "No script for DISTRO=${DISTRO}."
-fi
+source "./scripts/mac.sh"
 
 setup
 install

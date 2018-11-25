@@ -19,17 +19,7 @@ confirm_var() {
 }
 
 require_git() {
-    command -v git >/dev/null 2>&1 || {
-        case $(uname) in
-            Darwin ) xcode-select --install ;;
-            Linux  )
-                if command -v apt-get > /dev/null; then
-                    sudo apt-get install -y git
-                fi
-                ;;
-            *      ) echo "!! git is required" && exit 1 ;;
-        esac
-    }
+    command -v git >/dev/null 2>&1 || xcode-select --install
 }
 
 install_dotfiles() {
