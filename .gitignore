@@ -14,3 +14,6 @@ home/.config/nvim/managed/
 
 home/.config/nvim/swapfiles/
 !home/.config/nvim/swapfiles/README.md
+
+home/bin/*
+!home/bin/notes
