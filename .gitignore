@@ -1,5 +1,5 @@
-home/.ssh/known_hosts
-home/.ssh/authorized_keys
+home/.ssh/*
+!home/.ssh/config
 
 home/.ssh/control/*
 !home/.ssh/control/.keep
@@ -7,15 +7,13 @@ home/.ssh/control/*
 home/.ssh/config.d/*
 !home/.ssh/config.d/.keep
 
-home/.ssh/*_rsa
-home/.ssh/*_rsa.pub
-
 home/.config/gcloud
 
+home/.config/git
+
+home/.config/htop
+
+home/.config/hub
+
 home/.config/nvim/managed/
-
 home/.config/nvim/swapfiles/
-!home/.config/nvim/swapfiles/README.md
-
-home/bin/*
-!home/bin/notes
