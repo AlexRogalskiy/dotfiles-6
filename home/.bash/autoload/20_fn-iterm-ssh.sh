@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# change profiles on ssh sessions
+# change iterm profile on ssh sessions
 function iterm-ssh() {
     if [[ -n "$ITERM_SESSION_ID" ]]; then
         trap "iterm-reset" INT EXIT

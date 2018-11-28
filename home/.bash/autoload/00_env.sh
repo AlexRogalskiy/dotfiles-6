@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+PROMPT_COMMAND='git-prompt'
+
 export EDITOR="nvim"
-# export PAGER=vimpager
-# export MANPAGER="nvim -c MANPAGER -"
+export PAGER="nvim -c PAGER -"
+export MANPAGER="nvim -c MANPAGER -"
 
 export GOPATH="$HOME/dev"
 
