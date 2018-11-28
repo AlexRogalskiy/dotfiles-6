@@ -8,14 +8,14 @@ setup() {
     }
 
     brew tap homebrew/bundle
-    brew bundle --file="home/.osx/Brewfile"
+    brew bundle --file="home/.macos/Brewfile"
     brew cleanup
     brew cask cleanup
 }
 
 configure() {
     log_info "Linking iTerm2 setings."
-    ln -sf "$HOME/.osx/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
+    ln -sf "$HOME/.macos/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
 
     log_info "Linking neovim to 'vim'."
     ln -sf "/usr/local/bin/nvim" "/usr/local/bin/vim"
