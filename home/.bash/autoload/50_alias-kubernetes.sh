@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 alias k="kubectl"
 
@@ -8,8 +8,6 @@ alias kconf="kubectl config use-context"
 function kns() {
     kubectl config set-context $(kubectl config current-context) --namespace=$@
 }
-
-alias kubens="kns"
 
 # nodes
 alias kno="kubectl get no"
