@@ -15,8 +15,9 @@ secretfile="$HOME/.secrets.sh"
 if [ -f "$secretfile" ]; then source "$secretfile"; fi
 
 for file in $(find "$HOME/.bash/autoload/" -type f | sort); do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
+    test -r "$file" && test -f "$file" && source "$file"
 done
+
 
 # when not in tmux
 # disabled because not using tmux locally right now
