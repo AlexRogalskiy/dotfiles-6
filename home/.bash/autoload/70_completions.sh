@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# homebrew
-if command -v brew >/dev/null; then
-    file="/usr/local/etc/bash_completion"
-    test -f "${file}" && test -r "${file}" && source "${file}"
-fi
-
 # ssh scp sftp
 if [ -e "$HOME/.ssh/config" ]; then
     complete -o "default" -o "nospace" \
