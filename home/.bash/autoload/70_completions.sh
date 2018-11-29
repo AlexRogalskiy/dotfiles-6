@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 # homebrew
-if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-    source "$(brew --prefix)/etc/bash_completion"
+if command -v brew >/dev/null; then
+    file="/usr/local/etc/bash_completion"
+    test -f "${file}" && test -r "${file}" && source "${file}"
 fi
 
 # ssh scp sftp

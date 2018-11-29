@@ -4,16 +4,17 @@ function iterm-update-kube-status {
     config="${HOME}/.kube/config"
     marker="${HOME}/.prompt-kubectl-lastrun"
 
-    if [ "${marker}" -ot "${config}" ]; then
-        echo "marker is older than the config" >&2
-
+    # check if the env vars are set too
+    if [ -z "${kubeprompt}" ] || [ "${marker}" -ot "${config}" ]; then
         kubectx="$(kubectl config current-context)"
         kubens="$(kubectl config get-contexts ${kubectx} --no-headers | awk ' { print $5; }')"
 
         echo -ne "\033]50;SetUserVar=kubectx=$(echo -ne "⎈ ${kubectx}" | base64)\a"
         echo -ne "\033]50;SetUserVar=kubens=$(echo -ne "» ${kubens}" | base64)\a"
 
+        kubeprompt="$(date +%s)"
         touch "${marker}"
+
         return
     fi
 }
