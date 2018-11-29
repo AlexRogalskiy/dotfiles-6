@@ -10544,7 +10544,7 @@
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
-	<false/>
+	<true/>
 	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HideTabNumber</key>
@@ -10664,11 +10664,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>361 223 606 469 0 0 2048 1152 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>839 615 918 471 0 0 2048 1152 </string>
+	<string>495 463 1016 512 0 0 2048 1152 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>669 209 1270 825 0 0 2048 1152 </string>
+	<string>68 448 730 544 0 0 2048 1152 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>5 72 1675 978 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -11701,7 +11701,7 @@
 			<key>Title Components</key>
 			<integer>2</integer>
 			<key>Transparency</key>
-			<real>0.033866483718156815</real>
+			<real>0.077731490063334477</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -15117,7 +15117,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-28T02:34:22Z</date>
+	<date>2018-11-29T05:38:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -15170,6 +15170,8 @@
 	<dict/>
 	<key>Use background pattern indicator</key>
 	<false/>
+	<key>UseAdaptiveFrameRate</key>
+	<true/>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseCompactLabel</key>
