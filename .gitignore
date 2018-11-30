@@ -1,10 +1,10 @@
-home/.ssh/*
+home/.ssh/
 !home/.ssh/config
 
-home/.ssh/control/*
+home/.ssh/control/
 !home/.ssh/control/.keep
 
-home/.ssh/config.d/*
+home/.ssh/config.d/
 !home/.ssh/config.d/.keep
 
 home/.config/gcloud
@@ -17,3 +17,5 @@ home/.config/hub
 
 home/.config/nvim/managed/
 home/.config/nvim/swapfiles/
+
+home/bin/
