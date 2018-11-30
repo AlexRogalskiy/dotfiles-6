@@ -13,18 +13,3 @@ function _ssh_completion() {
 }
 
 complete -F _ssh_completion ssh scp
-
-function _notes_completion() {
-    local cur prev opts
-    COMPREPLY=()
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
-    opts=$(notes complete)
-
-    COMPREPLY=( $(compgen -W "$opts" -- ${cur}) )
-    return 0
-}
-
-# notes
-complete -F _notes_completion notes
-#complete -o "default" -o "nospace" -W "$(notes complete)" notes
