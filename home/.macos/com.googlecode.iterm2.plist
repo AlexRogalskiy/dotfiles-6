@@ -42,6 +42,8 @@
 	<true/>
 	<key>ClosingTmuxWindowKillsTmuxWindows_selection</key>
 	<integer>1</integer>
+	<key>ColoredSelectedTabOutlineStrength</key>
+	<real>0.0</real>
 	<key>CommandSelection</key>
 	<true/>
 	<key>Control</key>
@@ -10666,11 +10668,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>362 223 606 469 0 0 2048 1152 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1030 224 1018 447 0 0 2048 1152 </string>
+	<string>1030 263 1018 447 0 0 2048 1152 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>170 545 592 584 0 0 2048 1129 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2044 1145 0 0 2048 1152 </string>
+	<string>155 165 730 544 0 0 2048 1152 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>772 447 730 566 0 0 2048 1129 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -11649,6 +11651,8 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Use Tab Color</key>
+			<false/>
+			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
 			<real>1.1000000238418579</real>
@@ -14849,7 +14853,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-29T05:38:28Z</date>
+	<date>2018-11-30T05:38:28Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
