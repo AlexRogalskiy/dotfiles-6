@@ -1,1 +1,1 @@
-au! BufWritePost *.tf TerraformFmt
+autocmd BufWritePre *.tf call terraform#fmt()

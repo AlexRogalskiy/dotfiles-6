@@ -29,6 +29,7 @@ Plug 'neomake/neomake'
 "
 Plug 'fatih/vim-go',                    { 'tag': '*', 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'reedes/vim-pencil',               { 'for': 'markdown' }
+Plug 'hashivim/vim-terraform',          { 'for': 'terraform' }
 Plug 'sheerun/vim-polyglot'
 
 Plug 'lambdalisue/vim-manpager'
@@ -63,6 +64,9 @@ nmap q :q<CR>"
 
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
+
+let g:neomake_open_list = 2
+call neomake#configure#automake('w')
 
 " nerdtree
 let NERDTreeShowHidden=1
