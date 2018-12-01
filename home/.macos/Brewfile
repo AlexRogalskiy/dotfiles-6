@@ -65,3 +65,6 @@ cask 'sonos'
 cask 'caskroom/fonts/font-hack'
 
 tap 'homebrew/cask-versions'
+
+cask 'little-snitch'
+cask 'micro-snitch'
