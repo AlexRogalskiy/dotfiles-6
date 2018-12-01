@@ -48,7 +48,10 @@ configure() {
   a. remap keys in sys prefs -> keyboard: caps lock to option
   b. accessibility: three finger trackpad drag
 3. aws-vault configuration from notes
-4. user picture from dropbox
+4. install/run applications
+  a. little snitch
+  b. micro snitch
+  c. caffine
 5. keys - ssh, pgp
 
 =================================================
