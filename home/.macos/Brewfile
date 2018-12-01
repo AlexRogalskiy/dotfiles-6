@@ -63,3 +63,5 @@ tap 'caskroom/drivers'
 cask 'sonos'
 
 cask 'caskroom/fonts/font-hack'
+
+tap 'homebrew/cask-versions'
