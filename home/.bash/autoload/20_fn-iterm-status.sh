@@ -5,8 +5,10 @@ function iterm-update-kube-status {
     marker="${HOME}/.prompt-kubectl-lastrun"
 
     if [ -z "${kubeprompt}" ] || [ "${marker}" -ot "${config}" ]; then
-        kubectx="$(kubectl config current-context)"
-        kubens="$(kubectl config get-contexts ${kubectx} --no-headers | awk ' { print $5; }')"
+        kubectx="$(kubectl config current-context 2>/dev/null)"
+        test -z "${kubectx}" && return
+
+        kubens="$(kubectl config get-contexts "${kubectx}" --no-headers | awk ' { print $5; }')"
 
         echo -ne "\033]50;SetUserVar=kubectx=$(echo -ne "⎈ ${kubectx} » ${kubens}" | base64)\a"
 
