@@ -162,7 +162,3 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
-
-# map tab to escape, map caps lock to tab
-# https://developer.apple.com/library/content/technotes/tn2450/_index.html
-hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x70000002B,"HIDKeyboardModifierMappingDst":0x7000000029},{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x70000002B}]}'
