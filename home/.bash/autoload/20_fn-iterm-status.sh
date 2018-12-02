@@ -6,10 +6,14 @@ function iterm-update-kube-status {
 
     if [ -z "${kubeprompt}" ] || [ "${marker}" -ot "${config}" ]; then
         kubectx="$(kubectl config current-context 2>/dev/null)"
-        test -z "${kubectx}" && return
+        if [ -z "${kubectx}" ]; then
+            kubeprompt="$(date +%s)"
+            touch "${marker}"
+
+            return
+        fi
 
         kubens="$(kubectl config get-contexts "${kubectx}" --no-headers | awk ' { print $5; }')"
-
         echo -ne "\033]50;SetUserVar=kubectx=$(echo -ne "⎈ ${kubectx} » ${kubens}" | base64)\a"
 
         kubeprompt="$(date +%s)"
