@@ -65,9 +65,6 @@ nmap q :q<CR>"
 let g:neomake_error_sign = { 'text': '=>', 'texthl': 'ErrorMsg' }
 let g:neomake_warning_sign = { 'text': '=>', 'texthl': 'SignColumn' }
 
-let g:neomake_open_list = 2
-call neomake#configure#automake('w')
-
 " nerdtree
 let NERDTreeShowHidden=1
 

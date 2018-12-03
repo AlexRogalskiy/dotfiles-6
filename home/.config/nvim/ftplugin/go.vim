@@ -32,3 +32,6 @@ let g:enable_ycm_at_startup = 0
 let g:deoplete#enable_at_startup = 1
 
 set tabstop=4 shiftwidth=4 colorcolumn=80
+
+let g:neomake_open_list = 2
+call neomake#configure#automake('w')
