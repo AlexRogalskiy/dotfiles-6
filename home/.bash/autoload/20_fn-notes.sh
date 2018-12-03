@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+NOTES_DIR="${HOME}/Dropbox/Notes.d/"
+
 function notes() {
     note="$@"
     test -z "${note}" && note="default"
