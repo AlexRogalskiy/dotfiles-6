@@ -1,25 +1,10 @@
 #!/usr/bin/env bash
 
 function iterm-update-kube-status {
-    config="${HOME}/.kube/config"
-    marker="${HOME}/.prompt-kubectl-lastrun"
-
-    if [ -z "${kubeprompt}" ] || [ "${marker}" -ot "${config}" ]; then
-        kubectx="$(kubectl config current-context 2>/dev/null)"
-        if [ -z "${kubectx}" ]; then
-            kubeprompt="$(date +%s)"
-            touch "${marker}"
-
-            return
-        fi
-
-        kubens="$(kubectl config get-contexts "${kubectx}" --no-headers | awk ' { print $5; }')"
-        echo -ne "\033]50;SetUserVar=kubectx=$(echo -ne "⎈ ${kubectx} » ${kubens}" | base64)\a"
-
-        kubeprompt="$(date +%s)"
-        touch "${marker}"
-
-        return
+    if [[ -z "${KUBECTL_CONTEXT}" ]]; then
+        iterm-clear-kube-status
+    else
+        echo -ne "\033]50;SetUserVar=kubectx=$(echo -ne "⎈ ${KUBECTL_CONTEXT} » ${KUBECTL_NAMESPACE:-default}" | base64)\a"
     fi
 }
 
