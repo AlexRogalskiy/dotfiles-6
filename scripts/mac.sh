@@ -8,7 +8,7 @@ setup() {
     }
 
     brew tap homebrew/bundle
-    brew bundle --file="home/.macos/Brewfile"
+    brew bundle --file=Brewfile
     brew cleanup
 }
 

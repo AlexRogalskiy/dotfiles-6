@@ -5,7 +5,7 @@ brew 'bash'
 
 brew 'jq'
 brew 'tree'
-brew 'wget', args: ['with-iri']
+brew 'wget'
 brew 'ctags'
 brew 'cmake'
 brew 'gnu-tar'
@@ -13,13 +13,13 @@ brew 'gnu-sed'
 brew 'htop'
 brew 'coreutils'
 brew 'findutils'
-brew 'grep', args: ['with-default-names']
+brew 'grep'
 
 tap 'neovim/neovim'
 brew 'neovim'
 #brew 'vimpager'
 
-brew 'hg'
+#brew 'hg'
 brew 'git'
 brew 'hub'
 brew 'gist'
