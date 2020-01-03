@@ -62,7 +62,7 @@ cask 'google-chrome'
 tap 'caskroom/drivers'
 cask 'sonos'
 
-cask 'caskroom/fonts/font-hack'
+cask 'font-hack'
 
 tap 'homebrew/cask-versions'
 
