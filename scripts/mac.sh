@@ -20,8 +20,8 @@ configure() {
     ln -sf "/usr/local/bin/nvim" "/usr/local/bin/vim"
 
     log_info "Updating user $USER."
-    sudo dscl . -create /Users/roboll UserShell /bin/bash
-    sudo dscl . -create /Users/roboll RealName "rob boll"
+    sudo dscl . -create /Users/roboll UserShell /bin/zsh
+    sudo dscl . -create /Users/roboll RealName "roboll"
     sudo dscl . -create /Users/roboll PrimaryGroupID 80
     sudo dscl . -create /Users/roboll NFSHomeDirectory /Users/roboll
 
@@ -36,23 +36,18 @@ configure() {
     sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$BOXNAME"
 
     log_info "Setting macOS defaults."
-    scripts/mac-defaults.sh
+    # scripts/mac-defaults.sh
 
     cat <<EOF
 =================================================
 
-1. sync
-  a. sign in to dropbox
-  b. sync 1password
-2. usability tweaks
+1. usability tweaks
   a. remap keys in sys prefs -> keyboard: caps lock to option
   b. accessibility: three finger trackpad drag
-3. aws-vault configuration from notes
-4. install/run applications
-  a. little snitch
-  b. micro snitch
-  c. caffine
-5. keys - ssh, pgp
+2. install/run applications
+  a. 1Password
+  b. Caffine
+  c. Little Snitch
 
 =================================================
 EOF
