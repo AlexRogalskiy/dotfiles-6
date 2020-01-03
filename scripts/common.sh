@@ -19,10 +19,6 @@ install() {
         log_info "Installing from pip."
         sudo pip install neovim
     }
-    command -v pip2 >/dev/null && {
-        log_info "Installing from pip2."
-        sudo pip2 install neovim
-    }
     command -v pip3 >/dev/null && {
         log_info "Installing from pip3."
         sudo pip3 install neovim
