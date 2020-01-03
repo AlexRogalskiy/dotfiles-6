@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+export PROMPT='%F{blue}%B%3~%b%(?.%F{green}.%F{red}) %(!.#.$) %f'
+export RPROMPT='%(?..%F{red}%?)%f'
+
 alias k="kubectl"
 alias kpo="kubectl get pods"
 alias kno="kubectl get nodes"

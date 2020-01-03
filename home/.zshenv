@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# zsh
-export PROMPT='%F{blue}%B%3~%b%(?.%F{green}.%F{red}) %(!.#.$) %f'
-export RPROMPT='%(?..%F{red}%?)%f'
-
 export EDITOR="nvim"
 
 export PAGER="nvim -c PAGER -"
