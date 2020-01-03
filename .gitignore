@@ -1,3 +1,5 @@
+Brewfile.lock.json
+
 home/.ssh/
 !home/.ssh/config
 
