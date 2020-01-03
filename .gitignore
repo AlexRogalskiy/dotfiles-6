@@ -20,4 +20,4 @@ home/.config/hub
 home/.config/nvim/managed/
 home/.config/nvim/swapfiles/
 
-home/bin/
+home/.zsh/*_secret.zsh
