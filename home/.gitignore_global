@@ -1,5 +1,3 @@
-.generated
-
 *.pyc
 
 # misc os files
@@ -10,26 +8,5 @@
 # logs
 *.log
 
-# java
-*.class
-
-# intellij
-.idea/
-*.iml
-
-# gradle
-.gradle
-build/
-
-# maven
-target/
-
-# sql buffers
-*_buffer.sql
-
 # vim
 *.swp
-
-# vim-cp plugin
-.vimcp
-.vimsp
