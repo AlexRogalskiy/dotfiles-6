@@ -1,7 +1,7 @@
 brew 'stow'
 
 brew 'bash'
-#brew 'bash-completion'
+brew 'zsh'
 
 brew 'jq'
 brew 'tree'
@@ -17,16 +17,12 @@ brew 'grep'
 
 tap 'neovim/neovim'
 brew 'neovim'
-#brew 'vimpager'
 
-#brew 'hg'
 brew 'git'
 brew 'hub'
 brew 'gist'
 
 brew 'go'
-#brew 'node'
-#brew 'ruby'
 brew 'markdown'
 brew 'shellcheck'
 
@@ -46,15 +42,11 @@ brew 'kubernetes-cli'
 brew 'kubernetes-helm'
 
 cask 'docker'
-cask 'vagrant'
-#cask 'virtualbox'
 
-# cask 'cura'
 cask 'slack'
 cask 'spotify'
 cask 'caffeine'
 cask 'dropbox'
-#cask 'keybase'
 cask '1password'
 cask '1password-cli'
 cask 'google-chrome'
