@@ -2,9 +2,6 @@
 set -euo pipefail
 
 install() {
-    [ -f ~/.bashrc ] && mv ~/.bashrc ~/.bashrc.bk
-    [ -f ~/.bash_profile ] && mv ~/.bash_profile ~/.bash_profile.bk
-
     log_info "Stowing home."
     stow -t "$HOME" home
 
