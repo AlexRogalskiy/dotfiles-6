@@ -1,5 +1,12 @@
 #!/usr/bin/env zsh
 
+# source includes
+if [ -d "${HOME}/.zsh" ]; then
+  for file in "${HOME}/.zsh/*.zsh"; do
+    source "${file}"
+  done
+fi
+
 # allow bash style comments on cli
 setopt interactivecomments
 
