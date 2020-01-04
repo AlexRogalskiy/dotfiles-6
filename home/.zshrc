@@ -2,6 +2,7 @@
 
 hash -d dev=~/dev
 hash -d src=~/dev/src
+hash -d github.com=~/dev/src/github.com
 
 # source includes
 if [ -d "${HOME}/.zsh" ]; then
