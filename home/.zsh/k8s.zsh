@@ -16,11 +16,11 @@ function kc {
 function _kc {
   local contexts
 
-  zstyle -s ':kc:' contexts contexts
+  zstyle -s 'kc' contexts contexts
 
   if [[ -z "$contexts" ]] || _kubeconfig_is_modified; then
     contexts=$(kubectl config get-contexts -oname)
-    zstyle ':kc:' contexts "$contexts"
+    zstyle 'kc' contexts "$contexts"
   fi
 
   _arguments -C "1: :($contexts)"
@@ -41,39 +41,44 @@ compdef _kns kns
 
 # utilities
 function _kubeconfig_is_modified {
-  local kubeconfig configfile kubeconfig_modtime kubeconfig_lastmodtime
+  local kubeconfig configfile modtime last_modtime
 
   kubeconfig="$HOME/.kube/config"
   if [[ -n "$KUBECONFIG" ]]; then
     kubeconfig="$KUBECONFIG"
   fi
 
-  # concatenate modtime of all kubeconfig files
   while read -d ":" configfile; do
-    if ! kubeconfig_modtime="${kubeconfig_modtime}$(stat -L -f%m "$configfile" 2>/dev/null)"; then
+    if [[ -f $configfile ]] && ! modtime="${modtime}$(stat -L -f%m "$configfile" 2>/dev/null)"; then
       echo "$configfile doesn't exist"
       return 1
     fi
   done <<< "${kubeconfig}:"
 
-  # compare kubeconfig_modtime with stored value, if same, no change
-  zstyle -s ':zsh-kubeconfig-prompt:' kubeconfig_modtime kubeconfig_lastmodtime
-  if [[ "$kubeconfig_modtime" == "$kubeconfig_lastmodtime" ]]; then
+  zstyle -s 'kubeconfig' modtime last_modtime
+  if [[ "$modtime" == "$last_modtime" ]]; then
     return 1
   fi
 
-  zstyle ':zsh-kubeconfig-prompt:' kubeconfig_modtime "$kubeconfig_modtime"
+  zstyle 'kubeconfig' modtime "$modtime"
   return 0
 }
 
 # prompt
 function _set_k8s_prompt {
+  local context ns prefix
   if _kubeconfig_is_modified; then
     if context="$(kubectl config current-context 2>/dev/null)"; then
       ns="$(kubectl config view -o "jsonpath={.contexts[?(@.name==\"$context\")].context.namespace}")"
       [[ -z "$ns" ]] && ns="default"
 
-      __K8S_PROMPT="(${context}/${ns})"
+      if [[ ${context} == *prod* ]]; then
+        prefix='%F{red}'
+      elif [[ ${context} == *staging* ]]; then
+        prefix='%F{yellow}'
+      fi
+
+      __K8S_PROMPT="${prefix}(${context}/${ns})%f"
     else
       __K8S_PROMPT=""
     fi
