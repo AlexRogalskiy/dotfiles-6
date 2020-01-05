@@ -14,9 +14,17 @@ fi
 # allow bash style comments on cli
 setopt interactivecomments
 
+# vim bindings
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
+
 # always use nvim
 alias vi="nvim"
 alias vim="nvim"
+
+# colorize output
+alias ls="ls -G"
+alias grep="grep --color=auto"
 
 # allow interpolation in prompt
 setopt prompt_subst
