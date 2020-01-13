@@ -10674,7 +10674,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>170 545 592 584 0 0 2048 1129 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>155 93 730 563 0 0 1440 900 </string>
+	<string>641 287 1495 863 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>772 447 730 566 0 0 2048 1129 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -11376,7 +11376,7 @@
 			<key>Show Mark Indicators</key>
 			<false/>
 			<key>Show Status Bar</key>
-			<true/>
+			<false/>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
@@ -13735,7 +13735,7 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.4</string>
+		<string>3.3.5beta1</string>
 		<string>3.3.7beta4</string>
 		<string>3.3.20181129-nightly</string>
 		<string>3.3.8beta4</string>
@@ -13744,7 +13744,7 @@
 		<string>3.3.5beta2</string>
 		<string>3.3.8beta2</string>
 		<string>3.3.8beta3</string>
-		<string>3.3.5beta1</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
@@ -13764,9 +13764,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{284, 819}</string>
+		<string>{413, 837}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -13781,7 +13781,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>486835461.73727697</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>69</integer>
+	<integer>70</integer>
 	<key>NoSyncNeverRemindPrefsChangesLost</key>
 	<true/>
 	<key>NoSyncNewTabFromTmuxOpensTmux</key>
@@ -14764,7 +14764,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-05T17:11:22Z</date>
+	<date>2020-01-13T22:59:46Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
