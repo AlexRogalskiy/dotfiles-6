@@ -27,7 +27,7 @@ brew 'markdown'
 brew 'shellcheck'
 
 cask_args appdir: '/Applications'
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 
 cask 'iterm2'
 
@@ -51,12 +51,12 @@ cask '1password'
 cask '1password-cli'
 cask 'google-chrome'
 
-tap 'caskroom/drivers'
-cask 'sonos'
+tap 'homebrew/cask-drivers'
+cask 'sonos-s1-controller'
 
-cask 'font-hack'
+#cask 'font-hack'
 
 tap 'homebrew/cask-versions'
 
-cask 'little-snitch'
+#cask 'little-snitch'
 cask 'micro-snitch'
