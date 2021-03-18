@@ -18,10 +18,6 @@ confirm_var() {
     read -rp "?? $message Continue? "
 }
 
-require_git() {
-    command -v git >/dev/null 2>&1 || xcode-select --install
-}
-
 install_dotfiles() {
     target=${1}
     remote=${2}
@@ -44,9 +40,10 @@ confirm_var "INSTALL_DIR"
 export DOTFILES=${DOTFILES:=https://github.com/roboll/dotfiles}
 confirm_var "DOTFILES"
 
-require_git
+# install git if missing
+command -v git >/dev/null 2>&1 || xcode-select --install
 
 log_info "Getting dotfiles from $DOTFILES."
 install_dotfiles $INSTALL_DIR $DOTFILES
 
-exec $INSTALL_DIR/install.sh
+exec $INSTALL_DIR/scripts/install.sh
