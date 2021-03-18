@@ -17,7 +17,7 @@ command -v brew >/dev/null 2>&1 || {
 }
 
 # install dotfiles repository
-export DOTFILES_DIR="~/.dotfiles"
+export DOTFILES_DIR="$HOME/.dotfiles"
 export DOTFILES_REMOTE="https://github.com/roboll/dotfiles"
 log_info "Installing $DOTFILES_REMOTE into $DOTFILES_DIR."
 
