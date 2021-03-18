@@ -50,7 +50,7 @@ mkdir -p ~/.ssh
 curl -s https://github.com/roboll.keys > ~/.ssh/authorized_keys
 
 # install apps with homebrew
-BREWFILE=$PWD/Brewfile
+BREWFILE=$HOME/.dotfiles/Brewfile
 log_info "Installing apps from $BREWFILE."
 brew bundle --file=$BREWFILE
 brew cleanup
