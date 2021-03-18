@@ -10,19 +10,8 @@ log_err() {
     exit 1
 }
 
-confirm_var() {
-    name=${1}
-    value=$(printenv "${1}")
-    message="Using $name=$value."
-
-    read -rp "?? $message Continue? "
-}
-
-# install homebrew if missing
-command -v brew >/dev/null 2>&1 || {
-    log_info "Installing homebrew."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-}
+# install git if missing
+command -v git >/dev/null 2>&1 || xcode-select --install
 
 # install dotfiles repository
 DOTFILES_DIR="$HOME/.dotfiles"
@@ -41,4 +30,5 @@ else
     popd >/dev/null
 fi
 
+# exec installer
 exec $DOTFILES_DIR/scripts/_install.sh
