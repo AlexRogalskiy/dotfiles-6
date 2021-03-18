@@ -24,7 +24,6 @@ brew 'gist'
 
 brew 'go'
 brew 'markdown'
-brew 'shellcheck'
 
 cask_args appdir: '/Applications'
 tap 'homebrew/cask'
@@ -36,7 +35,9 @@ cask 'aws-vault'
 cask 'google-cloud-sdk'
 
 brew 'tfenv'
-brew 'vault'
+
+# no bottle for arm
+# brew 'vault'
 
 brew 'kubernetes-cli'
 brew 'kubernetes-helm'
@@ -50,13 +51,3 @@ cask 'dropbox'
 cask '1password'
 cask '1password-cli'
 cask 'google-chrome'
-
-tap 'homebrew/cask-drivers'
-cask 'sonos-s1-controller'
-
-#cask 'font-hack'
-
-tap 'homebrew/cask-versions'
-
-#cask 'little-snitch'
-cask 'micro-snitch'
