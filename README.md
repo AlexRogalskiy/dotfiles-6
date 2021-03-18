@@ -1,5 +1,5 @@
 # yep, dotfiles
 
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/roboll/dotfiles/master/scripts/install2.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/roboll/dotfiles/HEAD/scripts/install2.sh)
 ```

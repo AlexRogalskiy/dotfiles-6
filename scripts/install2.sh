@@ -25,7 +25,7 @@ if [ ! -d $DOTFILES_DIR ]; then
     git clone --recursive --quiet --depth 1 "$DOTFILES_REMOTE" "$DOTFILES_DIR"
 else
     pushd $DOTFILES_DIR >/dev/null
-    current=$(git remote --get remote.origin.url)
+    current=$(git config --get remote.origin.url)
     if [ "$current" != "$DOTFILES_REMOTE" ]; then
         log_err "$DOTFILES_DIR has wrong git DOTFILES_REMOTE: $current (expected $DOTFILES_REMOTE)"
     fi
