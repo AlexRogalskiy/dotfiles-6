@@ -63,6 +63,7 @@ sudo dscl . -append /Groups/admin GroupMembership roboll
 sudo dscl . -append /Groups/wheel GroupMembership roboll
 
 log_info "Pulling SSH pubkeys from Github."
+mkdir -p ~/.ssh
 curl -s https://github.com/roboll.keys > ~/.ssh/authorized_keys
 
 # install apps with homebrew
