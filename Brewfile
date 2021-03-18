@@ -19,8 +19,6 @@ tap 'neovim/neovim'
 brew 'neovim'
 
 brew 'git'
-brew 'hub'
-brew 'gist'
 
 brew 'go'
 brew 'markdown'
@@ -32,7 +30,9 @@ cask 'iterm2'
 
 brew 'awscli'
 cask 'aws-vault'
-cask 'google-cloud-sdk'
+
+# broken
+# cask 'google-cloud-sdk'
 
 brew 'tfenv'
 
@@ -47,7 +47,5 @@ cask 'docker'
 cask 'slack'
 cask 'spotify'
 cask 'caffeine'
-cask 'dropbox'
 cask '1password'
 cask '1password-cli'
-cask 'google-chrome'
