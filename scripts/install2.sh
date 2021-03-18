@@ -27,7 +27,7 @@ else
     pushd $DOTFILES_DIR >/dev/null
     current=$(git remote show origin)
     if [ "$current" != "$DOTFILES_REMOTE" ]; then
-        log_err "$DOTFILES_DIR has wrong git DOTFILES_REMOTE: $current (expected $remote)"
+        log_err "$DOTFILES_DIR has wrong git DOTFILES_REMOTE: $current (expected $DOTFILES_REMOTE)"
     fi
     git pull
     popd >/dev/null
