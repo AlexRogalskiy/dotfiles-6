@@ -65,8 +65,6 @@ ln -sf "$HOME/.macos/com.googlecode.iterm2.plist" "$HOME/Library/Preferences/"
 
 # configure neovim
 log_info "Configuring neovim."
-#ln -sf "/usr/local/bin/nvim" "/usr/local/bin/vim"
-
 export GOPATH=$HOME/dev
 command -v nvim >/dev/null && {
     log_info "Installing neovim plugins."
