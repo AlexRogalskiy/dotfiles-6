@@ -21,9 +21,9 @@ confirm_var() {
 USER=${USER:=roboll}
 confirm_var "USER"
 
-export BOXNAME=${BOXNAME:=$(hostname -s)}
-confirm_var "BOXNAME"
-echo "$BOXNAME" > ~/.boxname
+export COMPUTER_NAME=${COMPUTER_NAME:=$(hostname -s)}
+confirm_var "COMPUTER_NAME"
+echo "$COMPUTER_NAME" > ~/.computername
 
 # keep sudo until exit
 if [ "$(id -u)" -ne 0 ]; then

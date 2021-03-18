@@ -29,11 +29,11 @@ configure() {
     sudo dscl . -append /Groups/admin GroupMembership roboll
     sudo dscl . -append /Groups/wheel GroupMembership roboll
 
-    log_info "Updating for boxname $BOXNAME."
-    sudo scutil --set ComputerName "$BOXNAME"
-    sudo scutil --set HostName "$BOXNAME"
-    sudo scutil --set LocalHostName "$BOXNAME"
-    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$BOXNAME"
+    log_info "Updating for computer name $COMPUTER_NAME."
+    sudo scutil --set ComputerName "$COMPUTER_NAME"
+    sudo scutil --set HostName "$COMPUTER_NAME"
+    sudo scutil --set LocalHostName "$COMPUTER_NAME"
+    sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
 
     log_info "Setting macOS defaults."
     # scripts/mac-defaults.sh
