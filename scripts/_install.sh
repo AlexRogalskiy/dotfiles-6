@@ -51,7 +51,7 @@ curl -s https://github.com/roboll.keys > ~/.ssh/authorized_keys
 
 # install apps with homebrew
 log_info "Installing apps from Brewfile."
-brew bundle --file=Brewfile
+brew bundle --file=../Brewfile
 brew cleanup
 
 # link dotfiles to home dir
