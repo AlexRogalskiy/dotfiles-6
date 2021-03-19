@@ -49,3 +49,6 @@ cask 'spotify'
 cask 'caffeine'
 cask '1password'
 cask '1password-cli'
+
+tap 'homebrew/cask-fonts'
+cask 'font-hack'
