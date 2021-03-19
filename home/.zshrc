@@ -18,6 +18,9 @@ setopt interactivecomments
 bindkey -v
 bindkey '^R' history-incremental-pattern-search-backward
 
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
+
 # always use nvim
 alias vi="nvim"
 alias vim="nvim"
