@@ -74,7 +74,7 @@ let g:strip_whitespace_on_save = 1
 " let g:enable_ycm_at_startup = 1
 " let g:deoplete#enable_at_startup = 0
 
-let g:polyglot_disabled = ['go']
+" let g:polyglot_disabled = ['go']
 
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_by_filename = 1
